@@ -1,0 +1,110 @@
+name: Deploy to zapleo.com
+
+# Триггеры:
+#   1. Push в main → авто-деплой
+#   2. Manual run через UI (workflow_dispatch)
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - '.archive/**'
+      - 'docs/**'
+  workflow_dispatch:
+
+# Защита от параллельных деплоев — отменяет предыдущий running на тот же ref.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+# Минимальные права токена.
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: production
+      url: https://zapleo.com
+
+    steps:
+      # ---------- 1. SOURCE ----------
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ---------- 2. RUNTIME ----------
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+
+      # ---------- 3. BUILD ----------
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint (Biome)
+        run: pnpm exec biome check . --reporter=github
+        continue-on-error: true  # не блокируем деплой на warning'ах пока codebase молодая
+
+      - name: Typecheck
+        run: pnpm exec tsc --noEmit
+
+      - name: Build (Next.js static export)
+        run: pnpm build
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "out" ]; then
+            echo "::error::out/ directory missing after build"
+            exit 1
+          fi
+          echo "Build size: $(du -sh out | cut -f1)"
+          echo "Files: $(find out -type f | wc -l)"
+
+      # ---------- 4. SSH SETUP ----------
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      # ---------- 5. DEPLOY ----------
+      # rsync с --delete: удаляет на сервере файлы которых нет в out/
+      # --exclude .well-known: оставляем certbot challenges если они там есть
+      # --exclude legacy-*: на всякий случай (хотя legacy уже в /var/www/zapleo.com/data/)
+      - name: Rsync to production
+        run: |
+          rsync -avz --delete \
+            --exclude='.well-known' \
+            --exclude='legacy-*' \
+            -e "ssh -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts -o IdentitiesOnly=yes" \
+            out/ \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}"
+
+      # ---------- 6. HEALTH CHECK ----------
+      - name: Verify deployment
+        run: |
+          sleep 3
+          STATUS=$(curl -sSL -o /dev/null -w "%{http_code}" "https://zapleo.com/?ci=${{ github.sha }}")
+          if [ "$STATUS" != "200" ]; then
+            echo "::error::Health check failed: HTTP $STATUS"
+            exit 1
+          fi
+          echo "✓ Site responded HTTP 200"
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
