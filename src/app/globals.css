@@ -1,26 +1,227 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   zapleo.com · warm espresso dark · editorial Monocle × A24
+   ============================================================ */
+
+@theme {
+  /* —— Color tokens (oklch, warm espresso base) —— */
+  --color-bg-base: oklch(14% 0.02 60);
+  --color-bg-elevated: oklch(18% 0.03 65);
+  --color-bg-deep: oklch(9% 0.015 55);
+  --color-bg-veil: oklch(20% 0.025 60 / 0.4);
+
+  --color-ink: oklch(95% 0.03 80);
+  --color-ink-mute: oklch(70% 0.03 70);
+  --color-ink-faint: oklch(50% 0.025 65);
+  --color-ink-ghost: oklch(35% 0.02 60);
+
+  --color-amber: oklch(82% 0.18 70);
+  --color-amber-deep: oklch(62% 0.18 55);
+  --color-rust: oklch(55% 0.18 35);
+  --color-mint: oklch(78% 0.14 165);
+
+  --color-line: oklch(28% 0.02 60);
+  --color-line-bright: oklch(40% 0.025 65);
+
+  /* —— Fonts (wired in layout.tsx via next/font) —— */
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-newsreader);
+  --font-mono: var(--font-mono-jb);
+
+  /* —— Motion —— */
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+  --d-fast: 240ms;
+  --d-med: 380ms;
+  --d-slow: 700ms;
+
+  /* —— Effects —— */
+  --grain-opacity: 0.06;
+  --bloom-warm: radial-gradient(
+    ellipse at 70% 30%,
+    oklch(60% 0.18 50 / 0.18),
+    transparent 60%
+  );
+  --bloom-deep: radial-gradient(
+    ellipse at 30% 80%,
+    oklch(40% 0.12 30 / 0.22),
+    transparent 65%
+  );
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ============================================================
+   Base
+   ============================================================ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-bg-base);
+  color-scheme: dark;
+  scroll-behavior: auto; /* lenis handles smooth scroll */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-base);
+  color: var(--color-ink);
+  font-family: var(--font-body), Georgia, serif;
+  font-size: clamp(16px, 1.05vw, 19px);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern", "liga", "calt", "ss01";
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Disabled while user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: oklch(60% 0.18 50 / 0.35);
+  color: var(--color-ink);
+}
+
+/* ============================================================
+   Editorial display utility classes
+   ============================================================ */
+
+.display {
+  font-family: var(--font-display);
+  font-feature-settings: "ss01", "ss02", "ss05", "calt";
+  font-optical-sizing: auto;
+  letter-spacing: -0.018em;
+  line-height: 0.95;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "ss01", "calt";
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-mute);
+  font-weight: 500;
+}
+
+.marginalia {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--color-ink-faint);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Grain overlay (page-wide, non-interactive)
+   ============================================================ */
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.7 0 0 0 0 0.3 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* ============================================================
+   Scroll-reveal primitive (data-reveal toggled by IntersectionObserver)
+   ============================================================ */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 620ms var(--ease-out-cinema),
+    transform 620ms var(--ease-out-cinema);
+  will-change: opacity, transform;
+}
+[data-reveal="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger via inline style --stagger="120ms" */
+[data-reveal] {
+  transition-delay: var(--stagger, 0ms);
+}
+
+/* ============================================================
+   Link underline animation
+   ============================================================ */
+
+.link-line {
+  position: relative;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.link-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 320ms var(--ease-out-cinema);
+}
+.link-line:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   Glass / veil utility
+   ============================================================ */
+
+.glass {
+  background: oklch(18% 0.03 65 / 0.55);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid oklch(40% 0.025 65 / 0.35);
+}
+
+/* ============================================================
+   Diagonal divider
+   ============================================================ */
+
+.diag-divider {
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-bg-elevated) 100%
+  );
+  clip-path: polygon(0 0, 100% 30px, 100% 100%, 0 100%);
+}
+
+/* ============================================================
+   Bloom (warm light atmospherics for hero)
+   ============================================================ */
+
+.bloom-warm {
+  background: var(--bloom-warm);
+  pointer-events: none;
+}
+.bloom-deep {
+  background: var(--bloom-deep);
+  pointer-events: none;
 }
