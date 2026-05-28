@@ -87,9 +87,9 @@ const COURSES: Resource[] = [
     added: 'May 2026',
   },
   {
-    name: 'Dicoding — Generative AI Path',
+    name: 'Dicoding — AI Engineer Path',
     for: 'Indonesian learners',
-    what: 'Full Generative AI learning path in Bahasa Indonesia. Google-backed certification. The best free local option.',
+    what: '6-course path in Bahasa Indonesia: Python, ML basics, Deep Learning, Applied ML. Google-backed certificate. Best free local starting point.',
     cost: 'Free + cert',
     url: 'https://www.dicoding.com/learningpaths/64',
     added: 'May 2026',
@@ -138,11 +138,11 @@ const COMMUNITIES: Resource[] = [
     added: 'May 2026',
   },
   {
-    name: 'Indonesia AI Community (Telegram)',
+    name: 'AI Indonesia · @ai_indonesia',
     for: 'Indonesian tech community',
-    what: 'Local AI practitioners, job postings, and discussions. Search @indonesiaai on Telegram.',
+    what: 'Indonesian AI community: public seminars, practitioner discussions, job postings. Based in Depok, active nationally.',
     cost: 'Free',
-    url: 'https://t.me/IndonesiaAICommunity',
+    url: 'https://t.me/ai_indonesia',
     added: 'May 2026',
   },
   {

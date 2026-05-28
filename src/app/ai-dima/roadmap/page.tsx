@@ -509,11 +509,11 @@ export default function AIRoadmapPage() {
               name="IT STEP Indonesia"
               badge="MY SCHOOL"
               badgeAccent="amber"
-              program="AI & Machine Learning Professional"
-              format="In-person · Jakarta"
-              url="https://itstep.id/program/"
-              urlLabel="itstep.id/program/"
-              why="The only school on this list I run. In-person, structured curriculum, certified instructors. I'm the Branch Director — full transparency."
+              program="Back-End Developer + AI"
+              format="In-person · Jakarta · 8 months"
+              url="https://itstep.id/python"
+              urlLabel="itstep.id/python"
+              why="The only school on this list I run. Covers Python, Django, REST APIs, LangChain integration, and OpenAI API. I'm the Branch Director — full transparency."
               disclosure="I run this branch. I include it because it's genuinely good — not as a sales pitch. Judge the curriculum, not my endorsement."
             />
 
@@ -521,33 +521,33 @@ export default function AIRoadmapPage() {
             <SchoolCard
               name="Purwadhika Digital Technology School"
               badge="BOOTCAMP"
-              program="AI/ML Engineering Track"
-              format="Hybrid (online + Jakarta campus)"
-              url="https://purwadhika.com/program/ai-ml"
-              urlLabel="purwadhika.com/program/ai-ml"
-              why="One of Indonesia's oldest and most recognized tech schools. Strong hiring network at Indonesian unicorns."
+              program="Job Connector AI Engineering"
+              format="Hybrid (online + Jakarta campus) · 15 weeks"
+              url="https://purwadhika.com/job-connector/ai-engineering"
+              urlLabel="purwadhika.com → AI Engineering"
+              why="One of Indonesia's oldest and most recognized tech schools. Strong hiring network across 1,000+ partners in Asia."
             />
 
             {/* Dibimbing */}
             <SchoolCard
               name="Dibimbing"
               badge="BOOTCAMP"
-              program="Data Science & AI Bootcamp"
-              format="Online + mentored project sprints"
+              program="Data Science & AI Machine Learning"
+              format="Online + mentored project sprints · 24 weeks"
               url="https://dibimbing.id/layanan/bootcamp/data-science"
-              urlLabel="dibimbing.id → Data Science bootcamp"
-              why="Intensive project-based format. Good for career switchers who learn by building, not by watching."
+              urlLabel="dibimbing.id → Data Science"
+              why="Covers ML, deep learning, NLP, and Generative AI. 96% alumni employment rate. Unlimited batch repeats."
             />
 
             {/* RevoU */}
             <SchoolCard
               name="RevoU"
               badge="BOOTCAMP"
-              program="Full Stack Data Science + AI"
+              program="Bootcamp Data Analytics"
               format="Online · cohort-based"
-              url="https://revou.co/programme/full-stack-data-science"
-              urlLabel="revou.co → Full Stack Data Science"
-              why="Strong placement track record. Deferred tuition option available. Alumni network active in GoTo, Shopee ecosystem."
+              url="https://revou.co/bootcamp-data-analytics"
+              urlLabel="revou.co → Data Analytics Bootcamp"
+              why="Strong placement track record. AI integrated across modules. Alumni network active in GoTo, Shopee ecosystem."
             />
 
             {/* Dicoding */}
@@ -555,22 +555,22 @@ export default function AIRoadmapPage() {
               name="Dicoding"
               badge="FREE PATH"
               badgeAccent="mint"
-              program="Generative AI Learning Path"
-              format="Self-paced online · Bahasa Indonesia"
+              program="AI Engineer Learning Path"
+              format="Self-paced online · Bahasa Indonesia · 6 courses"
               url="https://www.dicoding.com/learningpaths/64"
-              urlLabel="dicoding.com → Generative AI path"
-              why="Fully free, in Bahasa, with Google certification backing. Best first step before committing to a paid bootcamp."
+              urlLabel="dicoding.com → AI Engineer path"
+              why="Fully free, in Bahasa: Python, ML basics, Deep Learning, Applied ML. Google-backed certificate. Best free local starting point."
             />
 
             {/* Hacktiv8 */}
             <SchoolCard
               name="Hacktiv8"
               badge="BOOTCAMP"
-              program="AI/Machine Learning Immersive"
-              format="In-person · Jakarta (Kuningan)"
-              url="https://hacktiv8.com/machine-learning"
-              urlLabel="hacktiv8.com → Machine Learning"
-              why="Intensive pace, strong alumni community. Good if you want a classroom environment and a fast credential."
+              program="Bootcamp Data Science & AI Machine Learning"
+              format="In-person / Remote · Jakarta · 12 weeks"
+              url="https://hacktiv8.com/data-science"
+              urlLabel="hacktiv8.com → Data Science"
+              why="Intensive pace, 87% graduate employment in 2025. Covers ML, deep learning, AI, data pipelines."
             />
 
           </div>
