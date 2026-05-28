@@ -1,10 +1,12 @@
+import type { Locale } from '@/i18n/config';
+import { getDict } from '@/i18n/dict';
 import { LangSwitcher } from './lang-switcher';
 
-/**
- * Cinematic hero — full viewport, asymmetric, warm espresso void
- * with double bloom + grain. Headline tilts to operator-narrative.
- */
-export function Hero() {
+export function Hero({ locale }: { locale: Locale }) {
+  const t = getDict(locale);
+  const home = t.home;
+  const base = locale === 'en' ? '' : `/${locale}`;
+
   return (
     <section
       style={{
@@ -14,11 +16,9 @@ export function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* warm atmospherics */}
       <div className="bloom-warm" style={{ position: 'absolute', inset: 0 }} />
       <div className="bloom-deep" style={{ position: 'absolute', inset: 0 }} />
 
-      {/* top brand strip */}
       <header
         style={{
           position: 'absolute',
@@ -34,33 +34,25 @@ export function Hero() {
       >
         <span className="mono uppercase" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
           zapleo
-          <span aria-hidden style={{ margin: '0 10px', color: 'var(--color-ink-ghost)' }}>
-            ·
-          </span>
-          <span style={{ color: 'var(--color-ink-mute)' }}>est. 2010</span>
+          <span aria-hidden style={{ margin: '0 10px', color: 'var(--color-ink-ghost)' }}>·</span>
+          <span style={{ color: 'var(--color-ink-mute)' }}>{t.common.brandTag}</span>
         </span>
-        <LangSwitcher />
+        <LangSwitcher current={locale} />
       </header>
 
-      {/* main editorial block */}
       <div
         style={{
           position: 'relative',
           minHeight: '100vh',
           display: 'grid',
-          gridTemplateColumns: 'minmax(0, 1fr)',
           alignItems: 'center',
           padding: 'clamp(96px, 14vh, 180px) clamp(24px, 6vw, 96px) clamp(60px, 10vh, 120px)',
           zIndex: 2,
         }}
       >
         <div style={{ maxWidth: '78ch' }}>
-          <p
-            className="eyebrow"
-            data-reveal
-            style={{ '--stagger': '0ms', marginBottom: 'clamp(24px, 3vh, 40px)' } as React.CSSProperties}
-          >
-            Dnipro → Weligama → Vietnam → Jakarta &nbsp;·&nbsp; Operator. Educator. AI-augmented.
+          <p className="eyebrow" data-reveal style={{ marginBottom: 'clamp(24px, 3vh, 40px)' }}>
+            {home.eyebrow}
           </p>
 
           <h1
@@ -78,7 +70,7 @@ export function Hero() {
               } as React.CSSProperties
             }
           >
-            Operator first.
+            {home.headLine1}
             <br />
             <em
               style={{
@@ -88,7 +80,7 @@ export function Hero() {
                 fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
               }}
             >
-              Educator now.
+              {home.headLine2}
             </em>
           </h1>
 
@@ -105,9 +97,7 @@ export function Hero() {
               } as React.CSSProperties
             }
           >
-            Twelve years shipping software from a Dnipro agency. Forty-plus client engagements.
-            Now running an IT academy branch in Jakarta — and teaching the path into tech with AI
-            in the workflow, humans in the chair.
+            {home.lead}
           </p>
 
           <div
@@ -123,30 +113,25 @@ export function Hero() {
               } as React.CSSProperties
             }
           >
-            <a href="/work/" className="link-line mono uppercase" style={{ fontSize: 12, letterSpacing: '0.18em' }}>
-              See the work
+            <a href={`${base}/work/`} className="link-line mono uppercase" style={{ fontSize: 12, letterSpacing: '0.18em' }}>
+              {home.ctaWork}
             </a>
-            <span aria-hidden style={{ color: 'var(--color-ink-ghost)' }}>
-              ·
-            </span>
-            <a href="/journey/" className="link-line mono uppercase" style={{ fontSize: 12, letterSpacing: '0.18em' }}>
-              The journey
+            <span aria-hidden style={{ color: 'var(--color-ink-ghost)' }}>·</span>
+            <a href={`${base}/journey/`} className="link-line mono uppercase" style={{ fontSize: 12, letterSpacing: '0.18em' }}>
+              {home.ctaJourney}
             </a>
-            <span aria-hidden style={{ color: 'var(--color-ink-ghost)' }}>
-              ·
-            </span>
+            <span aria-hidden style={{ color: 'var(--color-ink-ghost)' }}>·</span>
             <a
-              href="/contact/"
+              href={`${base}/contact/`}
               className="link-line mono uppercase"
               style={{ fontSize: 12, letterSpacing: '0.18em', color: 'var(--color-amber)' }}
             >
-              Direct line →
+              {home.ctaContact}
             </a>
           </div>
         </div>
       </div>
 
-      {/* chapter marker — bottom right */}
       <div
         style={{
           position: 'absolute',
@@ -160,7 +145,7 @@ export function Hero() {
         }}
       >
         <span className="mono" style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
-          CH 00 / 06
+          {t.common.chapter(0, 6)}
         </span>
         <span
           aria-hidden

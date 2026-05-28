@@ -1,48 +1,9 @@
-/**
- * Asymmetric 7/5 split:
- *   Left (sticky, larger): Now — Jakarta
- *   Right (scrolling): Then-archive cards
- */
-const THEN_CARDS = [
-  {
-    year: '2010',
-    place: 'Dnipro · UA',
-    title: 'Two laptops, one office',
-    body: 'Started Zapleo. Web, mobile, brand microsites. Office on Shevchenko 59, Prospekt Pushkina 33 after.',
-  },
-  {
-    year: '2014',
-    place: 'Dnipro · UA',
-    title: 'Subcontract engine',
-    body: 'Sprints for studios working on classifieds, retail, hardware launches. Team grows to eight.',
-  },
-  {
-    year: '2018',
-    place: 'Dnipro · UA',
-    title: 'Forty engagements deep',
-    body: 'Cosmetics ecommerce, association portals, news platforms, Android apps. PHP + Rails + JS.',
-  },
-  {
-    year: '2022',
-    place: 'Weligama · LK',
-    title: 'Sri Lanka. Pasijou opens.',
-    body: 'February 24. Move family south. Open Pasijou — coworking + restaurant + cinema on the south coast. First time operating in F&B.',
-  },
-  {
-    year: '2023',
-    place: 'Vietnam',
-    title: 'Veranda',
-    body: 'Veranda.my — second hospitality venture, this time in Vietnam. Same playbook: a place where work and food belong in one room.',
-  },
-  {
-    year: '2024',
-    place: 'Jakarta · ID',
-    title: 'Pivot to education',
-    body: 'Met the Indonesian market as consultant. Saw the English-content gap. Started building toward it.',
-  },
-];
+import type { Locale } from '@/i18n/config';
+import { getDict } from '@/i18n/dict';
 
-export function NowThen() {
+export function NowThen({ locale }: { locale: Locale }) {
+  const t = getDict(locale).nowThen;
+
   return (
     <section
       style={{
@@ -59,16 +20,9 @@ export function NowThen() {
         }}
         className="now-then-grid"
       >
-        {/* sticky LEFT — Now */}
-        <div
-          style={{
-            position: 'sticky',
-            top: 'clamp(80px, 12vh, 140px)',
-            alignSelf: 'start',
-          }}
-        >
+        <div style={{ position: 'sticky', top: 'clamp(80px, 12vh, 140px)', alignSelf: 'start' }}>
           <p className="eyebrow" data-reveal style={{ marginBottom: 28 }}>
-            Now · Jakarta · 2026
+            {t.nowEyebrow}
           </p>
           <h2
             className="display"
@@ -84,7 +38,7 @@ export function NowThen() {
               } as React.CSSProperties
             }
           >
-            Building an IT academy branch in&nbsp;Indonesia. Teaching the path into tech.
+            {t.nowHead}
           </h2>
           <p
             data-reveal
@@ -99,9 +53,7 @@ export function NowThen() {
               } as React.CSSProperties
             }
           >
-            Branch Director at IT STEP Academy Jakarta. Curriculum, hiring, ops. In parallel —
-            building a public English-language voice for the Asian career-switcher pipeline. The
-            voice is AI-augmented; the calls are mine.
+            {t.nowBody}
           </p>
 
           <ul
@@ -117,17 +69,12 @@ export function NowThen() {
               } as React.CSSProperties
             }
           >
-            {[
-              ['Where', 'Menteng, Jakarta'],
-              ['Role', 'Branch Director, IT STEP Academy Jakarta'],
-              ['Stack', 'Operator brain · AI pipeline · Ukrainian engineering spine'],
-              ['Open for', 'Brief calls, partner intros, smart questions'],
-            ].map(([k, v]) => (
+            {t.meta.map(([k, v]) => (
               <li
                 key={k}
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: '120px 1fr',
+                  gridTemplateColumns: '140px 1fr',
                   gap: 16,
                   paddingBottom: 12,
                   borderBottom: '1px solid var(--color-line)',
@@ -142,13 +89,12 @@ export function NowThen() {
           </ul>
         </div>
 
-        {/* scrolling RIGHT — Then archive cards */}
         <div style={{ display: 'grid', gap: 'clamp(48px, 8vh, 120px)' }}>
           <p className="eyebrow" data-reveal>
-            Then · The archive · Dnipro → Weligama → Vietnam
+            {t.thenEyebrow}
           </p>
 
-          {THEN_CARDS.map((c, i) => (
+          {t.cards.map((c, i) => (
             <article
               key={c.year}
               data-reveal
@@ -229,12 +175,8 @@ export function NowThen() {
 
       <style>{`
         @media (max-width: 900px) {
-          .now-then-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .now-then-grid > div:first-child {
-            position: static !important;
-          }
+          .now-then-grid { grid-template-columns: 1fr !important; }
+          .now-then-grid > div:first-child { position: static !important; }
         }
       `}</style>
     </section>

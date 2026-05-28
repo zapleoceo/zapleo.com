@@ -12,14 +12,14 @@ export default function Home() {
     <>
       <CursorDot />
       <main>
-        <Hero />
-        <NowThen />
-        <TrustedStrip />
+        <Hero locale="en" />
+        <NowThen locale="en" />
+        <TrustedStrip locale="en" />
         <WorkTeaser />
-        <PullQuote />
-        <CTABlock />
+        <PullQuote locale="en" />
+        <CTABlock locale="en" />
       </main>
-      <Footer />
+      <Footer locale="en" />
     </>
   );
 }

@@ -148,7 +148,7 @@ export function LocaleHero(p: LocaleHeroProps) {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={p.locale} />
     </>
   );
 }

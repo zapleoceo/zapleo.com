@@ -1,4 +1,8 @@
-export function CTABlock() {
+import type { Locale } from '@/i18n/config';
+import { getDict } from '@/i18n/dict';
+
+export function CTABlock({ locale }: { locale: Locale }) {
+  const t = getDict(locale).cta;
   return (
     <section
       style={{
@@ -9,7 +13,7 @@ export function CTABlock() {
     >
       <div style={{ maxWidth: '64ch', margin: '0 auto', textAlign: 'center' }}>
         <p className="eyebrow" data-reveal>
-          Direct line · No form
+          {t.eyebrow}
         </p>
         <h2
           className="display"
@@ -26,7 +30,8 @@ export function CTABlock() {
             } as React.CSSProperties
           }
         >
-          Working on something interesting? <em style={{ fontStyle: 'italic', color: 'var(--color-amber)' }}>Skip the form.</em>
+          {t.head1}{' '}
+          <em style={{ fontStyle: 'italic', color: 'var(--color-amber)' }}>{t.head2}</em>
         </h2>
         <p
           data-reveal
@@ -40,8 +45,7 @@ export function CTABlock() {
             } as React.CSSProperties
           }
         >
-          Email is read daily. WhatsApp is faster if you're in Asia. Reply within 48&nbsp;hours on
-          weekdays, in your timezone if you tell me where you are.
+          {t.body}
         </p>
         <div
           data-reveal
@@ -56,29 +60,13 @@ export function CTABlock() {
             } as React.CSSProperties
           }
         >
-          <a
-            href="mailto:dima@zapleo.com"
-            className="link-line mono uppercase"
-            style={{ fontSize: 13, letterSpacing: '0.18em', color: 'var(--color-amber)' }}
-          >
+          <a href="mailto:dima@zapleo.com" className="link-line mono uppercase" style={{ fontSize: 13, letterSpacing: '0.18em', color: 'var(--color-amber)' }}>
             dima@zapleo.com
           </a>
-          <a
-            href="https://wa.me/380994811889"
-            target="_blank"
-            rel="noopener"
-            className="link-line mono uppercase"
-            style={{ fontSize: 13, letterSpacing: '0.18em' }}
-          >
+          <a href="https://wa.me/380994811889" target="_blank" rel="noopener" className="link-line mono uppercase" style={{ fontSize: 13, letterSpacing: '0.18em' }}>
             WhatsApp →
           </a>
-          <a
-            href="https://t.me/zapleosoft"
-            target="_blank"
-            rel="noopener"
-            className="link-line mono uppercase"
-            style={{ fontSize: 13, letterSpacing: '0.18em' }}
-          >
+          <a href="https://t.me/zapleosoft" target="_blank" rel="noopener" className="link-line mono uppercase" style={{ fontSize: 13, letterSpacing: '0.18em' }}>
             Telegram
           </a>
           <a

@@ -1,3 +1,4 @@
+import type { Locale } from '@/i18n/config';
 import { CursorDot } from './cursor-dot';
 import { Footer } from './footer';
 import { LangSwitcher } from './lang-switcher';
@@ -7,12 +8,14 @@ export function PageShell({
   title,
   intro,
   chapter,
+  locale = 'en',
   children,
 }: {
   eyebrow: string;
   title: string | React.ReactNode;
   intro?: string | React.ReactNode;
   chapter: string; // e.g. "CH 02 / 06"
+  locale?: Locale;
   children: React.ReactNode;
 }) {
   return (
@@ -31,7 +34,7 @@ export function PageShell({
         <a href="/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
           ← zapleo
         </a>
-        <LangSwitcher />
+        <LangSwitcher current={locale} />
       </header>
 
       <section
@@ -98,7 +101,7 @@ export function PageShell({
       </section>
 
       <main>{children}</main>
-      <Footer />
+      <Footer locale={locale} />
     </>
   );
 }

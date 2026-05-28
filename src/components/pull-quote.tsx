@@ -1,4 +1,8 @@
-export function PullQuote() {
+import type { Locale } from '@/i18n/config';
+import { getDict } from '@/i18n/dict';
+
+export function PullQuote({ locale }: { locale: Locale }) {
+  const t = getDict(locale).pullQuote;
   return (
     <section
       style={{
@@ -8,7 +12,6 @@ export function PullQuote() {
         overflow: 'hidden',
       }}
     >
-      {/* warm mesh gradient backdrop */}
       <div
         aria-hidden
         style={{
@@ -25,7 +28,7 @@ export function PullQuote() {
       <figure
         style={{
           position: 'relative',
-          maxWidth: '24ch',
+          maxWidth: '28ch',
           margin: '0 auto',
           textAlign: 'left',
         }}
@@ -36,19 +39,19 @@ export function PullQuote() {
           style={
             {
               '--stagger': '0ms',
-              fontSize: 'clamp(40px, 8vw, 120px)',
+              fontSize: 'clamp(36px, 7vw, 108px)',
               fontWeight: 240,
               fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
               fontStyle: 'italic',
-              lineHeight: 1.0,
-              letterSpacing: '-0.03em',
+              lineHeight: 1.05,
+              letterSpacing: '-0.025em',
               margin: 0,
               color: 'var(--color-ink)',
               mixBlendMode: 'screen',
             } as React.CSSProperties
           }
         >
-          “The teacher I needed didn't exist in my language. So I built one.”
+          {t.text}
         </blockquote>
 
         <figcaption
@@ -64,7 +67,7 @@ export function PullQuote() {
             } as React.CSSProperties
           }
         >
-          — On launching the Vibe Coding course · Jakarta · 2026
+          {t.caption}
         </figcaption>
       </figure>
     </section>

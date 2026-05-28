@@ -1,27 +1,9 @@
-/**
- * Honest "engagement scale" strip.
- * No fake big-logo flexing — Zapleo's public record doesn't substantiate OLX/Dell/Intel/Microsoft.
- * Instead: present the *scale* of the agency's operator experience as numbers + industries.
- */
-const STATS = [
-  { value: '12', unit: 'years', label: 'agency operations' },
-  { value: '40+', unit: '', label: 'client engagements' },
-  { value: '6', unit: '', label: 'tech stacks shipped' },
-  { value: '4', unit: '', label: 'languages on this site' },
-] as const;
+import type { Locale } from '@/i18n/config';
+import { getDict } from '@/i18n/dict';
 
-const INDUSTRIES = [
-  'EdTech',
-  'Classifieds',
-  'Tech media',
-  'E-commerce',
-  'Industry associations',
-  'Booking platforms',
-  'Cosmetics & beauty',
-  'News & opinion',
-];
+export function TrustedStrip({ locale }: { locale: Locale }) {
+  const t = getDict(locale).trusted;
 
-export function TrustedStrip() {
   return (
     <section
       style={{
@@ -33,7 +15,7 @@ export function TrustedStrip() {
       }}
     >
       <p className="eyebrow" data-reveal style={{ textAlign: 'center', marginBottom: 'clamp(40px, 6vh, 72px)' }}>
-        The track record, in honest numbers
+        {t.eyebrow}
       </p>
 
       <div
@@ -45,7 +27,7 @@ export function TrustedStrip() {
           margin: '0 auto',
         }}
       >
-        {STATS.map((s, i) => (
+        {t.stats.map((s, i) => (
           <div
             key={s.label}
             data-reveal
@@ -91,7 +73,6 @@ export function TrustedStrip() {
         style={
           {
             '--stagger': '400ms',
-            marginTop: 'clamp(64px, 10vh, 120px)',
             display: 'flex',
             flexWrap: 'wrap',
             gap: '12px 24px',
@@ -101,7 +82,7 @@ export function TrustedStrip() {
           } as React.CSSProperties
         }
       >
-        {INDUSTRIES.map((ind) => (
+        {t.industries.map((ind) => (
           <span
             key={ind}
             className="mono uppercase"
@@ -133,20 +114,12 @@ export function TrustedStrip() {
           } as React.CSSProperties
         }
       >
-        * Specific clients available on request, where NDA permits. Public agency footprint:{' '}
-        <a
-          className="link-line"
-          href="https://github.com/zapleo"
-          style={{ color: 'var(--color-ink-mute)' }}
-        >
+        * {t.footnote}{' '}
+        <a className="link-line" href="https://github.com/zapleo" style={{ color: 'var(--color-ink-mute)' }}>
           github.com/zapleo
         </a>{' '}
         ·{' '}
-        <a
-          className="link-line"
-          href="https://www.linkedin.com/company/zapleo"
-          style={{ color: 'var(--color-ink-mute)' }}
-        >
+        <a className="link-line" href="https://www.linkedin.com/company/zapleo" style={{ color: 'var(--color-ink-mute)' }}>
           linkedin/company/zapleo
         </a>
       </p>
