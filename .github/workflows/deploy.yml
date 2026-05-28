@@ -94,7 +94,23 @@ jobs:
             out/ \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}"
 
-      # ---------- 6. HEALTH CHECK ----------
+      # ---------- 6. CLOUDFLARE CACHE PURGE (optional) ----------
+      # Purges CF edge cache after deploy. Skipped if CF secrets not set.
+      - name: Purge Cloudflare cache
+        if: ${{ env.CF_API_TOKEN != '' && env.CF_ZONE_ID != '' }}
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+        run: |
+          curl -fsSL -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}' \
+            && echo "✓ Cloudflare cache purged" \
+            || echo "⚠ CF purge failed (non-fatal)"
+
+      # ---------- 7. HEALTH CHECK ----------
       - name: Verify deployment
         run: |
           sleep 3

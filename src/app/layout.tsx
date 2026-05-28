@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Fraunces, Newsreader, JetBrains_Mono } from 'next/font/google';
+import { JsonLd } from '@/components/json-ld';
 import { ScrollReveal } from '@/components/scroll-reveal';
 import './globals.css';
 
@@ -46,12 +47,22 @@ export const metadata: Metadata = {
     title: 'Dmitriy Zaporozhets — zapleo',
     description:
       'Operator first, educator now. Building from Jakarta with an Ukrainian engineering spine.',
+    images: [
+      {
+        url: 'https://zapleo.com/og.svg',
+        width: 1200,
+        height: 630,
+        alt: 'zapleo — Operator first. Educator now.',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     creator: '@zapleosoft',
+    images: ['https://zapleo.com/og.svg'],
   },
   robots: { index: true, follow: true },
+  manifest: '/manifest.webmanifest',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -67,6 +78,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* scroll-reveal observer */}
         <ScrollReveal />
+
+        {/* schema.org */}
+        <JsonLd />
 
         {children}
       </body>
