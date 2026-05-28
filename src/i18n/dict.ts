@@ -23,9 +23,10 @@ export const DICTS = {
       journal: 'Journal',
       contact: 'Contact',
       colophon: 'Colophon',
+      aiDima: 'AI-Dima →',
     },
     home: {
-      eyebrow: "Dnipro → Weligama → Vietnam → Jakarta · Operator. Educator. AI-augmented.",
+      eyebrow: "Dnipro (UA) → Weligama (LK) → Nha Trang (VN) → Jakarta (ID) · Operator. Educator. AI-augmented.",
       headLine1: 'Operator first.',
       headLine2: 'Educator now.',
       lead:
@@ -45,13 +46,13 @@ export const DICTS = {
         ['Stack', 'Operator brain · AI pipeline · Ukrainian engineering spine'],
         ['Open for', 'Brief calls, partner intros, smart questions'],
       ] as [string, string][],
-      thenEyebrow: 'Then · The archive · Dnipro → Weligama → Vietnam',
+      thenEyebrow: 'Then · The archive · Dnipro (UA) → Weligama (LK) → Nha Trang (VN)',
       cards: [
         { year: '2010', place: 'Dnipro · UA', title: 'Two laptops, one office', body: 'Started Zapleo. Web, mobile, brand microsites. Office on Shevchenko 59, Prospekt Pushkina 33 after.' },
         { year: '2014', place: 'Dnipro · UA', title: 'Subcontract engine', body: 'Sprints for studios working on classifieds, retail, hardware launches. Team grows to eight.' },
         { year: '2018', place: 'Dnipro · UA', title: 'Forty engagements deep', body: 'Cosmetics ecommerce, association portals, news platforms, Android apps. PHP + Rails + JS.' },
         { year: '2022', place: 'Weligama · LK', title: 'Sri Lanka. Pasijou opens.', body: 'February 24. Move family south. Open Pasijou — coworking + restaurant + cinema on the south coast.' },
-        { year: '2023', place: 'Vietnam', title: 'Veranda', body: 'Veranda.my — second hospitality venture, this time in Vietnam. Same playbook: work and food in one room.' },
+        { year: '2023', place: 'Nha Trang · VN', title: 'Veranda', body: 'Veranda.my — second hospitality venture, this time in Nha Trang, Vietnam. Same playbook: work and food in one room.' },
         { year: '2024', place: 'Jakarta · ID', title: 'Pivot to education', body: 'Met the Indonesian market as consultant. Saw the English-content gap. Started building toward it.' },
       ],
     },
@@ -80,7 +81,7 @@ export const DICTS = {
     },
     footer: {
       tagline:
-        'Dmitriy Zaporozhets · Operator · Educator · AI-augmented.\nDnipro → Sri Lanka → Vietnam → Jakarta. Building one classroom and a few F&B ventures.',
+        'Dmitriy Zaporozhets · Operator · Educator · AI-augmented.\nDnipro (UA) → Weligama (LK) → Nha Trang (VN) → Jakarta (ID). Building one classroom and a few F&B ventures.',
       mapLabel: 'Map',
       aroundLabel: 'Around the web',
       directLabel: 'Direct',
@@ -112,7 +113,7 @@ export const DICTS = {
         ['Living', 'Jakarta, Indonesia. Menteng side of town. UTC+7. Family on the same timezone.'],
         ['Working on', 'Branch Director at IT STEP Academy Jakarta. Curriculum, hiring, ops, growth. First full quarter in role.'],
         ['Building', 'Vibe Coding — English-language tech course for Southeast Asian learners. AI-augmented teaching, human-directed. Launches Q3 2026.'],
-        ['Running in parallel', 'Pasijou (Weligama) and Veranda (Vietnam) — both hospitality ventures, day-to-day with strong local teams.'],
+        ['Running in parallel', 'Pasijou (Weligama, LK) and Veranda (Nha Trang, VN) — both hospitality ventures, day-to-day with strong local teams.'],
         ['Reading', '"How Big Things Get Done" (Flyvbjerg) on the project-management bench. "AI Engineering" (Chip Huyen) for the curriculum work.'],
         ['Learning', 'Bahasa Indonesia (slowly). React 19 server components in production (faster).'],
         ['Open for', 'Short calls with people building EdTech in SEA, anyone running multi-country teams, and Ukrainian engineers planning a move east.'],
@@ -173,9 +174,10 @@ export const DICTS = {
       journal: 'Журнал',
       contact: 'Контакти',
       colophon: 'Колофон',
+      aiDima: 'AI-Dima →',
     },
     home: {
-      eyebrow: 'Дніпро → Велігама → В\'єтнам → Джакарта · Оператор. Викладач. AI-доповнений.',
+      eyebrow: 'Дніпро (UA) → Велігама (LK) → Нья Чанг (VN) → Джакарта (ID) · Оператор. Викладач. AI-доповнений.',
       headLine1: 'Спочатку оператор.',
       headLine2: 'Зараз — викладач.',
       lead:
@@ -195,13 +197,13 @@ export const DICTS = {
         ['Стек', 'Операторський мозок · AI-конвеєр · Український інженерний хребет'],
         ['Відкритий для', 'Коротких дзвінків, партнерських представлень, розумних питань'],
       ] as [string, string][],
-      thenEyebrow: 'Тоді · Архів · Дніпро → Велігама → В\'єтнам',
+      thenEyebrow: 'Тоді · Архів · Дніпро (UA) → Велігама (LK) → Нья Чанг (VN)',
       cards: [
         { year: '2010', place: 'Дніпро · UA', title: 'Два ноутбуки, один офіс', body: 'Заснував Zapleo. Веб, мобайл, бренд-мікросайти. Офіс на Шевченка 59, потім Проспект Пушкіна 33.' },
         { year: '2014', place: 'Дніпро · UA', title: 'Субпідрядна машина', body: 'Спринти для студій, що працюють із classifieds, retail, hardware-запусками. Команда зростає до восьми.' },
         { year: '2018', place: 'Дніпро · UA', title: 'Сорок проєктів углиб', body: 'Косметика, асоціації, новинні платформи, Android-додатки. PHP + Rails + JS.' },
         { year: '2022', place: 'Велігама · LK', title: 'Шрі-Ланка. Відкривається Pasijou.', body: '24 лютого. Переїзд родини на південь. Відкриваємо Pasijou — коворкінг + ресторан + кінотеатр на південному березі.' },
-        { year: '2023', place: 'В\'єтнам', title: 'Veranda', body: 'Veranda.my — другий гастро-проєкт, тепер у В\'єтнамі. Той самий плейбук: робота та їжа в одному просторі.' },
+        { year: '2023', place: 'Нья Чанг · VN', title: 'Veranda', body: 'Veranda.my — другий гастро-проєкт, тепер у Нья Чанг, В\'єтнам. Той самий плейбук: робота та їжа в одному просторі.' },
         { year: '2024', place: 'Джакарта · ID', title: 'Поворот до освіти', body: 'Зустрівся з індонезійським ринком як консультант. Побачив прогалину в англомовному контенті. Почав будувати назустріч.' },
       ],
     },
@@ -229,7 +231,7 @@ export const DICTS = {
     },
     footer: {
       tagline:
-        'Дмитро Запорожець · Оператор · Викладач · AI-доповнений.\nДніпро → Шрі-Ланка → В\'єтнам → Джакарта. Будую одну аудиторію та кілька F&B проєктів.',
+        'Дмитро Запорожець · Оператор · Викладач · AI-доповнений.\nДніпро (UA) → Велігама (LK) → Нья Чанг (VN) → Джакарта (ID). Будую одну аудиторію та кілька F&B проєктів.',
       mapLabel: 'Карта',
       aroundLabel: 'У мережі',
       directLabel: 'Прямо',
@@ -261,7 +263,7 @@ export const DICTS = {
         ['Живу', 'Джакарта, Індонезія. Сторона Ментенг. UTC+7. Родина в тому ж часовому поясі.'],
         ['Працюю над', 'Директор філії IT STEP Academy Jakarta. Програма, найм, операційка, зростання. Перший повний квартал на ролі.'],
         ['Будую', 'Vibe Coding — англомовний tech-курс для учнів Південно-Східної Азії. AI-доповнене викладання, режисура людська. Запуск Q3 2026.'],
-        ['Веду паралельно', 'Pasijou (Велігама) та Veranda (В\'єтнам) — обидва гастро-проєкти на щодень із сильними локальними командами.'],
+        ['Веду паралельно', 'Pasijou (Велігама, LK) та Veranda (Нья Чанг, VN) — обидва гастро-проєкти на щодень із сильними локальними командами.'],
         ['Читаю', '"How Big Things Get Done" (Флівб\'єрг) на полиці PM. "AI Engineering" (Чіп Хюйен) — для курикулуму.'],
         ['Вчу', 'Bahasa Indonesia (повільно). React 19 server components у проді (швидше).'],
         ['Відкритий для', 'Коротких дзвінків із людьми, що будують EdTech в SEA, з тими хто керує мультикраїновими командами, та з українськими інженерами, що планують переїзд на схід.'],
@@ -322,9 +324,10 @@ export const DICTS = {
       journal: 'Журнал',
       contact: 'Контакты',
       colophon: 'Колофон',
+      aiDima: 'AI-Dima →',
     },
     home: {
-      eyebrow: 'Днепр → Велигама → Вьетнам → Джакарта · Оператор. Преподаватель. AI-дополненный.',
+      eyebrow: 'Днепр (UA) → Велигама (LK) → Нья Чанг (VN) → Джакарта (ID) · Оператор. Преподаватель. AI-дополненный.',
       headLine1: 'Сначала оператор.',
       headLine2: 'Сейчас — преподаватель.',
       lead:
@@ -344,13 +347,13 @@ export const DICTS = {
         ['Стек', 'Операторский мозг · AI-конвейер · Украинский инженерный хребет'],
         ['Открыт для', 'Коротких звонков, партнёрских представлений, умных вопросов'],
       ] as [string, string][],
-      thenEyebrow: 'Тогда · Архив · Днепр → Велигама → Вьетнам',
+      thenEyebrow: 'Тогда · Архив · Днепр (UA) → Велигама (LK) → Нья Чанг (VN)',
       cards: [
         { year: '2010', place: 'Днепр · UA', title: 'Два ноутбука, один офис', body: 'Основал Zapleo. Веб, мобайл, бренд-микросайты. Офис на Шевченко 59, потом Проспект Пушкина 33.' },
         { year: '2014', place: 'Днепр · UA', title: 'Субподрядная машина', body: 'Спринты для студий, работающих с classifieds, retail, hardware-запусками. Команда вырастает до восьми.' },
         { year: '2018', place: 'Днепр · UA', title: 'Сорок проектов вглубь', body: 'Косметика, ассоциации, новостные платформы, Android-приложения. PHP + Rails + JS.' },
         { year: '2022', place: 'Велигама · LK', title: 'Шри-Ланка. Открывается Pasijou.', body: '24 февраля. Переезд семьи на юг. Открываем Pasijou — коворкинг + ресторан + кинотеатр на южном берегу.' },
-        { year: '2023', place: 'Вьетнам', title: 'Veranda', body: 'Veranda.my — второй гастро-проект, теперь во Вьетнаме. Тот же плейбук: работа и еда в одном пространстве.' },
+        { year: '2023', place: 'Нья Чанг · VN', title: 'Veranda', body: 'Veranda.my — второй гастро-проект, теперь в Нья Чанге, Вьетнам. Тот же плейбук: работа и еда в одном пространстве.' },
         { year: '2024', place: 'Джакарта · ID', title: 'Поворот к образованию', body: 'Встретил индонезийский рынок консультантом. Увидел gap в англоязычном контенте. Начал строить навстречу.' },
       ],
     },
@@ -378,7 +381,7 @@ export const DICTS = {
     },
     footer: {
       tagline:
-        'Дмитрий Запорожец · Оператор · Преподаватель · AI-дополненный.\nДнепр → Шри-Ланка → Вьетнам → Джакарта. Строю одну аудиторию и несколько F&B-проектов.',
+        'Дмитрий Запорожец · Оператор · Преподаватель · AI-дополненный.\nДнепр (UA) → Велигама (LK) → Нья Чанг (VN) → Джакарта (ID). Строю одну аудиторию и несколько F&B-проектов.',
       mapLabel: 'Карта',
       aroundLabel: 'В сети',
       directLabel: 'Прямо',
@@ -410,7 +413,7 @@ export const DICTS = {
         ['Живу', 'Джакарта, Индонезия. Сторона Ментенг. UTC+7. Семья в том же часовом поясе.'],
         ['Работаю над', 'Директор филиала IT STEP Academy Jakarta. Программа, найм, операционка, рост. Первый полный квартал на роли.'],
         ['Строю', 'Vibe Coding — англоязычный tech-курс для учеников Юго-Восточной Азии. AI-дополненное преподавание, режиссура человеческая. Запуск Q3 2026.'],
-        ['Веду параллельно', 'Pasijou (Велигама) и Veranda (Вьетнам) — оба гастро-проекта на ежедневке с сильными локальными командами.'],
+        ['Веду параллельно', 'Pasijou (Велигама, LK) и Veranda (Нья Чанг, VN) — оба гастро-проекта на ежедневке с сильными локальными командами.'],
         ['Читаю', '"How Big Things Get Done" (Флибьорг) на полке PM. "AI Engineering" (Чип Хюйен) — для куррикулума.'],
         ['Учу', 'Bahasa Indonesia (медленно). React 19 server components в проде (быстрее).'],
         ['Открыт для', 'Коротких звонков с людьми, строящими EdTech в SEA, с теми кто управляет мультистрановыми командами, и с украинскими инженерами, планирующими переезд на восток.'],
@@ -471,9 +474,10 @@ export const DICTS = {
       journal: 'Jurnal',
       contact: 'Kontak',
       colophon: 'Colophon',
+      aiDima: 'AI-Dima →',
     },
     home: {
-      eyebrow: 'Dnipro → Weligama → Vietnam → Jakarta · Operator. Pendidik. AI-augmented.',
+      eyebrow: 'Dnipro (UA) → Weligama (LK) → Nha Trang (VN) → Jakarta (ID) · Operator. Pendidik. AI-augmented.',
       headLine1: 'Operator dulu.',
       headLine2: 'Pendidik sekarang.',
       lead:
@@ -493,13 +497,13 @@ export const DICTS = {
         ['Stack', 'Otak operator · Pipeline AI · Tulang punggung engineering Ukraina'],
         ['Terbuka untuk', 'Panggilan singkat, intro mitra, pertanyaan cerdas'],
       ] as [string, string][],
-      thenEyebrow: 'Dulu · Arsip · Dnipro → Weligama → Vietnam',
+      thenEyebrow: 'Dulu · Arsip · Dnipro (UA) → Weligama (LK) → Nha Trang (VN)',
       cards: [
         { year: '2010', place: 'Dnipro · UA', title: 'Dua laptop, satu kantor', body: 'Mendirikan Zapleo. Web, mobile, microsite brand. Kantor di Shevchenko 59, lalu Prospekt Pushkina 33.' },
         { year: '2014', place: 'Dnipro · UA', title: 'Mesin subkontrak', body: 'Sprint untuk studio yang bekerja di classifieds, retail, peluncuran hardware. Tim tumbuh menjadi delapan.' },
         { year: '2018', place: 'Dnipro · UA', title: 'Empat puluh proyek dalam', body: 'E-commerce kosmetik, portal asosiasi, platform berita, aplikasi Android. PHP + Rails + JS.' },
         { year: '2022', place: 'Weligama · LK', title: 'Sri Lanka. Pasijou buka.', body: '24 Februari. Bawa keluarga ke selatan. Buka Pasijou — coworking + restoran + bioskop di pesisir selatan.' },
-        { year: '2023', place: 'Vietnam', title: 'Veranda', body: 'Veranda.my — usaha hospitality kedua, kali ini di Vietnam. Playbook sama: kerja dan makanan dalam satu ruangan.' },
+        { year: '2023', place: 'Nha Trang · VN', title: 'Veranda', body: 'Veranda.my — usaha hospitality kedua, kali ini di Nha Trang, Vietnam. Playbook sama: kerja dan makanan dalam satu ruangan.' },
         { year: '2024', place: 'Jakarta · ID', title: 'Pivot ke pendidikan', body: 'Bertemu pasar Indonesia sebagai konsultan. Lihat celah konten berbahasa Inggris. Mulai membangun ke arah itu.' },
       ],
     },
@@ -527,7 +531,7 @@ export const DICTS = {
     },
     footer: {
       tagline:
-        'Dmitriy Zaporozhets · Operator · Pendidik · AI-augmented.\nDnipro → Sri Lanka → Vietnam → Jakarta. Membangun satu kelas dan beberapa usaha F&B.',
+        'Dmitriy Zaporozhets · Operator · Pendidik · AI-augmented.\nDnipro (UA) → Weligama (LK) → Nha Trang (VN) → Jakarta (ID). Membangun satu kelas dan beberapa usaha F&B.',
       mapLabel: 'Peta',
       aroundLabel: 'Di internet',
       directLabel: 'Langsung',
@@ -559,7 +563,7 @@ export const DICTS = {
         ['Tinggal', 'Jakarta, Indonesia. Sisi Menteng. UTC+7. Keluarga di zona waktu yang sama.'],
         ['Sedang mengerjakan', 'Branch Director IT STEP Academy Jakarta. Kurikulum, rekrutmen, operasi, pertumbuhan. Kuartal penuh pertama di peran ini.'],
         ['Membangun', 'Vibe Coding — kursus tech berbahasa Inggris untuk pelajar Asia Tenggara. Pengajaran AI-augmented, diarahkan manusia. Peluncuran Q3 2026.'],
-        ['Berjalan paralel', 'Pasijou (Weligama) dan Veranda (Vietnam) — dua usaha hospitality, harian dengan tim lokal yang kuat.'],
+        ['Berjalan paralel', 'Pasijou (Weligama, LK) dan Veranda (Nha Trang, VN) — dua usaha hospitality, harian dengan tim lokal yang kuat.'],
         ['Membaca', '"How Big Things Get Done" (Flyvbjerg) untuk PM bench. "AI Engineering" (Chip Huyen) untuk kerja kurikulum.'],
         ['Belajar', 'Bahasa Indonesia (perlahan). React 19 server components di produksi (lebih cepat).'],
         ['Terbuka untuk', 'Panggilan singkat dengan orang yang membangun EdTech di SEA, siapa pun yang menjalankan tim lintas negara, dan engineer Ukraina yang merencanakan pindah ke timur.'],

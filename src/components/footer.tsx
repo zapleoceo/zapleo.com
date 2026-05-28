@@ -59,6 +59,11 @@ export function Footer({ locale }: { locale: Locale }) {
                 </a>
               </li>
             ))}
+            <li style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid var(--color-line)' }}>
+              <a href="/ai-dima/" className="link-line" style={{ fontSize: 14, color: 'var(--color-amber)' }}>
+                {t.nav.aiDima}
+              </a>
+            </li>
           </ul>
         </div>
 
