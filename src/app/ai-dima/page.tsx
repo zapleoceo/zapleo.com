@@ -79,8 +79,8 @@ export default function AIDimaHub() {
         <a href="/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
           ← zapleo
         </a>
-        <div style={{ display: 'flex', gap: 'clamp(20px, 3vw, 40px)', alignItems: 'center' }}>
-          <nav className="mono" style={{ display: 'flex', gap: 'clamp(12px, 2vw, 28px)', fontSize: 11, letterSpacing: '0.16em' }}>
+        <div style={{ display: 'flex', gap: 'clamp(16px, 2.5vw, 32px)', alignItems: 'center' }}>
+          <nav className="mono ai-dima-section-nav" style={{ display: 'flex', gap: 'clamp(12px, 2vw, 28px)', fontSize: 11, letterSpacing: '0.16em' }}>
             {SECTIONS.slice(0, 3).map((s) => (
               <a key={s.href} href={s.href} className="link-line uppercase" style={{ color: 'var(--color-ink-faint)' }}>
                 {s.label}
@@ -410,6 +410,9 @@ export default function AIDimaHub() {
         .section-card:hover {
           border-color: var(--color-line-bright) !important;
           background: var(--color-bg-base) !important;
+        }
+        @media (max-width: 640px) {
+          .ai-dima-section-nav { display: none; }
         }
       `}</style>
 

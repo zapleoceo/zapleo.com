@@ -44,3 +44,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# graphify — commit graph.json + GRAPH_REPORT.md, skip machine-specific / transient files
+graphify-out/manifest.json
+graphify-out/cost.json
+graphify-out/.graphify_python
+graphify-out/cache/
+graphify-out/.graphify_*.json
+graphify-out/graph.html
