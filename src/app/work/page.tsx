@@ -97,8 +97,15 @@ export default function WorkPage() {
               {era.era}
             </p>
             <div style={{ display: 'grid', gap: 'clamp(36px, 6vh, 72px)' }}>
-              {era.items.map((w, i) => (
-                <article
+              {era.items.map((w, i) => {
+                const hasCase = ['pasijou', 'apcu'].includes(w.slug);
+                const Wrap = hasCase
+                  ? (props: { children: React.ReactNode; style: React.CSSProperties; className: string; 'data-reveal'?: boolean }) => (
+                      <a href={`/work/${w.slug}/`} {...props} />
+                    )
+                  : 'article';
+                return (
+                <Wrap
                   key={w.slug}
                   data-reveal
                   style={
@@ -112,6 +119,9 @@ export default function WorkPage() {
                       gridTemplateColumns: 'minmax(0, 5fr) minmax(0, 7fr)',
                       gap: 'clamp(28px, 4vw, 64px)',
                       transition: 'border-color 320ms var(--ease-out-cinema), transform 320ms var(--ease-out-cinema)',
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      cursor: hasCase ? 'pointer' : 'default',
                     } as React.CSSProperties
                   }
                   className="work-row"
@@ -156,7 +166,7 @@ export default function WorkPage() {
                         </span>
                       ))}
                     </div>
-                    {w.url !== '#' && (
+                    {w.url !== '#' && !hasCase && (
                       <p style={{ marginTop: 24 }}>
                         <a
                           href={w.url}
@@ -169,9 +179,16 @@ export default function WorkPage() {
                         </a>
                       </p>
                     )}
+                    {hasCase && (
+                      <p style={{ marginTop: 24 }}>
+                        <span className="mono uppercase" style={{ fontSize: 11, letterSpacing: '0.18em', color: 'var(--color-amber)' }}>
+                          Read case →
+                        </span>
+                      </p>
+                    )}
                   </div>
-                </article>
-              ))}
+                </Wrap>
+              );})}
             </div>
           </section>
         ))}
