@@ -23,6 +23,11 @@
 # misc
 .DS_Store
 *.pem
+*.swp
+Thumbs.db
+
+# legacy archive (research dump, не должно попадать в репо)
+/.archive/
 
 # debug
 npm-debug.log*
