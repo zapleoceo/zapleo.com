@@ -4,22 +4,39 @@ import { usePathname } from 'next/navigation';
 import { LOCALES, type Locale, LOCALE_LABEL, isLocale } from '@/i18n/config';
 
 /**
- * Context-aware switcher.
- * Reads usePathname(), replaces (or prepends) the locale segment, preserves the rest.
- * /en/work/pasijou/  →  /uk/work/pasijou/
- * /work/pasijou/     →  /uk/work/pasijou/
+ * Context-aware language switcher.
+ *
+ * Routing rules:
+ *   - EN is the default locale (no prefix).  /work/  /uk/work/  /ru/work/
+ *   - Switching TO en   → strips locale prefix  /uk/work/ → /work/
+ *   - Switching TO uk   → prepends prefix        /work/    → /uk/work/
+ *   - homeOnly=true     → non-EN always routes to /{loc}/
+ *     (use on pages that have no locale variants, e.g. AI-Dima)
  */
-export function LangSwitcher({ current }: { current: Locale }) {
+export function LangSwitcher({ current, homeOnly }: { current: Locale; homeOnly?: boolean }) {
   const pathname = usePathname() || '/';
 
   const buildHref = (loc: Locale) => {
     const parts = pathname.split('/').filter(Boolean);
+
+    // Always strip an existing locale prefix first
     if (parts.length > 0 && isLocale(parts[0])) {
-      parts[0] = loc;
-    } else {
-      parts.unshift(loc);
+      parts.shift();
     }
-    // trailing slash preserved
+
+    // homeOnly: non-default locales go straight to their home page
+    if (homeOnly && loc !== 'en') {
+      return `/${loc}/`;
+    }
+
+    // EN is the default → no prefix
+    if (loc === 'en') {
+      const joined = parts.join('/');
+      return joined ? `/${joined}/` : '/';
+    }
+
+    // Non-EN: prepend locale segment
+    parts.unshift(loc);
     return '/' + parts.join('/') + '/';
   };
 

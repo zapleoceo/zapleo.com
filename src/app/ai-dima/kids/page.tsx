@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { LangSwitcher } from '@/components/lang-switcher';
 
 export const metadata: Metadata = {
   title: 'AI for Kids — Indonesia · Coming Soon · AI-Dima',
@@ -38,22 +39,25 @@ export default function KidsPage() {
         <a href="/ai-dima/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
           ← AI-Dima
         </a>
-        <span
-          className="mono uppercase"
-          style={{
-            display: 'inline-block',
-            padding: '4px 12px',
-            background: 'oklch(65% 0.20 160 / 0.12)',
-            border: '1px solid var(--color-mint)',
-            borderRadius: 999,
-            fontSize: 10,
-            letterSpacing: '0.22em',
-            color: 'var(--color-mint)',
-            fontWeight: 700,
-          }}
-        >
-          Coming soon
-        </span>
+        <div style={{ display: 'flex', gap: 'clamp(16px, 2.5vw, 28px)', alignItems: 'center' }}>
+          <span
+            className="mono uppercase"
+            style={{
+              display: 'inline-block',
+              padding: '4px 12px',
+              background: 'oklch(65% 0.20 160 / 0.12)',
+              border: '1px solid var(--color-mint)',
+              borderRadius: 999,
+              fontSize: 10,
+              letterSpacing: '0.22em',
+              color: 'var(--color-mint)',
+              fontWeight: 700,
+            }}
+          >
+            Coming soon
+          </span>
+          <LangSwitcher current="en" homeOnly />
+        </div>
       </header>
 
       <main>

@@ -34,6 +34,7 @@ export const DICTS = {
       ctaWork: 'See the work',
       ctaJourney: 'The journey',
       ctaContact: 'Direct line →',
+      contextNote: '',
     },
     nowThen: {
       nowEyebrow: 'Now · Jakarta · 2026',
@@ -185,6 +186,7 @@ export const DICTS = {
       ctaWork: 'Дивитися роботи',
       ctaJourney: 'Шлях',
       ctaContact: 'Пряма лінія →',
+      contextNote: 'Українська сторінка веде з архіву: Дніпро, агенція 2010-2022, перехід на південь у 2022-му. Англомовну версію з акцентом на Джакарту дивіться через перемикач EN угорі.',
     },
     nowThen: {
       nowEyebrow: 'Зараз · Джакарта · 2026',
@@ -335,6 +337,7 @@ export const DICTS = {
       ctaWork: 'Смотреть работы',
       ctaJourney: 'Путь',
       ctaContact: 'Прямая линия →',
+      contextNote: 'Русская версия ведёт с архива: Днепр, агентство 2010-2022, переезд на юг в 2022-м. Английская версия с акцентом на Джакарту — через переключатель EN вверху.',
     },
     nowThen: {
       nowEyebrow: 'Сейчас · Джакарта · 2026',
@@ -485,6 +488,7 @@ export const DICTS = {
       ctaWork: 'Lihat karya',
       ctaJourney: 'Perjalanan',
       ctaContact: 'Hubungi langsung →',
+      contextNote: 'Halaman Indonesia membuka cerita dengan IT STEP Jakarta dan kursus Vibe Coding yang sedang dibangun. Untuk arsip agensi Dnipro yang lebih panjang — pilih EN di pojok kanan atas.',
     },
     nowThen: {
       nowEyebrow: 'Sekarang · Jakarta · 2026',

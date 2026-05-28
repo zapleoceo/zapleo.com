@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { LangSwitcher } from '@/components/lang-switcher';
 
 export const metadata: Metadata = {
   title: 'The Playbook · How AI-Dima is built · AI-Dima',
@@ -96,9 +97,12 @@ export default function PlaybookPage() {
         <a href="/ai-dima/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
           ← AI-Dima
         </a>
-        <span className="mono uppercase" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
-          Transparency
-        </span>
+        <div style={{ display: 'flex', gap: 'clamp(16px, 2.5vw, 32px)', alignItems: 'center' }}>
+          <span className="mono uppercase" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
+            Transparency
+          </span>
+          <LangSwitcher current="en" homeOnly />
+        </div>
       </header>
 
       <main>

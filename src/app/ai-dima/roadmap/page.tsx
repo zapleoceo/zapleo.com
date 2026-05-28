@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { LangSwitcher } from '@/components/lang-switcher';
 
 export const metadata: Metadata = {
   title: 'The 90-Day AI Roadmap for Indonesia · AI-Dima',
@@ -39,9 +40,12 @@ export default function AIRoadmapPage() {
         <a href="/ai-dima/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
           ← AI-Dima
         </a>
-        <span className="mono uppercase" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
-          Free Playbook · v1.0
-        </span>
+        <div style={{ display: 'flex', gap: 'clamp(16px, 2.5vw, 32px)', alignItems: 'center' }}>
+          <span className="mono uppercase" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
+            Free Playbook · v1.0
+          </span>
+          <LangSwitcher current="en" homeOnly />
+        </div>
       </header>
 
       <main>

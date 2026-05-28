@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { LangSwitcher } from '@/components/lang-switcher';
 
 export const metadata: Metadata = {
   title: 'AI-Dima · AI-augmented career education for Asia',
@@ -78,13 +79,16 @@ export default function AIDimaHub() {
         <a href="/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
           ← zapleo
         </a>
-        <nav className="mono" style={{ display: 'flex', gap: 'clamp(12px, 2vw, 28px)', fontSize: 11, letterSpacing: '0.16em' }}>
-          {SECTIONS.slice(0, 3).map((s) => (
-            <a key={s.href} href={s.href} className="link-line uppercase" style={{ color: 'var(--color-ink-faint)' }}>
-              {s.label}
-            </a>
-          ))}
-        </nav>
+        <div style={{ display: 'flex', gap: 'clamp(20px, 3vw, 40px)', alignItems: 'center' }}>
+          <nav className="mono" style={{ display: 'flex', gap: 'clamp(12px, 2vw, 28px)', fontSize: 11, letterSpacing: '0.16em' }}>
+            {SECTIONS.slice(0, 3).map((s) => (
+              <a key={s.href} href={s.href} className="link-line uppercase" style={{ color: 'var(--color-ink-faint)' }}>
+                {s.label}
+              </a>
+            ))}
+          </nav>
+          <LangSwitcher current="en" homeOnly />
+        </div>
       </header>
 
       <main>
