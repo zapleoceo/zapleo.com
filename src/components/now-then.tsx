@@ -4,11 +4,42 @@
  *   Right (scrolling): Then-archive cards
  */
 const THEN_CARDS = [
-  { year: '2010', title: 'Two laptops, Dnipro', body: 'Started Zapleo. Web, mobile, brand microsites. Office on Shevchenko 59.' },
-  { year: '2014', title: 'Subcontract engine', body: 'Sprints for studios working on classifieds, retail, hardware launches. Team grows to eight.' },
-  { year: '2018', title: 'Forty engagements deep', body: 'Cosmetics ecommerce, association portals, news platforms, Android apps. PHP + Rails + JS.' },
-  { year: '2022', title: 'Agency winds down', body: 'February 24. Move family south. Close ops in Dnipro. Pivot to PM(O) discipline.' },
-  { year: '2024', title: 'First year in SEA', body: 'Met the Indonesian market as consultant. Saw the English-content gap. Started building toward it.' },
+  {
+    year: '2010',
+    place: 'Dnipro · UA',
+    title: 'Two laptops, one office',
+    body: 'Started Zapleo. Web, mobile, brand microsites. Office on Shevchenko 59, Prospekt Pushkina 33 after.',
+  },
+  {
+    year: '2014',
+    place: 'Dnipro · UA',
+    title: 'Subcontract engine',
+    body: 'Sprints for studios working on classifieds, retail, hardware launches. Team grows to eight.',
+  },
+  {
+    year: '2018',
+    place: 'Dnipro · UA',
+    title: 'Forty engagements deep',
+    body: 'Cosmetics ecommerce, association portals, news platforms, Android apps. PHP + Rails + JS.',
+  },
+  {
+    year: '2022',
+    place: 'Weligama · LK',
+    title: 'Sri Lanka. Pasijou opens.',
+    body: 'February 24. Move family south. Open Pasijou — coworking + restaurant + cinema on the south coast. First time operating in F&B.',
+  },
+  {
+    year: '2023',
+    place: 'Vietnam',
+    title: 'Veranda',
+    body: 'Veranda.my — second hospitality venture, this time in Vietnam. Same playbook: a place where work and food belong in one room.',
+  },
+  {
+    year: '2024',
+    place: 'Jakarta · ID',
+    title: 'Pivot to education',
+    body: 'Met the Indonesian market as consultant. Saw the English-content gap. Started building toward it.',
+  },
 ];
 
 export function NowThen() {
@@ -114,7 +145,7 @@ export function NowThen() {
         {/* scrolling RIGHT — Then archive cards */}
         <div style={{ display: 'grid', gap: 'clamp(48px, 8vh, 120px)' }}>
           <p className="eyebrow" data-reveal>
-            Then · Dnipro archive · 2010 → 2022
+            Then · The archive · Dnipro → Weligama → Vietnam
           </p>
 
           {THEN_CARDS.map((c, i) => (
@@ -152,6 +183,19 @@ export function NowThen() {
               >
                 {c.year}
               </span>
+              <div
+                className="mono uppercase"
+                style={{
+                  fontSize: 10,
+                  letterSpacing: '0.22em',
+                  color: 'var(--color-amber)',
+                  position: 'relative',
+                  zIndex: 1,
+                  marginBottom: 10,
+                }}
+              >
+                {c.place}
+              </div>
               <h3
                 className="display"
                 style={{

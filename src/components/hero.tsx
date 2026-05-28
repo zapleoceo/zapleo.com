@@ -60,7 +60,7 @@ export function Hero() {
             data-reveal
             style={{ '--stagger': '0ms', marginBottom: 'clamp(24px, 3vh, 40px)' } as React.CSSProperties}
           >
-            Dnipro → Jakarta &nbsp;·&nbsp; Operator. Educator. AI-augmented.
+            Dnipro → Weligama → Vietnam → Jakarta &nbsp;·&nbsp; Operator. Educator. AI-augmented.
           </p>
 
           <h1

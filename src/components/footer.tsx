@@ -37,7 +37,7 @@ export function Footer() {
           >
             Dmitriy Zaporozhets · Operator · Educator · AI-augmented.
             <br />
-            Dnipro → Bali → Jakarta. Building one classroom and a few products.
+            Dnipro → Sri Lanka → Vietnam → Jakarta. Building one classroom and a few F&B ventures.
           </p>
         </div>
 
@@ -67,7 +67,8 @@ export function Footer() {
             {[
               ['LinkedIn', 'https://www.linkedin.com/in/dmitriy-zaporozhets-83b15375/'],
               ['GitHub · org', 'https://github.com/zapleo'],
-              ['Instagram', 'https://www.instagram.com/zapleosoft/'],
+              ['Instagram · @ai_dimaz', 'https://www.instagram.com/ai_dimaz/'],
+              ['Telegram · @zapleosoft', 'https://t.me/zapleosoft'],
               ['X · zapleosoft', 'https://x.com/zapleosoft'],
             ].map(([label, href]) => (
               <li key={href}>
@@ -89,7 +90,7 @@ export function Footer() {
           <p className="eyebrow" style={{ marginBottom: 16 }}>Direct</p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
             <li>
-              <a href="mailto:dmitriy@zapleo.com" className="link-line" style={{ fontSize: 14, color: 'var(--color-amber)' }}>
+              <a href="mailto:dima@zapleo.com" className="link-line" style={{ fontSize: 14, color: 'var(--color-amber)' }}>
                 dmitriy@zapleo.com
               </a>
             </li>

@@ -57,11 +57,11 @@ export function CTABlock() {
           }
         >
           <a
-            href="mailto:dmitriy@zapleo.com"
+            href="mailto:dima@zapleo.com"
             className="link-line mono uppercase"
             style={{ fontSize: 13, letterSpacing: '0.18em', color: 'var(--color-amber)' }}
           >
-            dmitriy@zapleo.com
+            dima@zapleo.com
           </a>
           <a
             href="https://wa.me/380994811889"
@@ -71,6 +71,15 @@ export function CTABlock() {
             style={{ fontSize: 13, letterSpacing: '0.18em' }}
           >
             WhatsApp →
+          </a>
+          <a
+            href="https://t.me/zapleosoft"
+            target="_blank"
+            rel="noopener"
+            className="link-line mono uppercase"
+            style={{ fontSize: 13, letterSpacing: '0.18em' }}
+          >
+            Telegram
           </a>
           <a
             href="https://www.linkedin.com/in/dmitriy-zaporozhets-83b15375/"
