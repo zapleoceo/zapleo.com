@@ -191,7 +191,7 @@ export default function ResourcesPage() {
           ← AI-Dima
         </a>
         <div style={{ display: 'flex', gap: 'clamp(16px, 2.5vw, 32px)', alignItems: 'center' }}>
-          <span className="mono uppercase" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
+          <span className="mono uppercase ai-dima-header-label" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
             Curated · May 2026
           </span>
           <LangSwitcher current="en" homeOnly />
@@ -355,6 +355,9 @@ export default function ResourcesPage() {
 
       <style>{`
         .resource-row:hover { border-color: var(--color-line-bright) !important; }
+        @media (max-width: 640px) {
+          .ai-dima-header-label { display: none; }
+        }
       `}</style>
 
       {/* ── Footer ── */}

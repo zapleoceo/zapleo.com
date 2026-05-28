@@ -41,7 +41,7 @@ export default function KidsPage() {
         </a>
         <div style={{ display: 'flex', gap: 'clamp(16px, 2.5vw, 28px)', alignItems: 'center' }}>
           <span
-            className="mono uppercase"
+            className="mono uppercase ai-dima-header-label"
             style={{
               display: 'inline-block',
               padding: '4px 12px',
@@ -283,6 +283,12 @@ export default function KidsPage() {
           © {new Date().getFullYear()} · AI-Dima · Jakarta (ID) → Asia → the world
         </span>
       </footer>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .ai-dima-header-label { display: none; }
+        }
+      `}</style>
     </>
   );
 }
