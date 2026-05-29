@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { LangSwitcher } from '@/components/lang-switcher';
+import { AIDimaLayout, AIDimaHeaderLabel } from '@/components/ai-dima-layout';
 
 export const metadata: Metadata = {
   title: 'The Playbook · How AI-Dima is built · AI-Dima',
@@ -76,34 +76,23 @@ const PRINCIPLES = [
   },
 ];
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://zapleo.com/ai-dima/playbook/#article',
+  headline: 'The AI-Dima Playbook — Full Stack Exposed',
+  description: 'Full transparency on the AI-augmented stack behind AI-Dima: HeyGen avatar, Claude, n8n, and why none of it works without a human.',
+  url: 'https://zapleo.com/ai-dima/playbook/',
+  inLanguage: 'en',
+  author: { '@id': 'https://zapleo.com/#person' },
+  publisher: { '@id': 'https://zapleo.com/#person' },
+  datePublished: '2026-05-01',
+};
+
 export default function PlaybookPage() {
   return (
-    <>
-      {/* ── Nav ── */}
-      <header
-        style={{
-          padding: 'clamp(20px, 3vw, 36px) clamp(24px, 4vw, 48px)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          background: 'var(--color-bg-deep)',
-          borderBottom: '1px solid var(--color-line)',
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-          backdropFilter: 'blur(12px)',
-        }}
-      >
-        <a href="/ai-dima/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
-          ← AI-Dima
-        </a>
-        <div style={{ display: 'flex', gap: 'clamp(16px, 2.5vw, 32px)', alignItems: 'center' }}>
-          <span className="mono uppercase ai-dima-header-label" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
-            Transparency
-          </span>
-          <LangSwitcher current="en" homeOnly />
-        </div>
-      </header>
+    <AIDimaLayout headerLabel={<AIDimaHeaderLabel>Transparency</AIDimaHeaderLabel>}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <main>
         {/* ── Hero ── */}
@@ -463,33 +452,6 @@ export default function PlaybookPage() {
           </div>
         </section>
       </main>
-
-      {/* ── Footer ── */}
-      <footer
-        style={{
-          padding: 'clamp(40px, 6vh, 64px) clamp(24px, 6vw, 96px)',
-          background: 'var(--color-bg-deep)',
-          borderTop: '1px solid var(--color-line)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 20,
-        }}
-      >
-        <a href="/ai-dima/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
-          ← AI-Dima
-        </a>
-        <span className="mono" style={{ fontSize: 11, letterSpacing: '0.18em', color: 'var(--color-ink-ghost)' }}>
-          © {new Date().getFullYear()} · AI-Dima · Jakarta (ID) → Asia → the world
-        </span>
-      </footer>
-
-      <style>{`
-        @media (max-width: 640px) {
-          .ai-dima-header-label { display: none; }
-        }
-      `}</style>
-    </>
+    </AIDimaLayout>
   );
 }

@@ -50,11 +50,11 @@ const SECTIONS = [
   {
     href: '/ai-dima/kids/',
     label: 'Kids',
-    eyebrow: 'Coming soon',
+    eyebrow: 'Ages 7–18 · Indonesia',
     title: 'AI for Kids — Indonesia',
-    desc: 'A dedicated roadmap for students aged 10–17 and the parents who want to guide them. Building now.',
-    cta: 'Join the waitlist →',
-    accent: 'var(--color-ink-faint)',
+    desc: 'Age-by-age tech roadmap from Scratch at 7 to Apple Developer Academy at 18. Plus a parent playbook.',
+    cta: 'Read the kids roadmap →',
+    accent: 'var(--color-mint)',
   },
 ];
 
@@ -414,7 +414,59 @@ export default function AIDimaHub() {
         @media (max-width: 640px) {
           .ai-dima-section-nav { display: none; }
         }
+        @media (max-width: 700px) {
+          .aidima-op-bridge {
+            grid-template-columns: 1fr !important;
+            gap: 10px !important;
+          }
+          .aidima-op-bridge > div:first-child { display: none; }
+        }
       `}</style>
+
+      {/* ── Operator cross-link ── */}
+      <section
+        style={{
+          padding: 'clamp(36px, 5vh, 52px) clamp(24px, 6vw, 96px)',
+          background: 'var(--color-bg-deep)',
+          borderTop: '1px solid var(--color-line)',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1100,
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '3px 1fr auto',
+            gap: 'clamp(20px, 3vw, 36px)',
+            alignItems: 'center',
+          }}
+          className="aidima-op-bridge"
+        >
+          <div
+            style={{ background: 'var(--color-amber-deep)', borderRadius: 2, alignSelf: 'stretch', minHeight: 40 }}
+          />
+          <div>
+            <p className="eyebrow" style={{ margin: '0 0 8px' }}>
+              Operator behind this
+            </p>
+            <p
+              style={{ margin: 0, fontSize: 'clamp(14px, 1vw, 15.5px)', color: 'var(--color-ink-mute)', lineHeight: 1.5 }}
+            >
+              <a href="/" className="link-line" style={{ color: 'var(--color-ink)' }}>
+                Dmitriy Zaporozhets
+              </a>{' '}
+              · 12 years shipping software · Branch Director at IT STEP Academy Jakarta
+            </p>
+          </div>
+          <a
+            href="/journey/"
+            className="mono uppercase link-line"
+            style={{ fontSize: 11, letterSpacing: '0.2em', color: 'var(--color-amber)', flexShrink: 0 }}
+          >
+            See the full journey →
+          </a>
+        </div>
+      </section>
 
       {/* ── Footer ── */}
       <footer

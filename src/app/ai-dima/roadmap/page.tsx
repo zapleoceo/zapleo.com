@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { LangSwitcher } from '@/components/lang-switcher';
+import { AIDimaLayout, AIDimaHeaderLabel } from '@/components/ai-dima-layout';
 
 export const metadata: Metadata = {
   title: 'The 90-Day AI Roadmap for Indonesia · AI-Dima',
@@ -19,34 +19,36 @@ const COLOR_HERO_GLOW = `
   radial-gradient(ellipse 50% 60% at 80% 80%, oklch(45% 0.14 30 / 0.22), transparent 65%)
 `;
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      '@id': 'https://zapleo.com/ai-dima/roadmap/#article',
+      headline: 'The 90-Day AI Roadmap for Indonesia',
+      description: 'A free, week-by-week playbook to go from zero AI knowledge to your first AI-skilled job in Indonesia.',
+      url: 'https://zapleo.com/ai-dima/roadmap/',
+      inLanguage: 'en',
+      author: { '@id': 'https://zapleo.com/#person' },
+      publisher: { '@id': 'https://zapleo.com/#person' },
+      datePublished: '2026-05-01',
+    },
+    {
+      '@type': 'Course',
+      '@id': 'https://zapleo.com/ai-dima/roadmap/#course',
+      name: 'The 90-Day AI Roadmap for Indonesia',
+      description: 'Week-by-week plan from zero to your first AI-skilled job. Built from live May 2026 Indonesian unicorn job postings.',
+      url: 'https://zapleo.com/ai-dima/roadmap/',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      provider: { '@id': 'https://zapleo.com/#person' },
+    },
+  ],
+};
+
 export default function AIRoadmapPage() {
   return (
-    <>
-      {/* ── Top nav ── */}
-      <header
-        style={{
-          padding: 'clamp(20px, 3vw, 36px) clamp(24px, 4vw, 48px)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          background: 'var(--color-bg-deep)',
-          borderBottom: '1px solid var(--color-line)',
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-          backdropFilter: 'blur(12px)',
-        }}
-      >
-        <a href="/ai-dima/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
-          ← AI-Dima
-        </a>
-        <div style={{ display: 'flex', gap: 'clamp(16px, 2.5vw, 32px)', alignItems: 'center' }}>
-          <span className="mono uppercase ai-dima-header-label" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
-            Free Playbook · v1.0
-          </span>
-          <LangSwitcher current="en" homeOnly />
-        </div>
-      </header>
+    <AIDimaLayout headerLabel={<AIDimaHeaderLabel>Free Playbook · v1.0</AIDimaHeaderLabel>}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <main>
         {/* ── HERO ── */}
@@ -974,34 +976,7 @@ export default function AIRoadmapPage() {
           </div>
         </section>
       </main>
-
-      {/* ── Footer ── */}
-      <footer
-        style={{
-          padding: 'clamp(40px, 6vh, 64px) clamp(24px, 6vw, 96px)',
-          background: 'var(--color-bg-deep)',
-          borderTop: '1px solid var(--color-line)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 20,
-        }}
-      >
-        <a href="/ai-dima/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
-          ← AI-Dima
-        </a>
-        <span className="mono" style={{ fontSize: 11, letterSpacing: '0.18em', color: 'var(--color-ink-ghost)' }}>
-          © {new Date().getFullYear()} · AI-Dima · Jakarta (ID) → Asia → the world
-        </span>
-      </footer>
-
-      <style>{`
-        @media (max-width: 640px) {
-          .ai-dima-header-label { display: none; }
-        }
-      `}</style>
-    </>
+    </AIDimaLayout>
   );
 }
 
