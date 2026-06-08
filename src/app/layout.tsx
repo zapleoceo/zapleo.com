@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Bricolage_Grotesque, Literata, JetBrains_Mono } from 'next/font/google';
 import { pageAlternates } from '@/i18n/seo';
 import { JsonLd } from '@/components/json-ld';
@@ -82,6 +81,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${bricolage.variable} ${literata.variable} ${jbMono.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        {/* Google Analytics 4 — G-DKW7C84LRB */}
+        {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKW7C84LRB" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-DKW7C84LRB');
+            `,
+          }}
+        />
+      </head>
       <body>
         {/* Film grain overlay */}
         <div className="grain" aria-hidden="true" />
@@ -100,19 +114,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {children}
 
-        {/* Google Analytics 4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-DKW7C84LRB"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-DKW7C84LRB', { page_path: window.location.pathname });
-          `}
-        </Script>
       </body>
     </html>
   );
