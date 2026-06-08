@@ -1,28 +1,36 @@
 import type { Metadata } from 'next';
-import { Fraunces, Newsreader, JetBrains_Mono } from 'next/font/google';
+import { Bricolage_Grotesque, Literata, JetBrains_Mono } from 'next/font/google';
 import { JsonLd } from '@/components/json-ld';
+import { LenisInit } from '@/components/lenis-init';
+import { Nav } from '@/components/nav';
 import { ScrollReveal } from '@/components/scroll-reveal';
 import './globals.css';
 
-// Display — variable, multi-axis (wght, SOFT, WONK, opsz).
-// Cyrillic locales fall back to Newsreader (which has Cyrillic) — see globals.css font stack.
-const fraunces = Fraunces({
-  variable: '--font-fraunces',
+/**
+ * Display — variable grotesque, geometric with character.
+ * Chosen: off the impeccable reflex-reject list, pairs with Literata on the
+ * sans/serif axis, signals "precision operator" rather than "literary editor."
+ */
+const bricolage = Bricolage_Grotesque({
+  variable: '--font-bricolage',
   subsets: ['latin', 'latin-ext'],
-  axes: ['SOFT', 'WONK', 'opsz'],
+  axes: ['wdth'],
   display: 'swap',
 });
 
-// Body — variable, optical sizing.
-// TODO: switch to Lora for Cyrillic locales once next-intl middleware lands.
-const newsreader = Newsreader({
-  variable: '--font-newsreader',
+/**
+ * Body — variable serif with optical sizing.
+ * Quality editorial readability without the Newsreader/Fraunces AI-default lane.
+ */
+const literata = Literata({
+  variable: '--font-literata',
   subsets: ['latin', 'latin-ext'],
   axes: ['opsz'],
   display: 'swap',
+  style: ['normal', 'italic'],
 });
 
-// Mono — for eyebrows, year-stamps, marginalia.
+/** Mono — marginalia, eyebrows, code artifacts. */
 const jbMono = JetBrains_Mono({
   variable: '--font-mono-jb',
   subsets: ['latin', 'latin-ext'],
@@ -45,8 +53,7 @@ export const metadata: Metadata = {
     url: 'https://zapleo.com',
     siteName: 'zapleo',
     title: 'Dmitriy Zaporozhets — zapleo',
-    description:
-      'Operator first, educator now. Building from Jakarta with an Ukrainian engineering spine.',
+    description: 'Operator first, educator now. Building from Jakarta with a Ukrainian engineering spine.',
     images: [
       {
         url: 'https://zapleo.com/og.svg',
@@ -69,15 +76,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${newsreader.variable} ${jbMono.variable}`}
+      className={`${bricolage.variable} ${literata.variable} ${jbMono.variable}`}
       suppressHydrationWarning
     >
       <body>
-        {/* atmospherics */}
+        {/* Film grain overlay */}
         <div className="grain" aria-hidden="true" />
 
-        {/* scroll-reveal observer */}
+        {/* Smooth scroll (Lenis) */}
+        <LenisInit />
+
+        {/* Scroll-reveal IntersectionObserver */}
         <ScrollReveal />
+
+        {/* Global sticky navigation */}
+        <Nav />
 
         {/* schema.org */}
         <JsonLd />

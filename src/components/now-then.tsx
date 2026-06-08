@@ -117,9 +117,10 @@ export function NowThen({ locale }: { locale: Locale }) {
                   position: 'absolute',
                   top: -8,
                   right: -12,
-                  fontSize: 'clamp(80px, 14vw, 180px)',
+                  /* Decorative watermark — intentionally oversized for visual texture,
+                     not a heading. Not aria-visible so screen readers skip it. */
+                  fontSize: 'clamp(72px, 12vw, 148px)',
                   fontWeight: 220,
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144',
                   color: 'var(--color-line-bright)',
                   letterSpacing: '-0.03em',
                   lineHeight: 1,

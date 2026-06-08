@@ -1,51 +1,62 @@
 @import "tailwindcss";
 
 /* ============================================================
-   zapleo.com · warm espresso dark · editorial Monocle × A24
+   zapleo.com · warm espresso dark · precision operator
+   Fonts: Bricolage Grotesque (display) + Literata (body) + JetBrains Mono
    ============================================================ */
 
 @theme {
   /* —— Color tokens (oklch, warm espresso base) —— */
-  --color-bg-base: oklch(14% 0.02 60);
+  --color-bg-base:     oklch(14% 0.02 60);
   --color-bg-elevated: oklch(18% 0.03 65);
-  --color-bg-deep: oklch(9% 0.015 55);
-  --color-bg-veil: oklch(20% 0.025 60 / 0.4);
+  --color-bg-deep:     oklch(9%  0.015 55);
+  --color-bg-veil:     oklch(14% 0.02 60 / 0.9);
 
-  --color-ink: oklch(95% 0.03 80);
-  --color-ink-mute: oklch(70% 0.03 70);
+  --color-ink:       oklch(95% 0.03 80);
+  --color-ink-mute:  oklch(70% 0.03 70);
   --color-ink-faint: oklch(50% 0.025 65);
   --color-ink-ghost: oklch(35% 0.02 60);
 
-  --color-amber: oklch(82% 0.18 70);
+  --color-amber:      oklch(82% 0.18 70);
   --color-amber-deep: oklch(62% 0.18 55);
-  --color-rust: oklch(55% 0.18 35);
-  --color-mint: oklch(78% 0.14 165);
+  --color-rust:       oklch(55% 0.18 35);
+  --color-mint:       oklch(78% 0.14 165);
 
-  --color-line: oklch(28% 0.02 60);
+  --color-line:        oklch(28% 0.02 60);
   --color-line-bright: oklch(40% 0.025 65);
 
-  /* —— Fonts (wired in layout.tsx via next/font) —— */
-  --font-display: var(--font-fraunces);
-  --font-body: var(--font-newsreader);
-  --font-mono: var(--font-mono-jb);
+  /* —— Fonts —— */
+  --font-display: var(--font-bricolage);
+  --font-body:    var(--font-literata);
+  --font-mono:    var(--font-mono-jb);
 
   /* —— Motion —— */
-  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out-soft:   cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-out-cinema: cubic-bezier(0.16, 1, 0.3, 1);
   --d-fast: 240ms;
-  --d-med: 380ms;
+  --d-med:  380ms;
   --d-slow: 700ms;
 
+  /* —— Z-index scale —— */
+  --z-base:    1;
+  --z-raised:  10;
+  --z-sticky:  40;
+  --z-overlay: 100;
+  --z-nav:     200;
+  --z-modal:   300;
+  --z-toast:   400;
+  --z-cursor:  999;
+
   /* —— Effects —— */
-  --grain-opacity: 0.06;
+  --grain-opacity: 0.055;
   --bloom-warm: radial-gradient(
     ellipse at 70% 30%,
-    oklch(60% 0.18 50 / 0.18),
+    oklch(60% 0.18 50 / 0.16),
     transparent 60%
   );
   --bloom-deep: radial-gradient(
     ellipse at 30% 80%,
-    oklch(40% 0.12 30 / 0.22),
+    oklch(40% 0.12 30 / 0.2),
     transparent 65%
   );
 }
@@ -57,7 +68,7 @@
 html {
   background: var(--color-bg-base);
   color-scheme: dark;
-  scroll-behavior: auto; /* lenis handles smooth scroll */
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
 }
 
 body {
@@ -65,16 +76,15 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body), Georgia, serif;
   font-size: clamp(16px, 1.05vw, 19px);
-  line-height: 1.6;
-  letter-spacing: -0.005em;
+  line-height: 1.65;
+  letter-spacing: 0em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "kern", "liga", "calt", "ss01";
+  font-feature-settings: "kern", "liga", "calt";
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Disabled while user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -87,26 +97,36 @@ body {
 }
 
 ::selection {
-  background: oklch(60% 0.18 50 / 0.35);
+  background: oklch(60% 0.18 50 / 0.32);
   color: var(--color-ink);
 }
 
 /* ============================================================
-   Editorial display utility classes
+   Display font utility
+   Used via className="display" on headings.
+   Bricolage Grotesque: wdth + opsz axes. No SOFT/WONK (Fraunces-only).
    ============================================================ */
 
 .display {
   font-family: var(--font-display);
-  font-feature-settings: "ss01", "ss02", "ss05", "calt";
+  font-feature-settings: "kern", "liga", "calt", "ss01";
   font-optical-sizing: auto;
-  letter-spacing: -0.018em;
-  line-height: 0.95;
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
+
+/* ============================================================
+   Mono utility
+   ============================================================ */
 
 .mono {
   font-family: var(--font-mono);
   font-feature-settings: "ss01", "calt";
 }
+
+/* ============================================================
+   Eyebrow — use sparingly, one named system (not every section)
+   ============================================================ */
 
 .eyebrow {
   font-family: var(--font-mono);
@@ -117,6 +137,10 @@ body {
   font-weight: 500;
 }
 
+/* ============================================================
+   Marginalia
+   ============================================================ */
+
 .marginalia {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -126,14 +150,14 @@ body {
 }
 
 /* ============================================================
-   Grain overlay (page-wide, non-interactive)
+   Grain overlay
    ============================================================ */
 
 .grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 100;
+  z-index: var(--z-cursor);
   opacity: var(--grain-opacity);
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.7 0 0 0 0 0.3 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -141,24 +165,28 @@ body {
 }
 
 /* ============================================================
-   Scroll-reveal primitive (data-reveal toggled by IntersectionObserver)
+   Scroll-reveal primitive
+   FIX: Elements are VISIBLE by default (correct for SEO, headless, no-JS).
+   CSS only hides them when body.motion-ok is set by the JS observer —
+   which itself first marks in-viewport elements as visible before enabling.
    ============================================================ */
 
-[data-reveal] {
+body.motion-ok [data-reveal]:not([data-reveal="visible"]) {
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(16px);
   transition:
-    opacity 620ms var(--ease-out-cinema),
-    transform 620ms var(--ease-out-cinema);
+    opacity 640ms var(--ease-out-cinema),
+    transform 640ms var(--ease-out-cinema);
+  transition-delay: var(--stagger, 0ms);
   will-change: opacity, transform;
 }
-[data-reveal="visible"] {
+
+body.motion-ok [data-reveal="visible"] {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Stagger via inline style --stagger="120ms" */
-[data-reveal] {
+  transition:
+    opacity 640ms var(--ease-out-cinema),
+    transform 640ms var(--ease-out-cinema);
   transition-delay: var(--stagger, 0ms);
 }
 
@@ -168,9 +196,10 @@ body {
 
 .link-line {
   position: relative;
-  color: var(--color-ink);
   text-decoration: none;
+  color: inherit;
 }
+
 .link-line::after {
   content: "";
   position: absolute;
@@ -183,6 +212,7 @@ body {
   transform: scaleX(0);
   transition: transform 320ms var(--ease-out-cinema);
 }
+
 .link-line:hover::after {
   transform-origin: left;
   transform: scaleX(1);
@@ -200,28 +230,34 @@ body {
 }
 
 /* ============================================================
-   Diagonal divider
-   ============================================================ */
-
-.diag-divider {
-  height: 80px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    var(--color-bg-elevated) 100%
-  );
-  clip-path: polygon(0 0, 100% 30px, 100% 100%, 0 100%);
-}
-
-/* ============================================================
-   Bloom (warm light atmospherics for hero)
+   Bloom atmospheric helpers (hero backgrounds)
    ============================================================ */
 
 .bloom-warm {
   background: var(--bloom-warm);
   pointer-events: none;
 }
+
 .bloom-deep {
   background: var(--bloom-deep);
   pointer-events: none;
+}
+
+/* ============================================================
+   Diagonal divider
+   ============================================================ */
+
+.diag-divider {
+  height: 80px;
+  background: linear-gradient(to bottom, transparent 0%, var(--color-bg-elevated) 100%);
+  clip-path: polygon(0 0, 100% 30px, 100% 100%, 0 100%);
+}
+
+/* ============================================================
+   Nav offset — inner pages need top padding so content isn't
+   hidden behind the fixed nav.
+   ============================================================ */
+
+.nav-offset {
+  padding-top: 56px;
 }

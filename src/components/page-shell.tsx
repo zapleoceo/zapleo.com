@@ -1,8 +1,12 @@
 import type { Locale } from '@/i18n/config';
 import { CursorDot } from './cursor-dot';
 import { Footer } from './footer';
-import { LangSwitcher } from './lang-switcher';
 
+/**
+ * Shared chrome for inner pages (work, journey, now, journal, contact, colophon).
+ * The global Nav (in layout.tsx) handles navigation; this component focuses on
+ * the page hero, chapter indicator, and footer.
+ */
 export function PageShell({
   eyebrow,
   title,
@@ -14,59 +18,65 @@ export function PageShell({
   eyebrow: string;
   title: string | React.ReactNode;
   intro?: string | React.ReactNode;
-  chapter: string; // e.g. "CH 02 / 06"
+  chapter: string;
   locale?: Locale;
   children: React.ReactNode;
 }) {
   return (
     <>
       <CursorDot />
-      <header
-        style={{
-          padding: 'clamp(24px, 4vw, 48px)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          background: 'var(--color-bg-deep)',
-          borderBottom: '1px solid var(--color-line)',
-        }}
-      >
-        <a href="/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
-          ← zapleo
-        </a>
-        <LangSwitcher current={locale} />
-      </header>
 
+      {/* Hero */}
       <section
+        className="nav-offset"
         style={{
           position: 'relative',
-          padding: 'clamp(72px, 14vh, 140px) clamp(24px, 6vw, 96px) clamp(48px, 8vh, 80px)',
+          padding: 'clamp(56px, 10vh, 120px) clamp(24px, 6vw, 96px) clamp(48px, 8vh, 80px)',
           background: 'var(--color-bg-deep)',
           overflow: 'hidden',
         }}
       >
-        <div aria-hidden className="bloom-warm" style={{ position: 'absolute', inset: 0, opacity: 0.5 }} />
+        <div aria-hidden className="bloom-warm" style={{ position: 'absolute', inset: 0, opacity: 0.45 }} />
+
+        {/* Chapter indicator */}
+        <span
+          className="mono"
+          style={{
+            position: 'absolute',
+            top: 'clamp(16px, 2.5vw, 28px)',
+            right: 'clamp(24px, 6vw, 96px)',
+            fontSize: 10,
+            letterSpacing: '0.22em',
+            color: 'var(--color-ink-ghost)',
+          }}
+        >
+          {chapter}
+        </span>
+
         <div style={{ position: 'relative', maxWidth: '72ch' }}>
-          <p className="eyebrow" data-reveal style={{ marginBottom: 24 }}>
+          {/* Eyebrow — keep as the chapter's named system, one per page */}
+          <p className="eyebrow" data-reveal style={{ marginBottom: 20 }}>
             {eyebrow}
           </p>
+
           <h1
             className="display"
             data-reveal
             style={
               {
                 '--stagger': '80ms',
-                fontSize: 'clamp(40px, 7vw, 96px)',
+                fontSize: 'clamp(40px, 6.5vw, 96px)',
                 fontWeight: 320,
-                fontVariationSettings: '"SOFT" 50, "opsz" 144',
-                margin: 0,
                 lineHeight: 0.96,
                 letterSpacing: '-0.02em',
+                margin: 0,
+                textWrap: 'balance',
               } as React.CSSProperties
             }
           >
             {title}
           </h1>
+
           {intro && (
             <p
               data-reveal
@@ -78,6 +88,7 @@ export function PageShell({
                   color: 'var(--color-ink-mute)',
                   maxWidth: '54ch',
                   lineHeight: 1.6,
+                  textWrap: 'pretty',
                 } as React.CSSProperties
               }
             >
@@ -85,19 +96,6 @@ export function PageShell({
             </p>
           )}
         </div>
-        <span
-          className="mono"
-          style={{
-            position: 'absolute',
-            top: 'clamp(24px, 4vw, 48px)',
-            right: 'clamp(24px, 6vw, 96px)',
-            fontSize: 10,
-            letterSpacing: '0.22em',
-            color: 'var(--color-ink-faint)',
-          }}
-        >
-          {chapter}
-        </span>
       </section>
 
       <main>{children}</main>

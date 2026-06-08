@@ -1,6 +1,15 @@
 import type { Locale } from '@/i18n/config';
 import { getDict } from '@/i18n/dict';
+import { HeroCanvas } from './hero-canvas';
 import { LangSwitcher } from './lang-switcher';
+
+/** Location milestones shown as a quiet right-side decoration. */
+const JOURNEY = [
+  { code: 'UA', year: '2010' },
+  { code: 'LK', year: '2022' },
+  { code: 'VN', year: '2023' },
+  { code: 'ID', year: '2024 →' },
+] as const;
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = getDict(locale);
@@ -11,62 +20,66 @@ export function Hero({ locale }: { locale: Locale }) {
     <section
       style={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: '100svh',
         background: 'var(--color-bg-deep)',
         overflow: 'hidden',
       }}
     >
+      {/* Atmospheric bloom */}
       <div className="bloom-warm" style={{ position: 'absolute', inset: 0 }} />
       <div className="bloom-deep" style={{ position: 'absolute', inset: 0 }} />
 
+      {/* Particle network — the AI/neural-network visual signal */}
+      <HeroCanvas />
+
+      {/* Top header — stays visible before nav slides in */}
       <header
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          padding: 'clamp(24px, 4vw, 48px)',
+          padding: 'clamp(22px, 3.5vw, 44px) clamp(24px, 6vw, 96px)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          zIndex: 2,
+          zIndex: 10,
         }}
       >
-        <span className="mono uppercase" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
+        <span className="mono uppercase" style={{ fontSize: 12, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
           zapleo
           <span aria-hidden style={{ margin: '0 10px', color: 'var(--color-ink-ghost)' }}>·</span>
-          <span style={{ color: 'var(--color-ink-mute)' }}>{t.common.brandTag}</span>
+          <span style={{ color: 'var(--color-ink-ghost)' }}>{t.common.brandTag}</span>
         </span>
         <LangSwitcher current={locale} />
       </header>
 
+      {/* Main content */}
       <div
         style={{
           position: 'relative',
-          minHeight: '100vh',
+          minHeight: '100svh',
           display: 'grid',
-          alignItems: 'center',
-          padding: 'clamp(96px, 14vh, 180px) clamp(24px, 6vw, 96px) clamp(60px, 10vh, 120px)',
-          zIndex: 2,
+          alignContent: 'center',
+          padding: 'clamp(100px, 16vh, 180px) clamp(24px, 6vw, 96px) clamp(80px, 12vh, 140px)',
+          zIndex: 5,
         }}
       >
-        <div style={{ maxWidth: '78ch' }}>
-          <p className="eyebrow" data-reveal style={{ marginBottom: 'clamp(24px, 3vh, 40px)' }}>
-            {home.eyebrow}
-          </p>
+        <div style={{ maxWidth: '68ch' }}>
 
+          {/* Headline — capped at 6rem (96px) per impeccable ceiling */}
           <h1
             className="display"
             data-reveal
             style={
               {
-                '--stagger': '90ms',
-                fontSize: 'clamp(48px, 9.5vw, 156px)',
+                '--stagger': '40ms',
+                fontSize: 'clamp(44px, 6.5vw, 96px)',
                 fontWeight: 320,
-                fontVariationSettings: '"SOFT" 50, "opsz" 144',
-                lineHeight: 0.92,
-                letterSpacing: '-0.025em',
+                lineHeight: 0.96,
+                letterSpacing: '-0.02em',
                 margin: 0,
+                textWrap: 'balance',
               } as React.CSSProperties
             }
           >
@@ -75,36 +88,38 @@ export function Hero({ locale }: { locale: Locale }) {
             <em
               style={{
                 fontStyle: 'italic',
-                fontWeight: 220,
+                fontWeight: 240,
                 color: 'var(--color-amber)',
-                fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
               }}
             >
               {home.headLine2}
             </em>
           </h1>
 
+          {/* Lead */}
           <p
             data-reveal
             style={
               {
-                '--stagger': '220ms',
+                '--stagger': '160ms',
                 marginTop: 'clamp(28px, 4vh, 48px)',
-                fontSize: 'clamp(17px, 1.4vw, 22px)',
-                lineHeight: 1.55,
+                fontSize: 'clamp(16px, 1.3vw, 20px)',
+                lineHeight: 1.6,
                 color: 'var(--color-ink-mute)',
-                maxWidth: '54ch',
+                maxWidth: '52ch',
+                textWrap: 'pretty',
               } as React.CSSProperties
             }
           >
             {home.lead}
           </p>
 
+          {/* CTAs */}
           <div
             data-reveal
             style={
               {
-                '--stagger': '340ms',
+                '--stagger': '280ms',
                 marginTop: 'clamp(40px, 6vh, 72px)',
                 display: 'flex',
                 gap: 'clamp(16px, 2vw, 28px)',
@@ -129,33 +144,106 @@ export function Hero({ locale }: { locale: Locale }) {
               {home.ctaContact}
             </a>
           </div>
+
+          {/* Location sub-note — replaces the eyebrow, sits below CTAs */}
+          <p
+            data-reveal
+            className="mono"
+            style={
+              {
+                '--stagger': '400ms',
+                marginTop: 'clamp(32px, 5vh, 56px)',
+                fontSize: 11,
+                letterSpacing: '0.18em',
+                color: 'var(--color-ink-ghost)',
+                textTransform: 'uppercase',
+              } as React.CSSProperties
+            }
+          >
+            {home.eyebrow}
+          </p>
         </div>
       </div>
 
+      {/* Journey milestone column — decorative, right side */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          right: 'clamp(24px, 5vw, 72px)',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          gap: 24,
+          zIndex: 5,
+          opacity: 0.35,
+          pointerEvents: 'none',
+        }}
+        className="hero-journey"
+      >
+        {JOURNEY.map((item, i) => (
+          <div
+            key={item.code}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-end',
+              gap: 2,
+              opacity: 0.4 + i * 0.2,
+            }}
+          >
+            <span
+              className="display"
+              style={{
+                fontSize: 'clamp(28px, 4vw, 56px)',
+                fontWeight: 280,
+                letterSpacing: '-0.01em',
+                lineHeight: 1,
+                color: i === JOURNEY.length - 1 ? 'var(--color-amber)' : 'var(--color-ink-ghost)',
+              }}
+            >
+              {item.code}
+            </span>
+            <span className="mono" style={{ fontSize: 9, letterSpacing: '0.22em', color: 'var(--color-ink-ghost)' }}>
+              {item.year}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Scroll indicator */}
       <div
         style={{
           position: 'absolute',
           bottom: 'clamp(24px, 4vh, 48px)',
-          right: 'clamp(24px, 4vw, 48px)',
+          left: 'clamp(24px, 6vw, 96px)',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-end',
-          gap: 12,
-          zIndex: 2,
+          gap: 10,
+          zIndex: 5,
+          alignItems: 'flex-start',
         }}
       >
-        <span className="mono" style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
-          {t.common.chapter(0, 6)}
+        <span className="mono" style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--color-ink-ghost)', writingMode: 'vertical-rl' }}>
+          scroll
         </span>
         <span
           aria-hidden
           style={{
             width: 1,
-            height: 56,
-            background: 'linear-gradient(to bottom, transparent, var(--color-ink-faint))',
+            height: 48,
+            background: 'linear-gradient(to bottom, var(--color-ink-ghost), transparent)',
           }}
         />
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-journey { display: none !important; }
+        }
+      `}</style>
     </section>
   );
 }
