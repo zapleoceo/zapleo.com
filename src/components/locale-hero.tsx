@@ -32,7 +32,7 @@ export function LocaleHero(p: LocaleHeroProps) {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            zIndex: 2,
+            zIndex: 10,
           }}
         >
           <a href="/" className="mono uppercase link-line" style={{ fontSize: 12, letterSpacing: '0.22em' }}>
