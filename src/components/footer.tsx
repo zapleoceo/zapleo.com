@@ -29,7 +29,6 @@ export function Footer({ locale }: { locale: Locale }) {
             style={{
               fontSize: 'clamp(28px, 3vw, 48px)',
               fontWeight: 360,
-              fontVariationSettings: '"SOFT" 50, "opsz" 144',
               letterSpacing: '-0.02em',
               margin: 0,
               lineHeight: 1,

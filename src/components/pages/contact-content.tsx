@@ -72,7 +72,6 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
                 style={{
                   fontSize: 'clamp(24px, 3vw, 36px)',
                   fontWeight: 400,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   letterSpacing: '-0.015em',
                   lineHeight: 1.1,
                   color: c.primary ? 'var(--color-amber)' : 'var(--color-ink)',

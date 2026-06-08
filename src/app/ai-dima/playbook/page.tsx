@@ -117,7 +117,6 @@ export default function PlaybookPage() {
                   '--stagger': '80ms',
                   fontSize: 'clamp(52px, 9vw, 140px)',
                   fontWeight: 300,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.92,
                   letterSpacing: '-0.025em',
                   margin: '24px 0 0',
@@ -131,7 +130,6 @@ export default function PlaybookPage() {
                   fontStyle: 'italic',
                   fontWeight: 220,
                   color: 'var(--color-amber)',
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
                 }}
               >
                 is built.
@@ -206,7 +204,6 @@ export default function PlaybookPage() {
                   '--stagger': '60ms',
                   fontSize: 'clamp(36px, 6vw, 72px)',
                   fontWeight: 320,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.98,
                   letterSpacing: '-0.022em',
                   margin: '24px 0 0',
@@ -315,7 +312,6 @@ export default function PlaybookPage() {
                   '--stagger': '60ms',
                   fontSize: 'clamp(36px, 6vw, 72px)',
                   fontWeight: 320,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.98,
                   letterSpacing: '-0.022em',
                   margin: '24px 0 0',
@@ -352,7 +348,6 @@ export default function PlaybookPage() {
                     style={{
                       fontSize: 'clamp(28px, 3vw, 40px)',
                       fontWeight: 240,
-                      fontVariationSettings: '"SOFT" 100, "opsz" 144',
                       color: 'var(--color-amber)',
                       lineHeight: 0.9,
                       letterSpacing: '-0.03em',

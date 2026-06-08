@@ -264,7 +264,6 @@ export default function KidsRoadmapPage() {
                   '--stagger': '80ms',
                   fontSize: 'clamp(52px, 9vw, 144px)',
                   fontWeight: 300,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.92,
                   letterSpacing: '-0.025em',
                   margin: '24px 0 0',
@@ -278,7 +277,6 @@ export default function KidsRoadmapPage() {
                   fontStyle: 'italic',
                   fontWeight: 220,
                   color: 'var(--color-mint)',
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
                 }}
               >
                 — Indonesia.
@@ -327,7 +325,6 @@ export default function KidsRoadmapPage() {
                 style={{
                   fontSize: 'clamp(56px, 8vw, 96px)',
                   fontWeight: 240,
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144',
                   color: 'var(--color-mint)',
                   lineHeight: 0.9,
                   letterSpacing: '-0.04em',
@@ -433,7 +430,6 @@ export default function KidsRoadmapPage() {
                     '--stagger': '80ms',
                     fontSize: 'clamp(36px, 6.5vw, 88px)',
                     fontWeight: 320,
-                    fontVariationSettings: '"SOFT" 50, "opsz" 144',
                     lineHeight: 0.96,
                     letterSpacing: '-0.022em',
                     margin: '28px 0 0',
@@ -617,7 +613,6 @@ export default function KidsRoadmapPage() {
                   '--stagger': '60ms',
                   fontSize: 'clamp(36px, 6vw, 80px)',
                   fontWeight: 320,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.98,
                   letterSpacing: '-0.022em',
                   margin: '24px 0 0',
@@ -684,7 +679,6 @@ export default function KidsRoadmapPage() {
                   '--stagger': '60ms',
                   fontSize: 'clamp(36px, 6vw, 80px)',
                   fontWeight: 320,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.98,
                   letterSpacing: '-0.022em',
                   margin: '24px 0 0',
@@ -837,7 +831,6 @@ export default function KidsRoadmapPage() {
                 {
                   fontSize: 'clamp(40px, 7vw, 96px)',
                   fontWeight: 300,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.96,
                   letterSpacing: '-0.025em',
                   margin: 0,
@@ -851,7 +844,6 @@ export default function KidsRoadmapPage() {
                   fontStyle: 'italic',
                   fontWeight: 220,
                   color: 'var(--color-mint)',
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
                 }}
               >
                 they are.

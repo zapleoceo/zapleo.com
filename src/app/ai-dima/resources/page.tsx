@@ -277,7 +277,6 @@ export default function ResourcesPage() {
                   '--stagger': '80ms',
                   fontSize: 'clamp(52px, 9vw, 140px)',
                   fontWeight: 300,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.92,
                   letterSpacing: '-0.025em',
                   margin: '24px 0 0',
@@ -291,7 +290,6 @@ export default function ResourcesPage() {
                   fontStyle: 'italic',
                   fontWeight: 220,
                   color: 'var(--color-mint)',
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
                 }}
               >
                 & communities.

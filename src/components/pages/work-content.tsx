@@ -139,7 +139,6 @@ export function WorkPageContent({ locale }: { locale: Locale }) {
                           marginTop: 16,
                           fontSize: 'clamp(28px, 4vw, 56px)',
                           fontWeight: 340,
-                          fontVariationSettings: '"SOFT" 50, "opsz" 144',
                           lineHeight: 1.0,
                           letterSpacing: '-0.02em',
                         }}

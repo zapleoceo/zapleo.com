@@ -162,7 +162,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               lineHeight: 1.55,
               fontFamily: 'var(--font-display)',
               fontWeight: 380,
-              fontVariationSettings: '"SOFT" 80, "opsz" 32',
               color: 'var(--color-ink)',
               maxWidth: '52ch',
               margin: '64px 0 0',
@@ -195,7 +194,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                   style={{
                     fontSize: 'clamp(28px, 3.5vw, 48px)',
                     fontWeight: 380,
-                    fontVariationSettings: '"SOFT" 50, "opsz" 144',
                     lineHeight: 1.1,
                     letterSpacing: '-0.02em',
                     margin: 0,

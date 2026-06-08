@@ -102,7 +102,6 @@ export function JournalPageContent({ locale }: { locale: Locale }) {
                     style={{
                       fontSize: 'clamp(24px, 3vw, 40px)',
                       fontWeight: 380,
-                      fontVariationSettings: '"SOFT" 50, "opsz" 144',
                       lineHeight: 1.1,
                       letterSpacing: '-0.02em',
                       margin: 0,

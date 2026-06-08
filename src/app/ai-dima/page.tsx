@@ -116,7 +116,6 @@ export default function AIDimaHub() {
                   '--stagger': '80ms',
                   fontSize: 'clamp(52px, 9.5vw, 148px)',
                   fontWeight: 300,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.92,
                   letterSpacing: '-0.025em',
                   margin: '24px 0 0',
@@ -130,7 +129,6 @@ export default function AIDimaHub() {
                   fontStyle: 'italic',
                   fontWeight: 220,
                   color: 'var(--color-amber)',
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
                 }}
               >
                 Human-directed.

@@ -51,7 +51,6 @@ export function NowPageContent({ locale }: { locale: Locale }) {
                   margin: 0,
                   fontFamily: 'var(--font-display)',
                   fontWeight: 380,
-                  fontVariationSettings: '"SOFT" 80, "opsz" 32',
                   letterSpacing: '-0.01em',
                 }}
               >

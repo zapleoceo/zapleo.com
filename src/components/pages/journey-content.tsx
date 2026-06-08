@@ -115,7 +115,6 @@ export function JourneyPageContent({ locale }: { locale: Locale }) {
                       marginTop: 6,
                       fontSize: 'clamp(22px, 2.6vw, 36px)',
                       fontWeight: 400,
-                      fontVariationSettings: '"SOFT" 50, "opsz" 144',
                       lineHeight: 1.1,
                       letterSpacing: '-0.015em',
                     }}

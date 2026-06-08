@@ -75,7 +75,6 @@ export default function AIRoadmapPage() {
                   '--stagger': '80ms',
                   fontSize: 'clamp(48px, 9vw, 144px)',
                   fontWeight: 300,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.92,
                   letterSpacing: '-0.025em',
                   margin: 0,
@@ -89,7 +88,6 @@ export default function AIRoadmapPage() {
                   fontStyle: 'italic',
                   fontWeight: 220,
                   color: 'var(--color-amber)',
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
                 }}
               >
                 for Indonesia.
@@ -136,7 +134,6 @@ export default function AIRoadmapPage() {
                 style={{
                   fontSize: 'clamp(56px, 8vw, 96px)',
                   fontWeight: 240,
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144',
                   color: 'var(--color-amber)',
                   lineHeight: 0.9,
                   letterSpacing: '-0.04em',
@@ -852,7 +849,6 @@ export default function AIRoadmapPage() {
                 {
                   fontSize: 'clamp(40px, 7vw, 96px)',
                   fontWeight: 300,
-                  fontVariationSettings: '"SOFT" 50, "opsz" 144',
                   lineHeight: 0.96,
                   letterSpacing: '-0.025em',
                   margin: 0,
@@ -866,7 +862,6 @@ export default function AIRoadmapPage() {
                   fontStyle: 'italic',
                   fontWeight: 220,
                   color: 'var(--color-amber)',
-                  fontVariationSettings: '"SOFT" 100, "opsz" 144, "WONK" 1',
                 }}
               >
                 Now walk it.
@@ -1015,7 +1010,6 @@ function SectionBlock({
               '--stagger': '60ms',
               fontSize: 'clamp(36px, 6vw, 80px)',
               fontWeight: 320,
-              fontVariationSettings: '"SOFT" 50, "opsz" 144',
               lineHeight: 0.98,
               letterSpacing: '-0.022em',
               margin: '24px 0 0',
@@ -1096,7 +1090,6 @@ function PhaseSection({
               '--stagger': '80ms',
               fontSize: 'clamp(40px, 7vw, 96px)',
               fontWeight: 320,
-              fontVariationSettings: '"SOFT" 50, "opsz" 144',
               lineHeight: 0.96,
               letterSpacing: '-0.025em',
               margin: '28px 0 0',
@@ -1262,7 +1255,6 @@ function ProjectCard({
         style={{
           fontSize: 'clamp(48px, 6vw, 80px)',
           fontWeight: 240,
-          fontVariationSettings: '"SOFT" 100, "opsz" 144',
           color: 'var(--color-amber)',
           lineHeight: 0.9,
           letterSpacing: '-0.04em',
