@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Literata, JetBrains_Mono } from 'next/font/google';
+import { pageAlternates } from '@/i18n/seo';
 import { JsonLd } from '@/components/json-ld';
 import { LenisInit } from '@/components/lenis-init';
 import { Nav } from '@/components/nav';
@@ -70,6 +71,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   manifest: '/manifest.webmanifest',
+  alternates: pageAlternates(''),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

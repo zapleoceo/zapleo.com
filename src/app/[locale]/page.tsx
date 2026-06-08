@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { LocaleHero } from '@/components/locale-hero';
 import { getDict } from '@/i18n/dict';
 import { isLocale, type Locale } from '@/i18n/config';
+import { localeAlternates } from '@/i18n/seo';
 
 export async function generateMetadata({
   params,
@@ -15,7 +16,7 @@ export async function generateMetadata({
   return {
     title: 'Dmitriy Zaporozhets · zapleo',
     description: t.home.lead,
-    alternates: { canonical: `https://zapleo.com/${locale}/` },
+    alternates: localeAlternates(locale, ''),
   };
 }
 

@@ -1,0 +1,35 @@
+# zapleo — Dmitriy Zaporozhets
+
+> Operator-turned-educator. 12 years of Ukrainian web agency work, now running an IT academy branch in Jakarta. Personal site at zapleo.com.
+
+## About
+
+Dmitriy Zaporozhets is a software operator and EdTech professional based in Jakarta, Indonesia. He founded a web agency in Dnipro, Ukraine in 2010, delivered 40+ client projects over 12 years, then pivoted to education — currently serving as Branch Director at IT STEP Academy Jakarta (since April 2026).
+
+His public persona (handle: @zapleosoft, brand: zapleo) sits at the intersection of software engineering, operator-level business management, and AI-augmented education.
+
+## Key pages
+
+- [Home](https://zapleo.com/) — overview, current focus, contact links
+- [Journey](https://zapleo.com/journey/) — full timeline from Dnipro (2010) through Sri Lanka, Vietnam to Jakarta (2026)
+- [Now](https://zapleo.com/now/) — what he is doing this month (updated monthly, nownownow.com format)
+- [Work](https://zapleo.com/work/) — selected engagements: apcu.ua (property platform), opentv.media, Pasijou (dining concept), Veranda (bar, Vietnam)
+- [Journal](https://zapleo.com/journal/) — long-form essays on AI-augmented work, Southeast Asia tech careers, founder unit economics
+- [Contact](https://zapleo.com/contact/) — email, WhatsApp, Telegram, LinkedIn
+- [AI-Dima](https://zapleo.com/ai-dima/) — AI-augmented version of the zapleo brand; roadmaps, resources, playbooks for educators
+
+## Languages
+
+Site available in English, Ukrainian (/uk/), Russian (/ru/), Bahasa Indonesia (/id/).
+
+## Identity signals
+
+- LinkedIn: https://www.linkedin.com/in/dmitriy-zaporozhets-83b15375/
+- GitHub: https://github.com/zapleo
+- Instagram: https://www.instagram.com/ai_dimaz/
+- Telegram: https://t.me/zapleosoft
+- X: https://x.com/zapleosoft
+
+## Disclosure
+
+Where IT STEP Academy Jakarta appears as a recommendation or employer on this site, the author is its Branch Director. Full disclosure on all such references.

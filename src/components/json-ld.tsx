@@ -1,6 +1,6 @@
 /**
  * Person + WebSite schema for the homepage.
- * All claims here are cross-referenced to public sources (LinkedIn, GitHub, DOU, Clutch).
+ * All claims cross-referenced to public sources (LinkedIn, GitHub, DOU, Clutch).
  */
 export function JsonLd() {
   const data = {
@@ -11,13 +11,15 @@ export function JsonLd() {
         '@id': 'https://zapleo.com/#person',
         name: 'Dmitriy Zaporozhets',
         url: 'https://zapleo.com',
+        description:
+          'Operator-turned-educator. 12 years of web agency work from Dnipro, now running an IT academy branch in Jakarta.',
         jobTitle: 'Branch Director, IT STEP Academy Jakarta',
         worksFor: { '@type': 'Organization', name: 'IT STEP Academy Jakarta' },
         alumniOf: {
           '@type': 'CollegeOrUniversity',
           name: 'Oles Honchar Dnipro National University',
         },
-        founderOf: [
+        founder: [
           { '@type': 'Organization', name: 'Zapleo', url: 'https://zapleo.com' },
           { '@type': 'Organization', name: 'Pasijou', url: 'https://www.instagram.com/pasijou/' },
         ],
