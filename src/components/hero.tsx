@@ -25,10 +25,6 @@ export function Hero({ locale }: { locale: Locale }) {
         overflow: 'hidden',
       }}
     >
-      {/* Atmospheric bloom */}
-      <div className="bloom-warm" style={{ position: 'absolute', inset: 0 }} />
-      <div className="bloom-deep" style={{ position: 'absolute', inset: 0 }} />
-
       {/* Particle network — the AI/neural-network visual signal */}
       <HeroCanvas />
 
@@ -75,9 +71,9 @@ export function Hero({ locale }: { locale: Locale }) {
               {
                 '--stagger': '40ms',
                 fontSize: 'clamp(44px, 6.5vw, 96px)',
-                fontWeight: 320,
+                fontWeight: 600,
                 lineHeight: 0.96,
-                letterSpacing: '-0.02em',
+                letterSpacing: '-0.025em',
                 margin: 0,
                 textWrap: 'balance',
               } as React.CSSProperties
@@ -88,7 +84,8 @@ export function Hero({ locale }: { locale: Locale }) {
             <em
               style={{
                 fontStyle: 'italic',
-                fontWeight: 240,
+                fontWeight: 200,
+                letterSpacing: '-0.01em',
                 color: 'var(--color-amber)',
               }}
             >
@@ -165,7 +162,7 @@ export function Hero({ locale }: { locale: Locale }) {
         </div>
       </div>
 
-      {/* Journey milestone column — decorative, right side */}
+      {/* Journey — precision readout, structural right column */}
       <div
         aria-hidden="true"
         style={{
@@ -175,10 +172,8 @@ export function Hero({ locale }: { locale: Locale }) {
           transform: 'translateY(-50%)',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-end',
-          gap: 24,
+          gap: 20,
           zIndex: 5,
-          opacity: 0.35,
           pointerEvents: 'none',
         }}
         className="hero-journey"
@@ -188,25 +183,24 @@ export function Hero({ locale }: { locale: Locale }) {
             key={item.code}
             style={{
               display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-end',
-              gap: 2,
-              opacity: 0.4 + i * 0.2,
+              alignItems: 'baseline',
+              gap: 10,
+              opacity: 0.2 + i * 0.2,
             }}
           >
             <span
               className="display"
               style={{
-                fontSize: 'clamp(28px, 4vw, 56px)',
-                fontWeight: 280,
+                fontSize: 'clamp(18px, 2.5vw, 36px)',
+                fontWeight: i === JOURNEY.length - 1 ? 500 : 200,
                 letterSpacing: '-0.01em',
                 lineHeight: 1,
-                color: i === JOURNEY.length - 1 ? 'var(--color-amber)' : 'var(--color-ink-ghost)',
+                color: i === JOURNEY.length - 1 ? 'var(--color-amber)' : 'var(--color-ink-mute)',
               }}
             >
               {item.code}
             </span>
-            <span className="mono" style={{ fontSize: 9, letterSpacing: '0.22em', color: 'var(--color-ink-ghost)' }}>
+            <span className="mono" style={{ fontSize: 9, letterSpacing: '0.16em', color: 'var(--color-ink-ghost)' }}>
               {item.year}
             </span>
           </div>

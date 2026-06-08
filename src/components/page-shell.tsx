@@ -1,5 +1,4 @@
 import type { Locale } from '@/i18n/config';
-import { CursorDot } from './cursor-dot';
 import { Footer } from './footer';
 
 /**
@@ -24,8 +23,6 @@ export function PageShell({
 }) {
   return (
     <>
-      <CursorDot />
-
       {/* Hero */}
       <section
         className="nav-offset"
@@ -36,8 +33,6 @@ export function PageShell({
           overflow: 'hidden',
         }}
       >
-        <div aria-hidden className="bloom-warm" style={{ position: 'absolute', inset: 0, opacity: 0.45 }} />
-
         {/* Chapter indicator */}
         <span
           className="mono"
@@ -54,7 +49,7 @@ export function PageShell({
         </span>
 
         <div style={{ position: 'relative', maxWidth: '72ch' }}>
-          {/* Eyebrow — keep as the chapter's named system, one per page */}
+          {/* Eyebrow — chapter's named system, one per page */}
           <p className="eyebrow" data-reveal style={{ marginBottom: 20 }}>
             {eyebrow}
           </p>
@@ -65,10 +60,10 @@ export function PageShell({
             style={
               {
                 '--stagger': '80ms',
-                fontSize: 'clamp(40px, 6.5vw, 96px)',
-                fontWeight: 320,
+                fontSize: 'clamp(40px, 7vw, 96px)',
+                fontWeight: 560,
                 lineHeight: 0.96,
-                letterSpacing: '-0.02em',
+                letterSpacing: '-0.025em',
                 margin: 0,
                 textWrap: 'balance',
               } as React.CSSProperties

@@ -14,16 +14,6 @@ export function CTABlock({ locale }: { locale: Locale }) {
         overflow: 'hidden',
       }}
     >
-      <div
-        aria-hidden
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'radial-gradient(ellipse 70% 60% at 50% 100%, oklch(55% 0.18 70 / 0.1), transparent)',
-          pointerEvents: 'none',
-        }}
-      />
-
       <div style={{ position: 'relative', maxWidth: '58ch', margin: '0 auto', textAlign: 'center' }}>
         <h2
           className="display"
@@ -31,16 +21,16 @@ export function CTABlock({ locale }: { locale: Locale }) {
           style={
             {
               fontSize: 'clamp(36px, 5.5vw, 80px)',
-              fontWeight: 320,
+              fontWeight: 560,
               lineHeight: 1.0,
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.025em',
               margin: 0,
               textWrap: 'balance',
             } as React.CSSProperties
           }
         >
           {t.head1}{' '}
-          <em style={{ fontStyle: 'italic', color: 'var(--color-amber)', fontWeight: 260 }}>{t.head2}</em>
+          <em style={{ fontStyle: 'italic', color: 'var(--color-amber)', fontWeight: 200 }}>{t.head2}</em>
         </h2>
 
         <p

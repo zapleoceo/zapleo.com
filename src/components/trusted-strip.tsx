@@ -22,17 +22,6 @@ export function TrustedStrip({ locale }: { locale: Locale }) {
         overflow: 'hidden',
       }}
     >
-      {/* Subtle background glow */}
-      <div
-        aria-hidden
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'radial-gradient(ellipse 60% 70% at 50% 50%, oklch(55% 0.12 50 / 0.07), transparent)',
-          pointerEvents: 'none',
-        }}
-      />
-
       <div style={{ position: 'relative', maxWidth: 1100, margin: '0 auto' }}>
 
         {/* Section label — one deliberate eyebrow, not one on every section */}
@@ -79,7 +68,7 @@ export function TrustedStrip({ locale }: { locale: Locale }) {
                   className="display"
                   style={{
                     fontSize: 'clamp(40px, 5.5vw, 72px)',
-                    fontWeight: 300,
+                    fontWeight: 420,
                     letterSpacing: '-0.03em',
                     lineHeight: 1,
                     color: 'var(--color-amber)',

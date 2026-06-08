@@ -1,4 +1,3 @@
-import { CursorDot } from '@/components/cursor-dot';
 import { CTABlock } from '@/components/cta-block';
 import { Footer } from '@/components/footer';
 import { Hero } from '@/components/hero';
@@ -10,7 +9,6 @@ import { WorkTeaser } from '@/components/work-teaser';
 export default function Home() {
   return (
     <>
-      <CursorDot />
       <main>
         <Hero locale="en" />
         <NowThen locale="en" />
