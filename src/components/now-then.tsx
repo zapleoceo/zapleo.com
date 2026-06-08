@@ -32,7 +32,6 @@ export function NowThen({ locale }: { locale: Locale }) {
                 '--stagger': '80ms',
                 fontSize: 'clamp(40px, 6vw, 88px)',
                 fontWeight: 360,
-                fontVariationSettings: '"SOFT" 30, "opsz" 144',
                 lineHeight: 1,
                 margin: 0,
               } as React.CSSProperties
