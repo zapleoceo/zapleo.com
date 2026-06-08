@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Bricolage_Grotesque, Literata, JetBrains_Mono } from 'next/font/google';
 import { pageAlternates } from '@/i18n/seo';
 import { JsonLd } from '@/components/json-ld';
@@ -98,6 +99,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd />
 
         {children}
+
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DKW7C84LRB"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DKW7C84LRB', { page_path: window.location.pathname });
+          `}
+        </Script>
       </body>
     </html>
   );
