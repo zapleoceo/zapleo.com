@@ -93,8 +93,9 @@ export const DICTS = {
       eyebrow: 'Chapter 02 · Work',
       title1: 'The defensible slice.',
       title2: 'The rest by request.',
-      intro: 'Twelve years of agency engagements + two hospitality ventures. Below is what can be verified publicly. Anything under NDA — happy to walk through on a call.',
+      intro: 'Twelve years of agency work, two hospitality ventures, and AI infrastructure built for production. Below is what can be verified publicly. Anything under NDA — happy to walk through on a call.',
       eras: {
+        ai: 'AI & Infrastructure · 2024 →',
         hospitality: 'Hospitality · 2022 →',
         agency: 'Agency selected · 2010 → 2022',
       },
@@ -246,6 +247,7 @@ export const DICTS = {
       title2: 'Решта — за запитом.',
       intro: 'Дванадцять років агенційних проєктів + два F&B-підприємства. Нижче — те, що можна перевірити публічно. Все під NDA — радо проведу дзвінком.',
       eras: {
+        ai: 'AI та Інфраструктура · 2024 →',
         hospitality: 'Гостинність · 2022 →',
         agency: 'Агенція, обране · 2010 → 2022',
       },
@@ -397,6 +399,7 @@ export const DICTS = {
       title2: 'Остальное — по запросу.',
       intro: 'Двенадцать лет агентских проектов + два F&B-предприятия. Ниже — то, что можно проверить публично. Всё под NDA — рад провести звонком.',
       eras: {
+        ai: 'AI и Инфраструктура · 2024 →',
         hospitality: 'Гостеприимство · 2022 →',
         agency: 'Агентство, избранное · 2010 → 2022',
       },
@@ -548,6 +551,7 @@ export const DICTS = {
       title2: 'Sisanya atas permintaan.',
       intro: 'Dua belas tahun proyek agensi + dua usaha hospitality. Di bawah — yang bisa diverifikasi publik. Yang di bawah NDA — senang berbagi lewat panggilan.',
       eras: {
+        ai: 'AI & Infrastruktur · 2024 →',
         hospitality: 'Hospitality · 2022 →',
         agency: 'Agensi pilihan · 2010 → 2022',
       },

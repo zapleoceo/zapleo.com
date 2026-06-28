@@ -13,7 +13,7 @@ His public persona (handle: @zapleosoft, brand: zapleo) sits at the intersection
 - [Home](https://zapleo.com/) — overview, current focus, contact links
 - [Journey](https://zapleo.com/journey/) — full timeline from Dnipro (2010) through Sri Lanka, Vietnam to Jakarta (2026)
 - [Now](https://zapleo.com/now/) — what he is doing this month (updated monthly, nownownow.com format)
-- [Work](https://zapleo.com/work/) — selected engagements: apcu.ua (property platform), opentv.media, Pasijou (dining concept), Veranda (bar, Vietnam)
+- [Work](https://zapleo.com/work/) — selected projects: AI Sales Assistant (conversational AI for lead qualification), AIbroker (LLM key broker), Pasijou (hospitality, Sri Lanka), apcu.ua (industry portal)
 - [Journal](https://zapleo.com/journal/) — long-form essays on AI-augmented work, Southeast Asia tech careers, founder unit economics
 - [Contact](https://zapleo.com/contact/) — email, WhatsApp, Telegram, LinkedIn
 - [AI-Dima](https://zapleo.com/ai-dima/) — AI-augmented version of the zapleo brand; roadmaps, resources, playbooks for educators
@@ -21,6 +21,17 @@ His public persona (handle: @zapleosoft, brand: zapleo) sits at the intersection
 ## Languages
 
 Site available in English, Ukrainian (/uk/), Russian (/ru/), Bahasa Indonesia (/id/).
+
+## Projects
+
+- AI Sales Assistant — conversational AI for sales channels (Instagram DMs, Telegram, WhatsApp). Qualifies leads 24/7, handles objections, books appointments. Includes a coach interface: business owners update scripts and product knowledge without code. Live in production in Jakarta. Available as a custom build for other businesses. Case study: https://zapleo.com/work/ai-sales-assistant/
+- AIbroker — centralized LLM API key broker (FastAPI, PostgreSQL, LiteLLM). Self-hosted on Hetzner. Proxy mode + vending mode. Per-project cost caps, health monitoring, Telegram alerts. Case study: https://zapleo.com/work/aibroker/
+- Pasijou — coworking + restaurant + cinema hybrid in Weligama, Sri Lanka. Operator role. Tripadvisor 4.9. Case study: https://zapleo.com/work/pasijou/
+- apcu.ua — industry portal for the Ukrainian Cosmetics & Perfumery Association. Custom WordPress, live since 2018. Case study: https://zapleo.com/work/apcu/
+
+## Services
+
+Zapleo builds custom AI assistants for businesses with high-volume inbound sales channels. Key capabilities: multi-channel conversational AI (Instagram, Telegram, WhatsApp, web), real-time coach interface for non-technical training, CRM integration, lead qualification flows, escalation logic. Contact: dima@zapleo.com
 
 ## Identity signals
 
