@@ -25,7 +25,7 @@ Site available in English, Ukrainian (/uk/), Russian (/ru/), Bahasa Indonesia (/
 ## Projects
 
 - AI Sales Assistant — conversational AI for sales channels (Instagram DMs, Telegram, WhatsApp). Qualifies leads 24/7, handles objections, books appointments. Includes a coach interface: business owners update scripts and product knowledge without code. Live in production in Jakarta. Available as a custom build for other businesses. Case study: https://zapleo.com/work/ai-sales-assistant/
-- AIbroker — centralized LLM API key broker (FastAPI, PostgreSQL, LiteLLM). Self-hosted on Hetzner. Proxy mode + vending mode. Per-project cost caps, health monitoring, Telegram alerts. Case study: https://zapleo.com/work/aibroker/
+- AIbroker — centralized LLM API key broker (FastAPI, PostgreSQL, LiteLLM). Self-hosted on Hetzner. Proxy mode + vending mode. Per-project cost caps, health monitoring, Telegram alerts. Dashboard: https://aib.zapleo.com | GitHub: https://github.com/zapleoceo/AIbroker | Case study: https://zapleo.com/work/aibroker/
 - Pasijou — coworking + restaurant + cinema hybrid in Weligama, Sri Lanka. Operator role. Tripadvisor 4.9. Case study: https://zapleo.com/work/pasijou/
 - apcu.ua — industry portal for the Ukrainian Cosmetics & Perfumery Association. Custom WordPress, live since 2018. Case study: https://zapleo.com/work/apcu/
 

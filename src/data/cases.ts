@@ -159,7 +159,10 @@ export const CASES: Record<string, CaseStudy> = {
           'LRU-aware key selection avoids hot-rotating one key while others sit idle. Per-project daily and monthly cost caps enforce budget discipline across all connected clients. A health monitor runs every 10 minutes — cheapest valid call per provider — and marks dead keys immediately with a Telegram alert. A live dashboard shows cost, key health, and per-project usage.',
       },
     ],
-    links: [{ label: 'AIbroker dashboard (admin)', href: 'https://aib.zapleo.com' }],
+    links: [
+      { label: 'AIbroker dashboard', href: 'https://aib.zapleo.com' },
+      { label: 'GitHub — zapleoceo/AIbroker', href: 'https://github.com/zapleoceo/AIbroker' },
+    ],
     accent: 'oklch(68% 0.17 250)',
   },
 };

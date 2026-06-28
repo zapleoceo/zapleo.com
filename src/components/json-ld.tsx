@@ -28,6 +28,7 @@ export function JsonLd() {
           name: 'AIbroker',
           applicationCategory: 'DeveloperApplication',
           url: 'https://aib.zapleo.com',
+          codeRepository: 'https://github.com/zapleoceo/AIbroker',
           description: 'Centralized LLM API key broker with LRU routing, per-project cost caps, and health monitoring. Self-hosted on Hetzner.',
           operatingSystem: 'Linux',
           author: { '@id': 'https://zapleo.com/#person' },
