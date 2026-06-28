@@ -23,14 +23,15 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const c = CASES[slug];
   if (!c || !isLocale(locale) || locale === 'en') return { title: 'Not found' };
+  const localTagline = getDict(locale as Locale).work.items[slug]?.tagline ?? c.tagline;
   return {
     title: c.name,
-    description: c.tagline,
+    description: localTagline,
     openGraph: {
       type: 'article',
       url: `https://zapleo.com/${locale}/work/${slug}/`,
       title: `${c.name} — zapleo`,
-      description: c.tagline,
+      description: localTagline,
       images: [{ url: 'https://zapleo.com/og.svg', width: 1200, height: 630 }],
     },
     alternates: localeAlternates(locale, `work/${slug}`),
@@ -49,6 +50,7 @@ export default async function LocaleCaseStudyPage({
   if (!c) notFound();
 
   const t = getDict(locale as Locale);
+  const tagline = t.work.items[slug]?.tagline ?? c.tagline;
 
   return (
     <PageShell
@@ -56,7 +58,7 @@ export default async function LocaleCaseStudyPage({
       title={
         <>
           {c.name}.{' '}
-          <em style={{ fontStyle: 'italic', color: c.accent }}>{c.tagline}</em>
+          <em style={{ fontStyle: 'italic', color: c.accent }}>{tagline}</em>
         </>
       }
       chapter="CASE"

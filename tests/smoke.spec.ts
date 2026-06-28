@@ -164,7 +164,11 @@ test('work page UK links to locale case studies', async ({ page }) => {
 
 test('RU case study ai-sales-assistant is in Russian', async ({ page }) => {
   await page.goto('/ru/work/ai-sales-assistant/');
+  // Hero tagline should be in Russian
+  await expect(page.getByText('Обучается через коучинг')).toBeVisible();
+  // Section headings should be in Russian
   await expect(page.getByText('Скорость ответа')).toBeVisible();
+  // CTA contact link should be locale-prefixed
   await expect(page.locator('main a[href="/ru/contact/"]')).toBeVisible();
 });
 
