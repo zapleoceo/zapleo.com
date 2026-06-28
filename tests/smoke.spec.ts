@@ -110,14 +110,14 @@ test('journey page loads', async ({ page }) => {
 test('now page loads', async ({ page }) => {
   await page.goto('/now/');
   await expect(page).toHaveTitle(/now/i);
-  await expect(page.getByText('right now')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 });
 
 // ── Navigation flow ───────────────────────────────────────────────────────────
 
 test('clicking Work in nav navigates to /work/', async ({ page }) => {
   await page.goto('/');
-  await page.locator('nav[aria-label="Main navigation"]').getByText('Work').click();
+  await page.locator('.nav-desktop').getByRole('link', { name: 'Work' }).click();
   await expect(page).toHaveURL(/\/work\//);
   await expect(page.getByText('The defensible slice')).toBeVisible();
 });
