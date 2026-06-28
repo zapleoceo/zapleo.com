@@ -72,7 +72,8 @@ test('AI Sales Assistant case study loads', async ({ page }) => {
   await page.goto('/work/ai-sales-assistant/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('AI Sales Assistant');
   await expect(page.getByText('Talks to leads')).toBeVisible();
-  await expect(page.getByRole('link', { name: /contact/i })).toBeVisible();
+  // CTA link in main content (not nav)
+  await expect(page.locator('main a[href="/contact/"]')).toBeVisible();
 });
 
 test('AIbroker case study has both links', async ({ page }) => {
@@ -85,16 +86,18 @@ test('AIbroker case study has both links', async ({ page }) => {
 test('Pasijou case study has external links', async ({ page }) => {
   await page.goto('/work/pasijou/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Pasijou');
-  await expect(page.getByRole('link', { name: /instagram/i })).toBeVisible();
-  await expect(page.getByRole('link', { name: /tripadvisor/i })).toBeVisible();
+  await expect(page.locator('a[href*="instagram.com/pasijou"]')).toBeVisible();
+  await expect(page.locator('a[href*="tripadvisor.com"]')).toBeVisible();
 });
 
 // ── Other pages ───────────────────────────────────────────────────────────────
 
 test('contact page has all 5 channels', async ({ page }) => {
   await page.goto('/contact/');
+  // Scope to main to avoid footer/nav collisions
+  const main = page.locator('main');
   for (const channel of ['Email', 'Telegram', 'WhatsApp', 'LinkedIn', 'Instagram']) {
-    await expect(page.getByText(channel)).toBeVisible();
+    await expect(main.getByText(channel, { exact: true }).first()).toBeVisible();
   }
 });
 
