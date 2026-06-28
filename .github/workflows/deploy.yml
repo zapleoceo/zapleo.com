@@ -1,8 +1,5 @@
-name: Deploy to zapleo.com
+name: CI → Deploy
 
-# Триггеры:
-#   1. Push в main → авто-деплой
-#   2. Manual run через UI (workflow_dispatch)
 on:
   push:
     branches: [main]
@@ -12,30 +9,24 @@ on:
       - 'docs/**'
   workflow_dispatch:
 
-# Защита от параллельных деплоев — отменяет предыдущий running на тот же ref.
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: true
 
-# Минимальные права токена.
 permissions:
   contents: read
 
 jobs:
-  build-and-deploy:
-    name: Build & Deploy
+  # ── JOB 1: build + test ────────────────────────────────────────────────────
+  test:
+    name: Build & Test
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment:
-      name: production
-      url: https://zapleo.com
+    timeout-minutes: 12
 
     steps:
-      # ---------- 1. SOURCE ----------
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ---------- 2. RUNTIME ----------
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -47,13 +38,12 @@ jobs:
           node-version: '22'
           cache: pnpm
 
-      # ---------- 3. BUILD ----------
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Lint (Biome)
         run: pnpm exec biome check . --reporter=github
-        continue-on-error: true  # не блокируем деплой на warning'ах пока codebase молодая
+        continue-on-error: true
 
       - name: Typecheck
         run: pnpm exec tsc --noEmit
@@ -72,7 +62,46 @@ jobs:
           echo "Build size: $(du -sh out | cut -f1)"
           echo "Files: $(find out -type f | wc -l)"
 
-      # ---------- 4. SSH SETUP ----------
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install chromium --with-deps
+
+      - name: Run smoke tests
+        run: pnpm test
+        env:
+          CI: 'true'
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-out
+          path: out/
+          retention-days: 1
+
+  # ── JOB 2: deploy (only if tests pass) ────────────────────────────────────
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    needs: test
+    environment:
+      name: production
+      url: https://zapleo.com
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-out
+          path: out/
+
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
@@ -81,10 +110,6 @@ jobs:
           echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
-      # ---------- 5. DEPLOY ----------
-      # rsync с --delete: удаляет на сервере файлы которых нет в out/
-      # --exclude .well-known: оставляем certbot challenges если они там есть
-      # --exclude legacy-*: на всякий случай (хотя legacy уже в /var/www/zapleo.com/data/)
       - name: Rsync to production
         run: |
           rsync -avz --delete \
@@ -94,8 +119,6 @@ jobs:
             out/ \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}"
 
-      # ---------- 6. CLOUDFLARE CACHE PURGE (optional) ----------
-      # Purges CF edge cache after deploy. Skipped if CF secrets not set.
       - name: Purge Cloudflare cache
         if: ${{ env.CF_API_TOKEN != '' && env.CF_ZONE_ID != '' }}
         env:
@@ -110,8 +133,7 @@ jobs:
             && echo "✓ Cloudflare cache purged" \
             || echo "⚠ CF purge failed (non-fatal)"
 
-      # ---------- 7. HEALTH CHECK ----------
-      - name: Verify deployment
+      - name: Health check
         run: |
           sleep 3
           STATUS=$(curl -sSL -o /dev/null -w "%{http_code}" "https://zapleo.com/?ci=${{ github.sha }}")
