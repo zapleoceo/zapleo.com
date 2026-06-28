@@ -110,7 +110,7 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Talks to leads. Learns from coaching. Ships in weeks.',
+          tagline: 'Talks to leads. Learns from coaching. Ships in days.',
           body: 'Conversational AI for high-volume sales channels — Instagram DMs, Telegram, WhatsApp. Responds to leads in seconds, qualifies, books appointments. Includes a coach interface: the business owner updates scripts and product knowledge themselves, no code required.',
         },
         aibroker: {
@@ -327,7 +327,7 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Говорить з лідами. Навчається через коучинг. Готовий за тижні.',
+          tagline: 'Говорить з лідами. Навчається через коучинг. Готовий за дні.',
           body: 'Conversational AI для каналів продажів з великим обсягом — Instagram DM, Telegram, WhatsApp. Відповідає лідам за секунди, кваліфікує, записує на зустрічі. Власник бізнесу оновлює скрипти та знання про продукт самостійно — без коду.',
         },
         aibroker: {
@@ -544,7 +544,7 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Говорит с лидами. Обучается через коучинг. Готов за недели.',
+          tagline: 'Говорит с лидами. Обучается через коучинг. Готов за дни.',
           body: 'Conversational AI для высокообъёмных каналов продаж — Instagram DM, Telegram, WhatsApp. Отвечает лидам за секунды, квалифицирует, записывает на встречи. Владелец бизнеса обновляет скрипты и знания о продукте самостоятельно — без кода.',
         },
         aibroker: {
@@ -761,7 +761,7 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Bicara dengan leads. Belajar lewat coaching. Siap dalam hitungan minggu.',
+          tagline: 'Bicara dengan leads. Belajar lewat coaching. Siap dalam hitungan hari.',
           body: 'AI percakapan untuk saluran penjualan volume tinggi — Instagram DM, Telegram, WhatsApp. Merespons leads dalam detik, memenuhi syarat, menjadwalkan janji. Pemilik bisnis memperbarui skrip dan pengetahuan produk sendiri — tanpa kode.',
         },
         aibroker: {
