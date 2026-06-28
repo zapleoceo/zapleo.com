@@ -52,14 +52,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Work case study pages
+  // Work case study pages — EN + all locales
   for (const slug of WORK_SLUGS) {
     entries.push({
       url: `https://zapleo.com/work/${slug}/`,
       lastModified: now,
       changeFrequency: 'yearly',
       priority: 0.6,
+      alternates: { languages: hreflang(`work/${slug}`) },
     });
+    for (const locale of NON_EN_LOCALES) {
+      entries.push({
+        url: `https://zapleo.com/${locale}/work/${slug}/`,
+        lastModified: now,
+        changeFrequency: 'yearly',
+        priority: 0.55,
+        alternates: { languages: hreflang(`work/${slug}`) },
+      });
+    }
   }
 
   // AI-Dima pages (EN only)

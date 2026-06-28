@@ -118,6 +118,32 @@ test('clicking Work in nav navigates to /work/', async ({ page }) => {
   await expect(page.getByText('The defensible slice')).toBeVisible();
 });
 
+// ── Locale case study pages ───────────────────────────────────────────────────
+
+const LOCALE_CASES: [string, string, string][] = [
+  ['/uk/work/ai-sales-assistant/', 'AI Sales Assistant', '/uk/work/'],
+  ['/ru/work/ai-sales-assistant/', 'AI Sales Assistant', '/ru/work/'],
+  ['/id/work/ai-sales-assistant/', 'AI Sales Assistant', '/id/work/'],
+  ['/uk/work/aibroker/', 'AIbroker', '/uk/work/'],
+  ['/uk/work/pasijou/', 'Pasijou', '/uk/work/'],
+  ['/id/work/apcu/', 'apcu.ua', '/id/work/'],
+];
+
+for (const [url, name, backHref] of LOCALE_CASES) {
+  test(`locale case study ${url} loads`, async ({ page }) => {
+    await page.goto(url);
+    await expect(page.getByRole('heading', { level: 1 })).toContainText(name);
+    const backLink = page.getByRole('link', { name: /back|назад|kembali|до всіх|ко всем/i });
+    await expect(backLink).toHaveAttribute('href', backHref);
+  });
+}
+
+test('work page UK links to locale case studies', async ({ page }) => {
+  await page.goto('/uk/work/');
+  const cards = page.locator('a[href="/uk/work/ai-sales-assistant/"]');
+  await expect(cards.first()).toBeVisible();
+});
+
 test('sitemap.xml is present', async ({ page }) => {
   const response = await page.request.get('/sitemap.xml');
   expect(response.status()).toBe(200);

@@ -30,9 +30,10 @@ export function WorkPageContent({ locale }: { locale: Locale }) {
             <div style={{ display: 'grid', gap: 'clamp(36px, 6vh, 72px)' }}>
               {era.items.map((w, i) => {
                 const hasCase = CASE_SLUGS.has(w.slug);
+                const caseHref = locale === 'en' ? `/work/${w.slug}/` : `/${locale}/work/${w.slug}/`;
                 const Wrap = hasCase
                   ? (props: { children: React.ReactNode; style: React.CSSProperties; className: string; 'data-reveal'?: boolean }) => (
-                      <a href={`/work/${w.slug}/`} {...props} />
+                      <a href={caseHref} {...props} />
                     )
                   : 'article';
                 return (
