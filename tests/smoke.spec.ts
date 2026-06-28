@@ -62,10 +62,10 @@ test('work page UK shows translated era labels and project descriptions', async 
   await expect(page.getByText('Говорить з лідами')).toBeVisible();
 });
 
-test('work page RU shows translated project descriptions', async ({ page }) => {
+test('work page RU shows translated era labels and project descriptions', async ({ page }) => {
   await page.goto('/ru/work/');
+  await expect(page.getByText('AI и Инфраструктура')).toBeVisible();
   await expect(page.getByText('Говорит с лидами')).toBeVisible();
-  await expect(page.getByText('AI-инструменты, гостеприимство')).toBeVisible();
 });
 
 test('work page ID shows translated era labels and project descriptions', async ({ page }) => {
