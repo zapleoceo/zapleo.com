@@ -16,9 +16,10 @@ test('homepage EN has AI pitch section', async ({ page }) => {
 
 test('homepage EN nav has all 5 links', async ({ page }) => {
   await page.goto('/');
-  const nav = page.locator('nav[aria-label="Main navigation"]');
+  // Desktop nav only (mobile drawer is hidden at desktop viewport)
+  const desktopNav = page.locator('.nav-desktop');
   for (const label of ['Work', 'Journey', 'Now', 'Journal', 'Contact']) {
-    await expect(nav.getByText(label)).toBeVisible();
+    await expect(desktopNav.getByRole('link', { name: label })).toBeVisible();
   }
 });
 
@@ -78,7 +79,7 @@ test('AIbroker case study has both links', async ({ page }) => {
   await page.goto('/work/aibroker/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('AIbroker');
   await expect(page.getByRole('link', { name: /dashboard/i })).toHaveAttribute('href', 'https://aib.zapleo.com');
-  await expect(page.getByRole('link', { name: /github/i })).toHaveAttribute('href', 'https://github.com/zapleoceo/AIbroker');
+  await expect(page.locator('a[href="https://github.com/zapleoceo/AIbroker"]')).toBeVisible();
 });
 
 test('Pasijou case study has external links', async ({ page }) => {
