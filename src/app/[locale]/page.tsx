@@ -1,6 +1,13 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { AIPitch } from '@/components/ai-pitch';
+import { CTABlock } from '@/components/cta-block';
+import { Footer } from '@/components/footer';
 import { LocaleHero } from '@/components/locale-hero';
+import { NowThen } from '@/components/now-then';
+import { PullQuote } from '@/components/pull-quote';
+import { TrustedStrip } from '@/components/trusted-strip';
+import { WorkTeaser } from '@/components/work-teaser';
 import { getDict } from '@/i18n/dict';
 import { isLocale, type Locale } from '@/i18n/config';
 import { localeAlternates } from '@/i18n/seo';
@@ -29,23 +36,35 @@ export default async function LocaleHomePage({
 
   if (!isLocale(locale) || locale === 'en') notFound();
 
-  const t = getDict(locale as Locale);
+  const l = locale as Locale;
+  const t = getDict(l);
   const th = t.home;
 
   return (
-    <LocaleHero
-      locale={locale as Locale}
-      eyebrow={th.eyebrow}
-      title={
-        <>
-          {th.headLine1}{' '}
-          <em style={{ fontStyle: 'italic', color: 'var(--color-amber)' }}>{th.headLine2}</em>
-        </>
-      }
-      intro={th.lead}
-      ctaPrimary={{ label: `${th.ctaWork} →`, href: `/${locale}/work/` }}
-      ctaSecondary={{ label: th.ctaJourney, href: `/${locale}/journey/` }}
-      contextNote={th.contextNote}
-    />
+    <>
+      <main>
+        <LocaleHero
+          locale={l}
+          eyebrow={th.eyebrow}
+          title={
+            <>
+              {th.headLine1}{' '}
+              <em style={{ fontStyle: 'italic', color: 'var(--color-amber)' }}>{th.headLine2}</em>
+            </>
+          }
+          intro={th.lead}
+          ctaPrimary={{ label: `${th.ctaWork} →`, href: `/${locale}/work/` }}
+          ctaSecondary={{ label: th.ctaJourney, href: `/${locale}/journey/` }}
+          contextNote={th.contextNote}
+        />
+        <NowThen locale={l} />
+        <TrustedStrip locale={l} />
+        <AIPitch locale={l} />
+        <WorkTeaser locale={l} />
+        <PullQuote locale={l} />
+        <CTABlock locale={l} />
+      </main>
+      <Footer locale={l} />
+    </>
   );
 }

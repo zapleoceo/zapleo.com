@@ -1,4 +1,3 @@
-import { Footer } from './footer';
 import { LangSwitcher } from './lang-switcher';
 
 type LocaleHeroProps = {
@@ -13,8 +12,7 @@ type LocaleHeroProps = {
 
 export function LocaleHero(p: LocaleHeroProps) {
   return (
-    <>
-      <section
+    <section
         style={{
           position: 'relative',
           minHeight: '100svh',
@@ -137,9 +135,6 @@ export function LocaleHero(p: LocaleHeroProps) {
             </p>
           </div>
         </div>
-      </section>
-
-      <Footer locale={p.locale} />
-    </>
+    </section>
   );
 }

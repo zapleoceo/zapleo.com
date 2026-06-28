@@ -1,11 +1,15 @@
 import { getAllWorkItems, CASE_SLUGS } from '@/data/work';
+import { getDict } from '@/i18n/dict';
+import type { Locale } from '@/i18n/config';
 
 // Homepage teaser: lead with the business pitch, then hospitality, then legacy
 const TEASER_SLUGS = ['ai-sales-assistant', 'pasijou', 'apcu'] as const;
 
 const WORK = TEASER_SLUGS.map((slug) => getAllWorkItems().find((w) => w.slug === slug)!);
 
-export function WorkTeaser() {
+export function WorkTeaser({ locale = 'en' }: { locale?: Locale }) {
+  const t = getDict(locale);
+  const base = locale === 'en' ? '' : `/${locale}`;
   return (
     <section
       style={{
@@ -69,7 +73,7 @@ export function WorkTeaser() {
         {WORK.map((w, i) => {
           const hasCase = CASE_SLUGS.has(w.slug);
           const Tag = hasCase ? 'a' : 'article';
-          const linkProps = hasCase ? { href: `/work/${w.slug}/` } : {};
+          const linkProps = hasCase ? { href: `${base}/work/${w.slug}/` } : {};
 
           return (
             <Tag
@@ -166,7 +170,7 @@ export function WorkTeaser() {
                   {hasCase && (
                     <p style={{ marginTop: 20 }}>
                       <span className="mono uppercase" style={{ fontSize: 10, letterSpacing: '0.18em', color: w.accent ?? 'var(--color-amber)' }}>
-                        Read case →
+                        {t.common.readCase}
                       </span>
                     </p>
                   )}
@@ -188,7 +192,7 @@ export function WorkTeaser() {
           } as React.CSSProperties
         }
       >
-        <a href="/work/" className="link-line mono uppercase" style={{ fontSize: 12, letterSpacing: '0.22em', color: 'var(--color-amber)' }}>
+        <a href={`${base}/work/`} className="link-line mono uppercase" style={{ fontSize: 12, letterSpacing: '0.22em', color: 'var(--color-amber)' }}>
           Full archive · 40+ engagements →
         </a>
       </div>

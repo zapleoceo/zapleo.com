@@ -1,3 +1,5 @@
+import type { Locale } from '@/i18n/config';
+
 const ACCENT = 'oklch(68% 0.20 280)';
 
 const FEATURES = [
@@ -18,7 +20,8 @@ const FEATURES = [
   },
 ] as const;
 
-export function AIPitch() {
+export function AIPitch({ locale = 'en' }: { locale?: Locale }) {
+  const base = locale === 'en' ? '' : `/${locale}`;
   return (
     <section
       data-testid="ai-pitch"
@@ -102,7 +105,7 @@ export function AIPitch() {
         </div>
 
         <a
-          href="/work/ai-sales-assistant/"
+          href={`${base}/work/ai-sales-assistant/`}
           data-reveal
           data-testid="ai-pitch-cta"
           style={
