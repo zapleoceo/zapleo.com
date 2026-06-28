@@ -54,16 +54,31 @@ test('work page shows AI era and all projects', async ({ page }) => {
   await expect(page.getByText('apcu.ua')).toBeVisible();
 });
 
-test('work page UK shows translated era labels', async ({ page }) => {
+test('work page UK shows translated era labels and project descriptions', async ({ page }) => {
   await page.goto('/uk/work/');
   await expect(page.getByText('AI та Інфраструктура')).toBeVisible();
   await expect(page.getByText('Гостинність')).toBeVisible();
+  // Translated project tagline (not EN)
+  await expect(page.getByText('Говорить з лідами')).toBeVisible();
 });
 
-test('work page ID shows translated era labels', async ({ page }) => {
+test('work page RU shows translated project descriptions', async ({ page }) => {
+  await page.goto('/ru/work/');
+  await expect(page.getByText('Говорит с лидами')).toBeVisible();
+  await expect(page.getByText('AI-инструменты, гостеприимство')).toBeVisible();
+});
+
+test('work page ID shows translated era labels and project descriptions', async ({ page }) => {
   await page.goto('/id/work/');
   await expect(page.getByText('AI & Infrastruktur')).toBeVisible();
   await expect(page.getByText('Hospitaliti')).toBeVisible();
+  await expect(page.getByText('Bicara dengan leads')).toBeVisible();
+});
+
+test('locale homepage UK has AI pitch section translated', async ({ page }) => {
+  await page.goto('/uk/');
+  await expect(page.getByTestId('ai-pitch')).toBeVisible();
+  await expect(page.locator('main').getByText('Я будую AI-асистентів')).toBeVisible();
 });
 
 // ── Case study pages ──────────────────────────────────────────────────────────

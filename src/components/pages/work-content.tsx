@@ -75,11 +75,11 @@ export function WorkPageContent({ locale }: { locale: Locale }) {
                         {w.name}
                       </h3>
                       <p style={{ marginTop: 12, color: 'var(--color-amber)', fontStyle: 'italic', fontSize: 16, lineHeight: 1.5 }}>
-                        {w.tagline}
+                        {tw.items[w.slug]?.tagline ?? w.tagline}
                       </p>
                     </div>
                     <div>
-                      <p style={{ color: 'var(--color-ink-mute)', fontSize: 17, lineHeight: 1.6, maxWidth: '50ch' }}>{w.body}</p>
+                      <p style={{ color: 'var(--color-ink-mute)', fontSize: 17, lineHeight: 1.6, maxWidth: '50ch' }}>{tw.items[w.slug]?.body ?? w.body}</p>
                       <div style={{ marginTop: 24, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                         {w.tags.map((tag) => (
                           <span

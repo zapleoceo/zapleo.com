@@ -113,7 +113,7 @@ export function CaseContent({ c, locale = 'en', slug }: { c: CaseStudy; locale?:
           }
         >
           <p className="eyebrow" style={{ marginBottom: 24 }}>
-            Live links
+            {t.common.liveLinks}
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12 }}>
             {c.links.map((l) => (

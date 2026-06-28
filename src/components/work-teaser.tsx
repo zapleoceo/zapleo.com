@@ -60,9 +60,9 @@ export function WorkTeaser({ locale = 'en' }: { locale?: Locale }) {
               } as React.CSSProperties
             }
           >
-            AI tools, hospitality, legacy engineering.{' '}
+            {t.work.teaser.heading}{' '}
             <em style={{ fontStyle: 'italic', color: 'var(--color-ink-mute)', fontWeight: 280 }}>
-              Forty more on request.
+              {t.work.teaser.headingEm}
             </em>
           </h2>
         </div>
@@ -140,14 +140,14 @@ export function WorkTeaser({ locale = 'en' }: { locale?: Locale }) {
                     {w.name}
                   </h3>
                   <p style={{ marginTop: 10, color: w.accent ?? 'var(--color-amber)', fontStyle: 'italic', fontSize: 15, lineHeight: 1.4 }}>
-                    {w.tagline}
+                    {t.work.items[w.slug]?.tagline ?? w.tagline}
                   </p>
                 </div>
 
                 {/* Right: description + tags + CTA */}
                 <div style={{ paddingTop: 4 }}>
                   <p style={{ color: 'var(--color-ink-mute)', fontSize: 16, lineHeight: 1.65, maxWidth: '52ch', textWrap: 'pretty' }}>
-                    {w.body}
+                    {t.work.items[w.slug]?.body ?? w.body}
                   </p>
                   <div style={{ marginTop: 24, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                     {w.tags.map((tag) => (
@@ -193,7 +193,7 @@ export function WorkTeaser({ locale = 'en' }: { locale?: Locale }) {
         }
       >
         <a href={`${base}/work/`} className="link-line mono uppercase" style={{ fontSize: 12, letterSpacing: '0.22em', color: 'var(--color-amber)' }}>
-          Full archive · 40+ engagements →
+          {t.work.teaser.archive}
         </a>
       </div>
 

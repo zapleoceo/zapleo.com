@@ -15,6 +15,7 @@ export const DICTS = {
       backToWork: '← Back to all work',
       viewAll: 'See all',
       backHome: '← zapleo',
+      liveLinks: 'Live links',
     },
     nav: {
       work: 'Work',
@@ -99,6 +100,67 @@ export const DICTS = {
         hospitality: 'Hospitality · 2022 →',
         agency: 'Agency selected · 2010 → 2022',
       },
+      teaser: {
+        heading: 'AI tools, hospitality, legacy engineering.',
+        headingEm: 'Forty more on request.',
+        archive: 'Full archive · 40+ engagements →',
+      },
+      items: {
+        'ai-sales-assistant': {
+          tagline: 'Talks to leads. Learns from coaching. Ships in weeks.',
+          body: 'Conversational AI for high-volume sales channels — Instagram DMs, Telegram, WhatsApp. Responds to leads in seconds, qualifies, books appointments. Includes a coach interface: the business owner updates scripts and product knowledge themselves, no code required.',
+        },
+        aibroker: {
+          tagline: 'LLM key broker · multi-provider · cost-guarded',
+          body: 'Centralized API key broker for all AI providers — LRU-aware routing, per-project cost caps, health monitoring. Proxy mode via LiteLLM + vending mode for arbitrary APIs. Serves Vera and Stepan bots in production.',
+        },
+        pasijou: {
+          tagline: 'Coworking + restaurant + cinema + yoga, in one room',
+          body: 'Hybrid clubhouse on the south coast — work and lunch in the same space, BBQ nights, music. Ukrainian comfort food, 4.9 on Tripadvisor.',
+        },
+        veranda: {
+          tagline: 'Second hospitality venture, same playbook',
+          body: 'A place where work and food belong in one room. Currently semi-private — public launch in progress.',
+        },
+        apcu: {
+          tagline: 'Industry portal · Cosmetics & Perfumery Association of Ukraine',
+          body: 'Custom WordPress build. Multi-section editorial CMS, member directory, regulatory news feed. Built once, iterating with the industry ever since.',
+        },
+        mobilshina: {
+          tagline: 'Frontend rebuild · automotive ecommerce, 30K+ SKUs',
+          body: 'Catalog UX, fitment selector, mobile-first checkout. Site has since been re-platformed by another studio.',
+        },
+        opentv: {
+          tagline: 'Custom CMS · independent news outlet',
+          body: 'Long-form articles, photo essays, live coverage workflow. Editorial-first publishing pipeline.',
+        },
+        archive: {
+          tagline: 'Booking platforms, retail, EdTech-adjacent, mobile apps',
+          body: 'A long tail of agency work — most under NDA, some long-since taken offline. Public footprint: github.com/zapleo (org repos), Clutch profile, LinkedIn company page.',
+        },
+      } as Record<string, { tagline: string; body: string }>,
+    },
+    aiPitch: {
+      eyebrow: 'Service · Custom AI build',
+      heading1: 'I build AI assistants that ',
+      headingEm: 'handle your leads',
+      heading2: ' while you sleep.',
+      features: [
+        {
+          title: 'Responds in seconds, not hours',
+          body: 'Instagram DM at 2am, Telegram on a Sunday — the assistant answers immediately, qualifies the lead, books the appointment. Your team reviews the calendar Monday morning.',
+        },
+        {
+          title: 'Your team trains it — no code',
+          body: 'When the AI gives a wrong or outdated answer, any team member corrects it in a plain interface. The correction applies instantly across all channels. No developer ticket. No redeploy.',
+        },
+        {
+          title: 'Custom build, 2–4 weeks',
+          body: 'Built to your product, your pricing, your objection library. Connected to Instagram, Telegram, and WhatsApp. I build it; you run it. Full handover with a 30-day calibration window.',
+        },
+      ] as { title: string; body: string }[],
+      proof: ['Live in production', 'Jakarta 2025 →', 'Instagram · Telegram · WhatsApp'] as string[],
+      cta: 'See the full case →',
     },
     journey: {
       eyebrow: 'Chapter 03 · Journey',
@@ -168,6 +230,7 @@ export const DICTS = {
       backToWork: '← До всіх робіт',
       viewAll: 'Дивитися всі',
       backHome: '← zapleo',
+      liveLinks: 'Посилання',
     },
     nav: {
       work: 'Роботи',
@@ -251,6 +314,67 @@ export const DICTS = {
         hospitality: 'Гостинність · 2022 →',
         agency: 'Агенція, обране · 2010 → 2022',
       },
+      teaser: {
+        heading: 'AI-інструменти, гостинність, спадщина.',
+        headingEm: 'Ще сорок — за запитом.',
+        archive: 'Повний архів · 40+ проєктів →',
+      },
+      items: {
+        'ai-sales-assistant': {
+          tagline: 'Говорить з лідами. Навчається через коучинг. Готовий за тижні.',
+          body: 'Conversational AI для каналів продажів з великим обсягом — Instagram DM, Telegram, WhatsApp. Відповідає лідам за секунди, кваліфікує, записує на зустрічі. Власник бізнесу оновлює скрипти та знання про продукт самостійно — без коду.',
+        },
+        aibroker: {
+          tagline: 'Брокер LLM-ключів · мульти-провайдер · з обмеженням витрат',
+          body: 'Централізований брокер API-ключів для всіх AI-провайдерів — LRU-маршрутизація, обмеження витрат на проєкт, моніторинг. Proxy-режим через LiteLLM + режим видачі для довільних API. Обслуговує ботів Vera та Stepan в продакшені.',
+        },
+        pasijou: {
+          tagline: 'Коворкінг + ресторан + кінотеатр + йога — в одній кімнаті',
+          body: 'Гібридний клубхаус на південному узбережжі — робота та обід в одному просторі, BBQ-ночі, музика. Українська їжа, 4.9 на Tripadvisor.',
+        },
+        veranda: {
+          tagline: 'Другий гостинний проєкт, той самий плейбук',
+          body: 'Місце, де робота та їжа в одній кімнаті. Наразі напівприватне — публічний запуск готується.',
+        },
+        apcu: {
+          tagline: 'Галузевий портал · Асоціація косметики та парфумерії України',
+          body: 'Кастомна збірка на WordPress. Багаторозділова редакційна CMS, каталог учасників, стрічка регуляторних новин. Збудовано одного разу, розвиваємо разом із галуззю.',
+        },
+        mobilshina: {
+          tagline: 'Фронтенд-рефакторинг · автомобільний ecommerce, 30К+ SKU',
+          body: 'UX каталогу, вибір типорозміру, мобільна оплата. Сайт згодом перенесено на іншу платформу іншою студією.',
+        },
+        opentv: {
+          tagline: 'Кастомна CMS · незалежне медіа',
+          body: 'Лонгріди, фотоесеї, потоковий репортаж. Редакційний конвеєр видачі.',
+        },
+        archive: {
+          tagline: 'Платформи бронювання, роздріб, EdTech, мобільні додатки',
+          body: 'Довгий хвіст агенційної роботи — більшість під NDA, дехто давно знятий з онлайну. Публічний слід: github.com/zapleo (орг-репо), профіль на Clutch, сторінка компанії в LinkedIn.',
+        },
+      } as Record<string, { tagline: string; body: string }>,
+    },
+    aiPitch: {
+      eyebrow: 'Сервіс · Кастомна AI-розробка',
+      heading1: 'Я будую AI-асистентів, які ',
+      headingEm: 'обробляють ваші ліди',
+      heading2: ' поки ви спите.',
+      features: [
+        {
+          title: 'Відповідає за секунди, а не за години',
+          body: 'Instagram DM о 2-й ночі, Telegram у неділю — асистент відповідає миттєво, кваліфікує ліда, записує на зустріч. Команда переглядає календар у понеділок вранці.',
+        },
+        {
+          title: 'Команда навчає — без коду',
+          body: 'Коли AI дає неправильну або застарілу відповідь, будь-який член команди виправляє це через простий інтерфейс. Виправлення застосовується миттєво на всіх каналах. Жодного квитка розробнику. Жодного деплою.',
+        },
+        {
+          title: 'Кастомна розробка, 2–4 тижні',
+          body: 'Побудовано під ваш продукт, ваш прайс, вашу бібліотеку заперечень. Підключено до Instagram, Telegram та WhatsApp. Я будую — ви запускаєте. Повне передання з 30-денним вікном калібрування.',
+        },
+      ] as { title: string; body: string }[],
+      proof: ['Live in production', 'Джакарта 2025 →', 'Instagram · Telegram · WhatsApp'] as string[],
+      cta: 'Дивитися повний кейс →',
     },
     journey: {
       eyebrow: 'Розділ 03 · Шлях',
@@ -320,6 +444,7 @@ export const DICTS = {
       backToWork: '← Ко всем работам',
       viewAll: 'Смотреть все',
       backHome: '← zapleo',
+      liveLinks: 'Ссылки',
     },
     nav: {
       work: 'Работы',
@@ -403,6 +528,67 @@ export const DICTS = {
         hospitality: 'Гостеприимство · 2022 →',
         agency: 'Агентство, избранное · 2010 → 2022',
       },
+      teaser: {
+        heading: 'AI-инструменты, гостеприимство, наследие.',
+        headingEm: 'Ещё сорок — по запросу.',
+        archive: 'Полный архив · 40+ проектов →',
+      },
+      items: {
+        'ai-sales-assistant': {
+          tagline: 'Говорит с лидами. Обучается через коучинг. Готов за недели.',
+          body: 'Conversational AI для высокообъёмных каналов продаж — Instagram DM, Telegram, WhatsApp. Отвечает лидам за секунды, квалифицирует, записывает на встречи. Владелец бизнеса обновляет скрипты и знания о продукте самостоятельно — без кода.',
+        },
+        aibroker: {
+          tagline: 'Брокер LLM-ключей · мульти-провайдер · с ограничением стоимости',
+          body: 'Централизованный брокер API-ключей для всех AI-провайдеров — LRU-маршрутизация, ограничение затрат на проект, мониторинг. Proxy-режим через LiteLLM + режим выдачи для произвольных API. Обслуживает ботов Vera и Stepan в продакшене.',
+        },
+        pasijou: {
+          tagline: 'Коворкинг + ресторан + кинотеатр + йога — в одной комнате',
+          body: 'Гибридный клубхаус на южном побережье — работа и обед в одном пространстве, BBQ-ночи, музыка. Украинская еда, 4.9 на Tripadvisor.',
+        },
+        veranda: {
+          tagline: 'Второй гостиничный проект, тот же плейбук',
+          body: 'Место, где работа и еда в одной комнате. Сейчас полуприватное — публичный запуск готовится.',
+        },
+        apcu: {
+          tagline: 'Отраслевой портал · Ассоциация косметики и парфюмерии Украины',
+          body: 'Кастомная сборка на WordPress. Многораздельная редакционная CMS, каталог участников, лента регуляторных новостей. Построено однажды, развиваем вместе с отраслью.',
+        },
+        mobilshina: {
+          tagline: 'Фронтенд-рефакторинг · автомобильный ecommerce, 30К+ SKU',
+          body: 'UX каталога, подбор размера, мобильная оплата. Сайт впоследствии переведён на другую платформу другой студией.',
+        },
+        opentv: {
+          tagline: 'Кастомная CMS · независимое медиа',
+          body: 'Лонгриды, фотоэссе, потоковый репортаж. Редакционный пайплайн.',
+        },
+        archive: {
+          tagline: 'Платформы бронирования, ритейл, EdTech, мобильные приложения',
+          body: 'Длинный хвост агентской работы — большинство под NDA, часть давно снята с онлайна. Публичный след: github.com/zapleo (орг-репо), профиль на Clutch, страница компании в LinkedIn.',
+        },
+      } as Record<string, { tagline: string; body: string }>,
+    },
+    aiPitch: {
+      eyebrow: 'Сервис · Кастомная AI-разработка',
+      heading1: 'Я строю AI-ассистентов, которые ',
+      headingEm: 'обрабатывают ваши лиды',
+      heading2: ' пока вы спите.',
+      features: [
+        {
+          title: 'Отвечает за секунды, не за часы',
+          body: 'Instagram DM в 2 часа ночи, Telegram в воскресенье — ассистент отвечает мгновенно, квалифицирует лид, записывает на встречу. Команда смотрит календарь в понедельник утром.',
+        },
+        {
+          title: 'Команда обучает — без кода',
+          body: 'Когда AI даёт неправильный или устаревший ответ, любой член команды исправляет это через простой интерфейс. Исправление применяется мгновенно по всем каналам. Никакого тикета разработчику. Никакого деплоя.',
+        },
+        {
+          title: 'Кастомная разработка, 2–4 недели',
+          body: 'Построено под ваш продукт, ваш прайс, вашу библиотеку возражений. Подключено к Instagram, Telegram и WhatsApp. Я строю — вы запускаете. Полная передача с 30-дневным окном калибровки.',
+        },
+      ] as { title: string; body: string }[],
+      proof: ['Live in production', 'Джакарта 2025 →', 'Instagram · Telegram · WhatsApp'] as string[],
+      cta: 'Смотреть полный кейс →',
     },
     journey: {
       eyebrow: 'Глава 03 · Путь',
@@ -472,6 +658,7 @@ export const DICTS = {
       backToWork: '← Kembali ke karya',
       viewAll: 'Lihat semua',
       backHome: '← zapleo',
+      liveLinks: 'Tautan',
     },
     nav: {
       work: 'Karya',
@@ -555,6 +742,67 @@ export const DICTS = {
         hospitality: 'Hospitaliti · 2022 →',
         agency: 'Agensi pilihan · 2010 → 2022',
       },
+      teaser: {
+        heading: 'Alat AI, hospitality, warisan.',
+        headingEm: 'Empat puluh lagi atas permintaan.',
+        archive: 'Arsip lengkap · 40+ proyek →',
+      },
+      items: {
+        'ai-sales-assistant': {
+          tagline: 'Bicara dengan leads. Belajar lewat coaching. Siap dalam hitungan minggu.',
+          body: 'AI percakapan untuk saluran penjualan volume tinggi — Instagram DM, Telegram, WhatsApp. Merespons leads dalam detik, memenuhi syarat, menjadwalkan janji. Pemilik bisnis memperbarui skrip dan pengetahuan produk sendiri — tanpa kode.',
+        },
+        aibroker: {
+          tagline: 'Broker kunci LLM · multi-provider · terbatas biaya',
+          body: 'Broker kunci API terpusat untuk semua provider AI — routing LRU-aware, batas biaya per proyek, pemantauan kesehatan. Mode proxy via LiteLLM + mode vending untuk API apa pun. Melayani bot Vera dan Stepan di produksi.',
+        },
+        pasijou: {
+          tagline: 'Coworking + restoran + bioskop + yoga — dalam satu ruangan',
+          body: 'Clubhouse hybrid di pesisir selatan — kerja dan makan siang di tempat yang sama, malam BBQ, musik. Makanan kenyamanan Ukraina, 4.9 di Tripadvisor.',
+        },
+        veranda: {
+          tagline: 'Usaha hospitality kedua, playbook yang sama',
+          body: 'Tempat di mana kerja dan makanan masuk dalam satu ruangan. Saat ini semi-privat — peluncuran publik sedang dipersiapkan.',
+        },
+        apcu: {
+          tagline: 'Portal industri · Asosiasi Kosmetik & Parfum Ukraina',
+          body: 'Build WordPress kustom. CMS editorial multi-seksi, direktori anggota, feed berita regulasi. Dibangun sekali, terus berkembang bersama industri.',
+        },
+        mobilshina: {
+          tagline: 'Pembangunan ulang frontend · ecommerce otomotif, 30K+ SKU',
+          body: 'UX katalog, pemilih fitment, checkout mobile-first. Situs kemudian dipindahkan platform oleh studio lain.',
+        },
+        opentv: {
+          tagline: 'CMS kustom · outlet berita independen',
+          body: 'Artikel panjang, esai foto, alur kerja liputan langsung. Pipeline penerbitan editorial-first.',
+        },
+        archive: {
+          tagline: 'Platform booking, retail, EdTech-adjacent, aplikasi mobile',
+          body: 'Ekor panjang pekerjaan agensi — sebagian besar di bawah NDA, beberapa sudah lama offline. Jejak publik: github.com/zapleo (repo org), profil Clutch, halaman perusahaan LinkedIn.',
+        },
+      } as Record<string, { tagline: string; body: string }>,
+    },
+    aiPitch: {
+      eyebrow: 'Layanan · Build AI kustom',
+      heading1: 'Saya membangun asisten AI yang ',
+      headingEm: 'menangani leads Anda',
+      heading2: ' saat Anda tidur.',
+      features: [
+        {
+          title: 'Merespons dalam detik, bukan jam',
+          body: 'DM Instagram jam 2 pagi, Telegram hari Minggu — asisten menjawab langsung, memenuhi syarat leads, memesan janji. Tim Anda meninjau kalender Senin pagi.',
+        },
+        {
+          title: 'Tim Anda melatihnya — tanpa kode',
+          body: 'Saat AI memberi jawaban yang salah atau ketinggalan zaman, siapa pun di tim bisa mengoreksinya di antarmuka sederhana. Koreksi langsung berlaku di semua saluran. Tidak perlu tiket developer. Tidak perlu redeploy.',
+        },
+        {
+          title: 'Build kustom, 2–4 minggu',
+          body: 'Dibangun untuk produk, harga, dan perpustakaan keberatan Anda. Terhubung ke Instagram, Telegram, dan WhatsApp. Saya membangun; Anda menjalankannya. Serah terima penuh dengan jendela kalibrasi 30 hari.',
+        },
+      ] as { title: string; body: string }[],
+      proof: ['Live in production', 'Jakarta 2025 →', 'Instagram · Telegram · WhatsApp'] as string[],
+      cta: 'Lihat studi kasus lengkap →',
     },
     journey: {
       eyebrow: 'Bab 03 · Perjalanan',
