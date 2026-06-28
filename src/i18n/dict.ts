@@ -17,6 +17,9 @@ export const DICTS = {
       backHome: '← zapleo',
       liveLinks: 'Live links',
     },
+    case: {
+      stats: { place: 'Place', role: 'Role', team: 'Team', stack: 'Stack' },
+    },
     nav: {
       work: 'Work',
       journey: 'Journey',
@@ -232,6 +235,9 @@ export const DICTS = {
       backHome: '← zapleo',
       liveLinks: 'Посилання',
     },
+    case: {
+      stats: { place: 'Місце', role: 'Роль', team: 'Команда', stack: 'Стек' },
+    },
     nav: {
       work: 'Роботи',
       journey: 'Шлях',
@@ -446,6 +452,9 @@ export const DICTS = {
       backHome: '← zapleo',
       liveLinks: 'Ссылки',
     },
+    case: {
+      stats: { place: 'Место', role: 'Роль', team: 'Команда', stack: 'Стек' },
+    },
     nav: {
       work: 'Работы',
       journey: 'Путь',
@@ -659,6 +668,9 @@ export const DICTS = {
       viewAll: 'Lihat semua',
       backHome: '← zapleo',
       liveLinks: 'Tautan',
+    },
+    case: {
+      stats: { place: 'Lokasi', role: 'Peran', team: 'Tim', stack: 'Stack' },
     },
     nav: {
       work: 'Karya',

@@ -226,7 +226,7 @@ export function Nav() {
           </a>
         ))}
         <a
-          href="/ai-dima/"
+          href={`${base}/ai-dima/`}
           onClick={() => setOpen(false)}
           className="mono uppercase"
           style={{ fontSize: 15, letterSpacing: '0.18em', color: 'var(--color-amber)', textDecoration: 'none', marginTop: 4 }}

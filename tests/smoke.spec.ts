@@ -162,6 +162,22 @@ test('work page UK links to locale case studies', async ({ page }) => {
   await expect(cards.first()).toBeVisible();
 });
 
+test('RU case study ai-sales-assistant is in Russian', async ({ page }) => {
+  await page.goto('/ru/work/ai-sales-assistant/');
+  await expect(page.getByText('Скорость ответа')).toBeVisible();
+  await expect(page.locator('main a[href="/ru/contact/"]')).toBeVisible();
+});
+
+test('UK case study pasijou is in Ukrainian', async ({ page }) => {
+  await page.goto('/uk/work/pasijou/');
+  await expect(page.getByText('Чому клубхаус')).toBeVisible();
+});
+
+test('ID case study aibroker is in Indonesian', async ({ page }) => {
+  await page.goto('/id/work/aibroker/');
+  await expect(page.getByText('Insiden biaya')).toBeVisible();
+});
+
 test('sitemap.xml is present', async ({ page }) => {
   const response = await page.request.get('/sitemap.xml');
   expect(response.status()).toBe(200);

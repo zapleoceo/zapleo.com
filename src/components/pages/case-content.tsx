@@ -1,10 +1,25 @@
 import type { CaseStudy } from '@/data/cases';
 import type { Locale } from '@/i18n/config';
 import { getDict } from '@/i18n/dict';
+import { getCaseI18n } from '@/i18n/cases-i18n';
 
 export function CaseContent({ c, locale = 'en', slug }: { c: CaseStudy; locale?: Locale; slug: string }) {
   const t = getDict(locale);
+  const tc = t.common;
+  const ts = t.case.stats;
   const backHref = locale === 'en' ? '/work/' : `/${locale}/work/`;
+  const base = locale === 'en' ? '' : `/${locale}`;
+
+  const i18n = getCaseI18n(slug, locale);
+  const brief = i18n?.brief ?? c.brief;
+  const sections = i18n?.sections ?? c.sections;
+
+  // Merge translated link labels with original hrefs; make internal hrefs locale-aware
+  const links = c.links.map((l, idx) => {
+    const label = i18n?.links[idx]?.label ?? l.label;
+    const href = l.href.startsWith('http') ? l.href : `${base}${l.href}`;
+    return { label, href };
+  });
 
   return (
     <div style={{ padding: 'clamp(48px, 8vh, 96px) clamp(24px, 6vw, 96px)', maxWidth: 1080, margin: '0 auto' }}>
@@ -22,12 +37,12 @@ export function CaseContent({ c, locale = 'en', slug }: { c: CaseStudy; locale?:
           margin: 0,
         }}
       >
-        {[
-          ['Place', c.place],
-          ['Role', c.role],
-          ['Team', c.team],
-          ['Stack', c.stack.slice(0, 2).join(' · ')],
-        ].map(([k, v]) => (
+        {([
+          [ts.place, c.place],
+          [ts.role, c.role],
+          [ts.team, c.team],
+          [ts.stack, c.stack.slice(0, 2).join(' · ')],
+        ] as [string, string][]).map(([k, v]) => (
           <div key={k}>
             <dt className="mono uppercase" style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
               {k}
@@ -55,12 +70,12 @@ export function CaseContent({ c, locale = 'en', slug }: { c: CaseStudy; locale?:
           } as React.CSSProperties
         }
       >
-        {c.brief}
+        {brief}
       </p>
 
       {/* sections with marginalia */}
       <div style={{ marginTop: 'clamp(80px, 12vh, 140px)', display: 'grid', gap: 'clamp(64px, 10vh, 120px)' }}>
-        {c.sections.map((s, i) => (
+        {sections.map((s, i) => (
           <article
             key={s.title}
             data-reveal
@@ -100,7 +115,7 @@ export function CaseContent({ c, locale = 'en', slug }: { c: CaseStudy; locale?:
       </div>
 
       {/* links */}
-      {c.links.length > 0 && (
+      {links.length > 0 && (
         <section
           data-reveal
           style={
@@ -113,10 +128,10 @@ export function CaseContent({ c, locale = 'en', slug }: { c: CaseStudy; locale?:
           }
         >
           <p className="eyebrow" style={{ marginBottom: 24 }}>
-            {t.common.liveLinks}
+            {tc.liveLinks}
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12 }}>
-            {c.links.map((l) => (
+            {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
@@ -136,7 +151,7 @@ export function CaseContent({ c, locale = 'en', slug }: { c: CaseStudy; locale?:
       {/* back to work */}
       <p style={{ marginTop: 'clamp(64px, 10vh, 96px)', textAlign: 'center' }}>
         <a href={backHref} className="link-line mono uppercase" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-mute)' }}>
-          {t.common.backToWork}
+          {tc.backToWork}
         </a>
       </p>
 
