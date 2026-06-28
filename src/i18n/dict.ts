@@ -552,7 +552,7 @@ export const DICTS = {
       intro: 'Dua belas tahun proyek agensi + dua usaha hospitality. Di bawah — yang bisa diverifikasi publik. Yang di bawah NDA — senang berbagi lewat panggilan.',
       eras: {
         ai: 'AI & Infrastruktur · 2024 →',
-        hospitality: 'Hospitality · 2022 →',
+        hospitality: 'Hospitaliti · 2022 →',
         agency: 'Agensi pilihan · 2010 → 2022',
       },
     },
