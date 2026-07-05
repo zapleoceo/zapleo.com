@@ -110,8 +110,8 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Talks to leads. Learns from coaching. Ships in days.',
-          body: 'Conversational AI for high-volume sales channels — Instagram DMs, Telegram, WhatsApp. Responds to leads in seconds, qualifies, books appointments. Includes a coach interface: the business owner updates scripts and product knowledge themselves, no code required.',
+          tagline: 'Qualifies leads. Closes in DMs. Ships in days.',
+          body: 'AI sales agent for Instagram, WhatsApp and Messenger DMs. Responds in seconds, qualifies leads, handles objections, follows up on silent leads. Coach it in plain words — no developer ticket, no redeploy.',
         },
         aibroker: {
           tagline: 'LLM key broker · multi-provider · cost-guarded',
@@ -163,7 +163,7 @@ export const DICTS = {
         },
       ] as { title: string; body: string }[],
       proof: ['Live in production', 'Jakarta 2025 →', 'Instagram · Telegram · WhatsApp'] as string[],
-      cta: 'See the full case →',
+      cta: 'Try Stepan →',
     },
     journey: {
       eyebrow: 'Chapter 03 · Journey',
@@ -327,8 +327,8 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Говорить з лідами. Навчається через коучинг. Готовий за дні.',
-          body: 'Conversational AI для каналів продажів з великим обсягом — Instagram DM, Telegram, WhatsApp. Відповідає лідам за секунди, кваліфікує, записує на зустрічі. Власник бізнесу оновлює скрипти та знання про продукт самостійно — без коду.',
+          tagline: 'Кваліфікує ліди. Закриває в DM. Готовий за дні.',
+          body: 'AI-агент продажів для DM в Instagram, WhatsApp та Messenger. Відповідає за секунди, кваліфікує ліди, обробляє заперечення, повертає тихих лідів. Навчаєте словами — без коду, без деплою.',
         },
         aibroker: {
           tagline: 'Брокер LLM-ключів · мульти-провайдер · з обмеженням витрат',
@@ -380,7 +380,7 @@ export const DICTS = {
         },
       ] as { title: string; body: string }[],
       proof: ['Live in production', 'Джакарта 2025 →', 'Instagram · Telegram · WhatsApp'] as string[],
-      cta: 'Дивитися повний кейс →',
+      cta: 'Спробувати Stepan →',
     },
     journey: {
       eyebrow: 'Розділ 03 · Шлях',
@@ -544,8 +544,8 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Говорит с лидами. Обучается через коучинг. Готов за дни.',
-          body: 'Conversational AI для высокообъёмных каналов продаж — Instagram DM, Telegram, WhatsApp. Отвечает лидам за секунды, квалифицирует, записывает на встречи. Владелец бизнеса обновляет скрипты и знания о продукте самостоятельно — без кода.',
+          tagline: 'Квалифицирует лиды. Закрывает в DM. Готов за дни.',
+          body: 'AI-агент продаж для DM в Instagram, WhatsApp и Messenger. Отвечает за секунды, квалифицирует лиды, обрабатывает возражения, возвращает тихих лидов. Обучаете словами — без кода, без деплоя.',
         },
         aibroker: {
           tagline: 'Брокер LLM-ключей · мульти-провайдер · с ограничением стоимости',
@@ -597,7 +597,7 @@ export const DICTS = {
         },
       ] as { title: string; body: string }[],
       proof: ['Live in production', 'Джакарта 2025 →', 'Instagram · Telegram · WhatsApp'] as string[],
-      cta: 'Смотреть полный кейс →',
+      cta: 'Попробовать Stepan →',
     },
     journey: {
       eyebrow: 'Глава 03 · Путь',
@@ -761,8 +761,8 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Bicara dengan leads. Belajar lewat coaching. Siap dalam hitungan hari.',
-          body: 'AI percakapan untuk saluran penjualan volume tinggi — Instagram DM, Telegram, WhatsApp. Merespons leads dalam detik, memenuhi syarat, menjadwalkan janji. Pemilik bisnis memperbarui skrip dan pengetahuan produk sendiri — tanpa kode.',
+          tagline: 'Kualifikasi leads. Tutup di DM. Siap dalam hitungan hari.',
+          body: 'Agen penjualan AI untuk DM Instagram, WhatsApp dan Messenger. Respons dalam detik, kualifikasi leads, tangani keberatan, follow up leads yang diam. Anda melatihnya dengan kata-kata — tanpa kode, tanpa redeploy.',
         },
         aibroker: {
           tagline: 'Broker kunci LLM · multi-provider · terbatas biaya',
@@ -814,7 +814,7 @@ export const DICTS = {
         },
       ] as { title: string; body: string }[],
       proof: ['Live in production', 'Jakarta 2025 →', 'Instagram · Telegram · WhatsApp'] as string[],
-      cta: 'Lihat studi kasus lengkap →',
+      cta: 'Coba Stepan →',
     },
     journey: {
       eyebrow: 'Bab 03 · Perjalanan',

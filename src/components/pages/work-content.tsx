@@ -30,10 +30,13 @@ export function WorkPageContent({ locale }: { locale: Locale }) {
             <div style={{ display: 'grid', gap: 'clamp(36px, 6vh, 72px)' }}>
               {era.items.map((w, i) => {
                 const hasCase = CASE_SLUGS.has(w.slug);
-                const caseHref = locale === 'en' ? `/work/${w.slug}/` : `/${locale}/work/${w.slug}/`;
-                const Wrap = hasCase
+                const isExternal = !hasCase && w.url.startsWith('http');
+                const href = hasCase
+                  ? (locale === 'en' ? `/work/${w.slug}/` : `/${locale}/work/${w.slug}/`)
+                  : w.url;
+                const Wrap = hasCase || isExternal
                   ? (props: { children: React.ReactNode; style: React.CSSProperties; className: string; 'data-reveal'?: boolean }) => (
-                      <a href={caseHref} {...props} />
+                      <a href={href} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined} {...props} />
                     )
                   : 'article';
                 return (
@@ -53,7 +56,7 @@ export function WorkPageContent({ locale }: { locale: Locale }) {
                         transition: 'border-color 320ms var(--ease-out-cinema), transform 320ms var(--ease-out-cinema)',
                         textDecoration: 'none',
                         color: 'inherit',
-                        cursor: hasCase ? 'pointer' : 'default',
+                        cursor: hasCase || isExternal ? 'pointer' : 'default',
                       } as React.CSSProperties
                     }
                     className="work-row"
@@ -97,17 +100,11 @@ export function WorkPageContent({ locale }: { locale: Locale }) {
                           </span>
                         ))}
                       </div>
-                      {w.url !== '#' && !hasCase && (
+                      {isExternal && (
                         <p style={{ marginTop: 24 }}>
-                          <a
-                            href={w.url}
-                            target="_blank"
-                            rel="noopener"
-                            className="link-line mono uppercase"
-                            style={{ fontSize: 11, letterSpacing: '0.18em', color: 'var(--color-amber)' }}
-                          >
+                          <span className="mono uppercase" style={{ fontSize: 11, letterSpacing: '0.18em', color: 'var(--color-amber)' }}>
                             {w.url.replace(/^https?:\/\//, '').replace(/\/$/, '')} →
-                          </a>
+                          </span>
                         </p>
                       )}
                       {hasCase && (

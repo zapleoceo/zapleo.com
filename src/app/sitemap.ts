@@ -4,7 +4,7 @@ import { hreflang } from '@/i18n/seo';
 export const dynamic = 'force-static';
 
 const MULTI_ROUTES = ['', 'work', 'journey', 'now', 'journal', 'contact', 'colophon'];
-const WORK_SLUGS = ['pasijou', 'apcu', 'aibroker', 'ai-sales-assistant'];
+const WORK_SLUGS = ['pasijou', 'apcu', 'aibroker'];
 const NON_EN_LOCALES = ['uk', 'ru', 'id'] as const;
 
 const AI_DIMA_ROUTES = [

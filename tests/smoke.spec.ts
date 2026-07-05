@@ -11,7 +11,7 @@ test('homepage EN loads with hero', async ({ page }) => {
 test('homepage EN has AI pitch section', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByTestId('ai-pitch')).toBeVisible();
-  await expect(page.getByTestId('ai-pitch-cta')).toHaveAttribute('href', '/work/ai-sales-assistant/');
+  await expect(page.getByTestId('ai-pitch-cta')).toHaveAttribute('href', 'https://stepan2.zapleo.com');
 });
 
 test('homepage EN nav has all 5 links', async ({ page }) => {
@@ -59,20 +59,20 @@ test('work page UK shows translated era labels and project descriptions', async 
   await expect(page.getByText('AI та Інфраструктура')).toBeVisible();
   await expect(page.getByText('Гостинність')).toBeVisible();
   // Translated project tagline (not EN)
-  await expect(page.getByText('Говорить з лідами')).toBeVisible();
+  await expect(page.getByText('Кваліфікує ліди').first()).toBeVisible();
 });
 
 test('work page RU shows translated era labels and project descriptions', async ({ page }) => {
   await page.goto('/ru/work/');
   await expect(page.getByText('AI и Инфраструктура')).toBeVisible();
-  await expect(page.getByText('Говорит с лидами')).toBeVisible();
+  await expect(page.getByText('Квалифицирует лиды').first()).toBeVisible();
 });
 
 test('work page ID shows translated era labels and project descriptions', async ({ page }) => {
   await page.goto('/id/work/');
   await expect(page.getByText('AI & Infrastruktur')).toBeVisible();
   await expect(page.getByText('Hospitaliti')).toBeVisible();
-  await expect(page.getByText('Bicara dengan leads')).toBeVisible();
+  await expect(page.getByText('Kualifikasi leads').first()).toBeVisible();
 });
 
 test('locale homepage UK has AI pitch section translated', async ({ page }) => {
@@ -83,12 +83,9 @@ test('locale homepage UK has AI pitch section translated', async ({ page }) => {
 
 // ── Case study pages ──────────────────────────────────────────────────────────
 
-test('AI Sales Assistant case study loads', async ({ page }) => {
-  await page.goto('/work/ai-sales-assistant/');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('AI Sales Assistant');
-  await expect(page.getByText('Talks to leads')).toBeVisible();
-  // CTA link in main content (not nav)
-  await expect(page.locator('main a[href="/contact/"]')).toBeVisible();
+test('AI Sales Assistant redirect page returns 200', async ({ page }) => {
+  const response = await page.request.get('/work/ai-sales-assistant/');
+  expect(response.status()).toBe(200);
 });
 
 test('AIbroker case study has both links', async ({ page }) => {
@@ -139,9 +136,6 @@ test('nav desktop has Work link with correct href', async ({ page }) => {
 // ── Locale case study pages ───────────────────────────────────────────────────
 
 const LOCALE_CASES: [string, string, string][] = [
-  ['/uk/work/ai-sales-assistant/', 'AI Sales Assistant', '/uk/work/'],
-  ['/ru/work/ai-sales-assistant/', 'AI Sales Assistant', '/ru/work/'],
-  ['/id/work/ai-sales-assistant/', 'AI Sales Assistant', '/id/work/'],
   ['/uk/work/aibroker/', 'AIbroker', '/uk/work/'],
   ['/uk/work/pasijou/', 'Pasijou', '/uk/work/'],
   ['/id/work/apcu/', 'apcu.ua', '/id/work/'],
@@ -156,20 +150,15 @@ for (const [url, name, backHref] of LOCALE_CASES) {
   });
 }
 
-test('work page UK links to locale case studies', async ({ page }) => {
+test('work page UK AI Sales Assistant card links to Stepan 2', async ({ page }) => {
   await page.goto('/uk/work/');
-  const cards = page.locator('a[href="/uk/work/ai-sales-assistant/"]');
-  await expect(cards.first()).toBeVisible();
+  const card = page.locator('a[href="https://stepan2.zapleo.com"]').first();
+  await expect(card).toBeVisible();
 });
 
-test('RU case study ai-sales-assistant is in Russian', async ({ page }) => {
-  await page.goto('/ru/work/ai-sales-assistant/');
-  // Hero tagline should be in Russian
-  await expect(page.getByText('Обучается через коучинг')).toBeVisible();
-  // Section headings should be in Russian
-  await expect(page.getByText('Скорость ответа')).toBeVisible();
-  // CTA contact link should be locale-prefixed
-  await expect(page.locator('main a[href="/ru/contact/"]')).toBeVisible();
+test('RU AI Sales Assistant redirect page returns 200', async ({ page }) => {
+  const response = await page.request.get('/ru/work/ai-sales-assistant/');
+  expect(response.status()).toBe(200);
 });
 
 test('UK case study pasijou is in Ukrainian', async ({ page }) => {
@@ -187,6 +176,5 @@ test('sitemap.xml is present', async ({ page }) => {
   expect(response.status()).toBe(200);
   const body = await response.text();
   expect(body).toContain('zapleo.com');
-  expect(body).toContain('/work/ai-sales-assistant/');
   expect(body).toContain('/work/aibroker/');
 });

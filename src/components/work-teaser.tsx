@@ -72,8 +72,12 @@ export function WorkTeaser({ locale = 'en' }: { locale?: Locale }) {
       <div style={{ display: 'grid', gap: 2, maxWidth: 1100 }}>
         {WORK.map((w, i) => {
           const hasCase = CASE_SLUGS.has(w.slug);
-          const Tag = hasCase ? 'a' : 'article';
-          const linkProps = hasCase ? { href: `${base}/work/${w.slug}/` } : {};
+          const isExternal = !hasCase && w.url.startsWith('http');
+          const Tag = hasCase || isExternal ? 'a' : 'article';
+          const linkProps = hasCase
+            ? { href: `${base}/work/${w.slug}/` }
+            : isExternal ? { href: w.url, target: '_blank', rel: 'noopener noreferrer' }
+            : {};
 
           return (
             <Tag
@@ -167,10 +171,10 @@ export function WorkTeaser({ locale = 'en' }: { locale?: Locale }) {
                       </span>
                     ))}
                   </div>
-                  {hasCase && (
+                  {(hasCase || isExternal) && (
                     <p style={{ marginTop: 20 }}>
                       <span className="mono uppercase" style={{ fontSize: 10, letterSpacing: '0.18em', color: w.accent ?? 'var(--color-amber)' }}>
-                        {t.common.readCase}
+                        {hasCase ? t.common.readCase : `${w.url.replace(/^https?:\/\//, '').replace(/\/$/, '')} →`}
                       </span>
                     </p>
                   )}

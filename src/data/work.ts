@@ -24,10 +24,10 @@ export const WORK_ERAS: WorkEra[] = [
         year: '2025 — present',
         place: 'Jakarta · live in production',
         name: 'AI Sales Assistant',
-        tagline: 'Talks to leads. Learns from coaching. Ships in days.',
-        body: 'Conversational AI for high-volume sales channels — Instagram DMs, Telegram, WhatsApp. Responds to leads in seconds, qualifies, books appointments. Includes a coach interface: the business owner updates scripts and product knowledge themselves, no code required.',
-        tags: ['Python', 'Telegram API', 'Instagram API', 'LLM', 'Sales automation'],
-        url: '/work/ai-sales-assistant/',
+        tagline: 'Qualifies leads. Closes in DMs. Ships in days.',
+        body: 'AI sales agent for Instagram, WhatsApp and Messenger DMs. Responds in seconds, qualifies leads, handles objections, follows up on silent leads. Coach it in plain words — no developer ticket, no redeploy.',
+        tags: ['Python', 'Instagram API', 'WhatsApp', 'LLM', 'Sales automation'],
+        url: 'https://stepan2.zapleo.com',
         accent: 'oklch(68% 0.20 280)',
       },
       {
@@ -118,7 +118,7 @@ export const WORK_ERAS: WorkEra[] = [
 ];
 
 // Slugs with a full case-study page at /work/[slug]/
-export const CASE_SLUGS = new Set<string>(['pasijou', 'apcu', 'aibroker', 'ai-sales-assistant']);
+export const CASE_SLUGS = new Set<string>(['pasijou', 'apcu', 'aibroker']);
 
 export function getAllWorkItems(): WorkItem[] {
   return WORK_ERAS.flatMap((era) => era.items);

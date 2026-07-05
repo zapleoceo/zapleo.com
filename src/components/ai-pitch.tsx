@@ -5,7 +5,6 @@ const ACCENT = 'oklch(68% 0.20 280)';
 
 export function AIPitch({ locale = 'en' }: { locale?: Locale }) {
   const t = getDict(locale).aiPitch;
-  const base = locale === 'en' ? '' : `/${locale}`;
 
   return (
     <section
@@ -91,7 +90,9 @@ export function AIPitch({ locale = 'en' }: { locale?: Locale }) {
         </div>
 
         <a
-          href={`${base}/work/ai-sales-assistant/`}
+          href="https://stepan2.zapleo.com"
+          target="_blank"
+          rel="noopener noreferrer"
           data-reveal
           data-testid="ai-pitch-cta"
           style={
