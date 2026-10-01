@@ -227,7 +227,7 @@ const ALL_RESOURCES: Resource[] = [
     what: 'In-person coding education for ages 6-18 in Jakarta. Python with Minecraft, game development, web front-end.',
     url: 'https://itstep.id',
     added: 'May 2026',
-    disclosure: 'I run this branch. Full disclosure — I include it because the curriculum is good, not as a sales pitch.',
+    disclosure: 'I led this branch in 2026. This list is archived; verify current curriculum and availability directly.',
   },
 ];
 

@@ -1,17 +1,16 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { NowPageContent } from '@/components/pages/now-content';
-import { getDict } from '@/i18n/dict';
+import { RECOVERY_COPY } from '@/content/recovery';
 import { isLocale, type Locale } from '@/i18n/config';
 import { localeAlternates } from '@/i18n/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale) || locale === 'en') return {};
-  const t = getDict(locale);
   return {
-    title: t.nav.now,
-    description: t.now.intro,
+    title: RECOVERY_COPY[locale].home.aboutTitle,
+    description: RECOVERY_COPY[locale].home.aboutBody,
     alternates: localeAlternates(locale, 'now'),
   };
 }

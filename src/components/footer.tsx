@@ -1,9 +1,11 @@
 import type { Locale } from '@/i18n/config';
 import { getDict } from '@/i18n/dict';
+import { RECOVERY_COPY, recoveryPath } from '@/content/recovery';
 
 export function Footer({ locale }: { locale: Locale }) {
   const t = getDict(locale);
   const base = locale === 'en' ? '' : `/${locale}`;
+  const offer = RECOVERY_COPY[locale];
 
   return (
     <footer
@@ -37,7 +39,7 @@ export function Footer({ locale }: { locale: Locale }) {
             zapleo
           </h3>
           <p className="marginalia" style={{ marginTop: 16, maxWidth: '38ch', color: 'var(--color-ink-faint)', whiteSpace: 'pre-line' }}>
-            {t.footer.tagline}
+            {offer.home.context}
           </p>
         </div>
 
@@ -45,6 +47,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <p className="eyebrow" style={{ marginBottom: 16 }}>{t.footer.mapLabel}</p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
             {[
+              [offer.nav, recoveryPath(locale)],
               [t.nav.work, `${base}/work/`],
               [t.nav.journey, `${base}/journey/`],
               [t.nav.now, `${base}/now/`],
@@ -58,11 +61,6 @@ export function Footer({ locale }: { locale: Locale }) {
                 </a>
               </li>
             ))}
-            <li style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid var(--color-line)' }}>
-              <a href={`${base}/ai-dima/`} className="link-line" style={{ fontSize: 14, color: 'var(--color-amber)' }}>
-                {t.nav.aiDima}
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -114,7 +112,7 @@ export function Footer({ locale }: { locale: Locale }) {
           {t.footer.copy.replace('{year}', String(new Date().getFullYear()))}
         </span>
         <span className="mono" style={{ fontSize: 11, letterSpacing: '0.18em', color: 'var(--color-ink-ghost)' }}>
-          {t.footer.meta}
+          Nha Trang · GMT+7
         </span>
       </div>
 

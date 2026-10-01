@@ -4,7 +4,7 @@ import { LangSwitcher } from '@/components/lang-switcher';
 export const metadata: Metadata = {
   title: 'AI-Dima · AI-augmented career education for Asia',
   description:
-    'AI-Dima is an AI-augmented education project by Dmitriy Zaporozhets — Branch Director at IT STEP Academy Jakarta. Free roadmaps, curated resources, and a public playbook for anyone entering tech in Southeast Asia.',
+    'An archived AI-augmented education project by Dmitriy Zaporozhets. The roadmaps and resources date from 2026 and have not been refreshed.',
   openGraph: {
     title: 'AI-Dima · AI-delivered. Human-directed.',
     description:
@@ -180,7 +180,7 @@ export default function AIDimaHub() {
                   <a href="/" className="link-line" style={{ color: 'var(--color-amber)' }}>
                     Dmitriy Zaporozhets
                   </a>{' '}
-                  — Branch Director at IT STEP Academy Jakarta, 12 years of agency work
+                  — former IT STEP Jakarta Branch Director and agency founder
                   across Ukraine and Southeast Asia. The avatar and the voice are AI-augmented.
                   The strategy, the curriculum choices, and the editorial calls are mine.
                 </p>
@@ -453,7 +453,7 @@ export default function AIDimaHub() {
               <a href="/" className="link-line" style={{ color: 'var(--color-ink)' }}>
                 Dmitriy Zaporozhets
               </a>{' '}
-              · 12 years shipping software · Branch Director at IT STEP Academy Jakarta
+              · Former IT STEP Jakarta Branch Director · AI systems and operations
             </p>
           </div>
           <a

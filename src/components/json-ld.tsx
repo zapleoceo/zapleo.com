@@ -12,9 +12,9 @@ export function JsonLd() {
         name: 'Dmitriy Zaporozhets',
         url: 'https://zapleo.com',
         description:
-          'Operator-turned-educator. 12 years of web agency work from Dnipro, now running an IT academy branch in Jakarta.',
-        jobTitle: 'Branch Director, IT STEP Academy Jakarta',
-        worksFor: { '@type': 'Organization', name: 'IT STEP Academy Jakarta' },
+          'AI integrator and business operator. Founder of Zapleo and former branch director of IT STEP Academy Jakarta.',
+        jobTitle: 'AI Integrator and Founder',
+        worksFor: { '@type': 'Organization', name: 'Zapleo' },
         alumniOf: {
           '@type': 'CollegeOrUniversity',
           name: 'Oles Honchar Dnipro National University',
@@ -52,12 +52,12 @@ export function JsonLd() {
       },
       {
         '@type': 'Service',
-        '@id': 'https://zapleo.com/#ai-assistant-service',
-        name: 'AI Sales Assistant — custom build',
-        description: 'Conversational AI assistant for sales channels: Instagram DMs, Telegram, WhatsApp. Qualifies leads 24/7, handles objections, books appointments. Includes a real-time coach interface so the business owner trains the AI without code. Custom-built per client.',
-        url: 'https://zapleo.com/work/ai-sales-assistant/',
+        '@id': 'https://zapleo.com/#revenue-recovery-service',
+        name: 'Revenue Recovery Sprint',
+        description: 'Ten-business-day diagnostic of one inbound sales funnel across source, CRM, calls, messages and handoffs. Delivers a measured loss map and a first-fix blueprint.',
+        url: 'https://zapleo.com/revenue-recovery/',
         provider: { '@id': 'https://zapleo.com/#person' },
-        serviceType: 'Custom AI development',
+        serviceType: 'Sales funnel diagnostic and AI integration planning',
         areaServed: ['Southeast Asia', 'Ukraine', 'Global'],
         availableChannel: {
           '@type': 'ServiceChannel',
@@ -71,7 +71,7 @@ export function JsonLd() {
         url: 'https://zapleo.com',
         name: 'zapleo',
         description:
-          'Personal site of Dmitriy Zaporozhets — operator, educator, AI-augmented. 12 years of Ukrainian web agency, now running an IT academy branch in Jakarta.',
+          'Dmitriy Zaporozhets helps businesses find lost inbound leads and build AI-assisted operational fixes.',
         publisher: { '@id': 'https://zapleo.com/#person' },
         inLanguage: ['en', 'uk', 'ru', 'id'],
       },

@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: '%s · zapleo',
   },
   description:
-    'Operator first, educator now. Twelve years shipping software from a Dnipro agency. Building an IT academy branch in Jakarta — and an AI-augmented way to teach the path into tech.',
+    'Dmitriy Zaporozhets traces lost leads across ads, CRM, calls and messages, then builds practical AI-assisted fixes for real business operations.',
   authors: [{ name: 'Dmitriy Zaporozhets', url: 'https://zapleo.com' }],
   creator: 'Dmitriy Zaporozhets',
   openGraph: {
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
     url: 'https://zapleo.com',
     siteName: 'zapleo',
     title: 'Dmitriy Zaporozhets — zapleo',
-    description: 'Operator first, educator now. Building from Jakarta with a Ukrainian engineering spine.',
+    description: 'Find where paid leads disappear. AI integration and a ten-day revenue recovery diagnostic by Dmitriy Zaporozhets.',
     images: [
       {
         url: 'https://zapleo.com/og.svg',
         width: 1200,
         height: 630,
-        alt: 'zapleo — Operator first. Educator now.',
+        alt: 'zapleo — AI integration for real operations',
       },
     ],
   },

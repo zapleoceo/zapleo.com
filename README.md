@@ -1,17 +1,16 @@
 # zapleo.com — 2026 rebuild
 
-Personal portfolio + agency showcase for **Dmitriy Zaporozhets** (zapleo).
-Premium creator-style site with cinematic motion, multilang, and clean security audit.
+Client-acquisition site and selected portfolio for **Dmitriy Zaporozhets** (Zapleo).
+The primary offer is a fixed-scope revenue-recovery diagnosis at `/revenue-recovery/`.
+The buyer path and launch checks are documented in [`docs/SITE_CLIENT_ACQUISITION_PLAN.md`](docs/SITE_CLIENT_ACQUISITION_PLAN.md).
 
 ## Stack
 
 - **Next.js 16.2** (App Router, Turbopack, static export)
 - **React 19.2** + TypeScript 5.9 strict
 - **Tailwind CSS 4** (new engine)
-- **Motion (Framer Motion 12)** + GSAP + Lenis — для wow-эффектов и smooth scroll
-- **react-three-fiber + drei + postprocessing** — 3D hero
-- **next-intl** — EN / UK / RU / ID, client-side switch без перезагрузки
-- **react-hook-form + zod** — формы и валидация
+- EN / UK / RU / ID static routes with typed site copy in `src/content/recovery.ts`
+- No server-side lead form; service CTA opens a prefilled email
 - **Biome** — линтер + форматтер в одном (заменяет ESLint+Prettier)
 - **pnpm@9** — package manager
 
@@ -28,8 +27,8 @@ zapleo.com-2026/
 │   │   └── [locale]/      # i18n routing
 │   ├── components/
 │   ├── lib/
-│   ├── content/           # MDX для проектов и блога
-│   └── messages/          # переводы (en.json, uk.json, ru.json, id.json)
+│   ├── content/           # typed service content in four languages
+│   └── i18n/              # shared interface and older portfolio translations
 ├── biome.json
 ├── next.config.ts
 └── package.json
@@ -40,8 +39,7 @@ zapleo.com-2026/
 ```bash
 pnpm dev          # dev server + Turbopack
 pnpm build        # production build → out/
-pnpm lint         # Biome check
-pnpm format       # Biome format
+pnpm test          # Playwright smoke and responsive checks
 ```
 
 ## Деплой
@@ -50,6 +48,8 @@ GitHub Actions on push to `main`:
 1. `pnpm build` (генерирует `out/` со статикой)
 2. `rsync` на сервер в `/var/www/zapleo.com/data/www/zapleo.com/` под юзером `zapleo.com`
 3. nginx (FastPanel) сервит статику + Cloudflare CDN/SSL
+
+The static export cannot enforce Next.js runtime `headers`; nginx/Cloudflare own those rules.
 
 ## Локально: первый запуск
 

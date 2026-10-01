@@ -176,7 +176,7 @@ const LOCAL_OPTIONS = [
     url: 'https://itstep.id',
     what: 'Python with Minecraft, game development, web front-end. Structured in-person program for kids in Jakarta.',
     disclosure:
-      'I run this branch. Full transparency — I include it because the curriculum is genuinely good, not as a sales pitch. Visit and judge the program for yourself.',
+      'I led this branch in 2026. This recommendation is archived; check the current curriculum directly.',
   },
   {
     name: 'Apple Developer Academy @ BINUS',
@@ -929,7 +929,7 @@ export default function KidsRoadmapPage() {
                 } as React.CSSProperties
               }
             >
-              AI-delivered. Human-directed. I run IT STEP Academy Jakarta (disclosure above). This roadmap is not a
+              AI-delivered. Human-directed. I formerly led IT STEP Academy Jakarta (disclosure above). This roadmap is not a
               sales pitch — it exists because I get the same questions from parents every week, and I'd rather
               answer them once, properly.
             </p>

@@ -21,11 +21,11 @@ export const WORK_ERAS: WorkEra[] = [
     items: [
       {
         slug: 'ai-sales-assistant',
-        year: '2025 — present',
+        year: '2026 — present',
         place: 'Jakarta · live in production',
         name: 'AI Sales Assistant',
-        tagline: 'Qualifies leads. Closes in DMs. Ships in days.',
-        body: 'AI sales agent for Instagram, WhatsApp and Messenger DMs. Responds in seconds, qualifies leads, handles objections, follows up on silent leads. Coach it in plain words — no developer ticket, no redeploy.',
+        tagline: 'AI sales conversations connected to CRM.',
+        body: 'AI sales agent for Instagram and WhatsApp conversations. It qualifies leads, checks claims against business facts, records context and hands off to a person when needed. Built and tested in a live education funnel.',
         tags: ['Python', 'Instagram API', 'WhatsApp', 'LLM', 'Sales automation'],
         url: 'https://stepan2.zapleo.com',
         accent: 'oklch(68% 0.20 280)',
@@ -63,7 +63,7 @@ export const WORK_ERAS: WorkEra[] = [
         place: 'Vietnam',
         name: 'Veranda',
         tagline: 'Second hospitality venture, same playbook',
-        body: 'A place where work and food belong in one room. Currently semi-private — public launch in progress.',
+        body: 'Hospitality project in Vietnam, combining operations, guest experience and the systems behind a physical venue.',
         tags: ['F&B', 'Hospitality', 'Operator role'],
         url: '#',
       },

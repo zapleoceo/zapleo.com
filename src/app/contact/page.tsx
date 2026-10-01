@@ -4,7 +4,7 @@ import { pageAlternates } from '@/i18n/seo';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Direct line. No form by default. Reply within 48h on weekdays, in your timezone.',
+  description: 'Contact Dmitriy Zaporozhets about AI integration and finding lost inbound leads in your CRM, calls and messages.',
   openGraph: {
     title: 'Contact · Dmitriy Zaporozhets',
     description: 'Email, WhatsApp, Telegram, LinkedIn — direct line, no middleman.',

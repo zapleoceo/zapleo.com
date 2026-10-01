@@ -25,20 +25,20 @@
 
   <!-- eyebrow -->
   <text x="80" y="120" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="20" fill="oklch(70% 0.03 70)" letter-spacing="4">
-    DNIPRO  →  WELIGAMA  →  VIETNAM  →  JAKARTA
+    DMITRIY ZAPOROZHETS  ·  AI INTEGRATION
   </text>
 
   <!-- big headline -->
   <text x="80" y="290" font-family="Georgia, 'Fraunces', serif" font-size="116" fill="oklch(95% 0.03 80)" font-weight="300" letter-spacing="-3">
-    Operator first.
+    Find lost leads.
   </text>
   <text x="80" y="400" font-family="Georgia, 'Fraunces', serif" font-size="116" fill="oklch(82% 0.18 70)" font-style="italic" font-weight="300" letter-spacing="-3">
-    Educator now.
+    Fix the funnel.
   </text>
 
   <!-- under-line -->
   <text x="80" y="490" font-family="Georgia, serif" font-size="28" fill="oklch(70% 0.03 70)" font-style="italic">
-    12 years of Ukrainian agency · Now running an IT academy in Jakarta.
+    CRM · calls · messages · AI-assisted operations
   </text>
 
   <!-- wordmark bottom -->

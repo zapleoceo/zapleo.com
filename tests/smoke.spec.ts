@@ -8,17 +8,19 @@ test('homepage EN loads with hero', async ({ page }) => {
   await expect(page.locator('h1, [class*="display"]').first()).toBeVisible();
 });
 
-test('homepage EN has AI pitch section', async ({ page }) => {
+test('homepage EN leads to the recovery sprint', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByTestId('ai-pitch')).toBeVisible();
-  await expect(page.getByTestId('ai-pitch-cta')).toHaveAttribute('href', 'https://stepan2.zapleo.com');
+  await expect(page.getByTestId('service-preview')).toBeVisible();
+  await expect(page.getByTestId('selected-proof')).toBeVisible();
+  await expect(page.locator('a[href="/revenue-recovery/"]').first()).toBeVisible();
 });
 
-test('homepage EN nav has all 5 links', async ({ page }) => {
+test('homepage EN nav prioritizes the service', async ({ page }) => {
   await page.goto('/');
+  await page.evaluate(() => window.scrollTo(0, 200));
   // Desktop nav only (mobile drawer is hidden at desktop viewport)
   const desktopNav = page.locator('.nav-desktop');
-  for (const label of ['Work', 'Journey', 'Now', 'Journal', 'Contact']) {
+  for (const label of ['Revenue recovery', 'Work', 'Journey', 'Contact']) {
     await expect(desktopNav.getByRole('link', { name: label })).toBeVisible();
   }
 });
@@ -28,19 +30,19 @@ test('homepage EN nav has all 5 links', async ({ page }) => {
 test('Ukrainian homepage loads', async ({ page }) => {
   await page.goto('/uk/');
   await expect(page).toHaveTitle(/zapleo/i);
-  await expect(page.getByText('Спочатку оператор')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('ліда');
 });
 
 test('Russian homepage loads', async ({ page }) => {
   await page.goto('/ru/');
   await expect(page).toHaveTitle(/zapleo/i);
-  await expect(page.getByText('Сначала оператор')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('лид');
 });
 
 test('Indonesian homepage loads', async ({ page }) => {
   await page.goto('/id/');
   await expect(page).toHaveTitle(/zapleo/i);
-  await expect(page.getByText('Operator dulu')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('prospek');
 });
 
 // ── Work page ─────────────────────────────────────────────────────────────────
@@ -59,26 +61,26 @@ test('work page UK shows translated era labels and project descriptions', async 
   await expect(page.getByText('AI та Інфраструктура')).toBeVisible();
   await expect(page.getByText('Гостинність')).toBeVisible();
   // Translated project tagline (not EN)
-  await expect(page.getByText('Кваліфікує ліди').first()).toBeVisible();
+  await expect(page.getByText('AI-розмови з лідами, підключені до CRM.')).toBeVisible();
 });
 
 test('work page RU shows translated era labels and project descriptions', async ({ page }) => {
   await page.goto('/ru/work/');
   await expect(page.getByText('AI и Инфраструктура')).toBeVisible();
-  await expect(page.getByText('Квалифицирует лиды').first()).toBeVisible();
+  await expect(page.getByText('ИИ-разговоры с лидами, подключённые к CRM.')).toBeVisible();
 });
 
 test('work page ID shows translated era labels and project descriptions', async ({ page }) => {
   await page.goto('/id/work/');
   await expect(page.getByText('AI & Infrastruktur')).toBeVisible();
   await expect(page.getByText('Hospitaliti')).toBeVisible();
-  await expect(page.getByText('Kualifikasi leads').first()).toBeVisible();
+  await expect(page.getByText('Percakapan penjualan AI yang terhubung ke CRM.')).toBeVisible();
 });
 
-test('locale homepage UK has AI pitch section translated', async ({ page }) => {
+test('locale homepage UK has translated offer', async ({ page }) => {
   await page.goto('/uk/');
-  await expect(page.getByTestId('ai-pitch')).toBeVisible();
-  await expect(page.locator('main').getByText('Я будую AI-асистентів')).toBeVisible();
+  await expect(page.getByTestId('service-preview')).toBeVisible();
+  await expect(page.locator('a[href="/uk/revenue-recovery/"]').first()).toBeVisible();
 });
 
 // ── Case study pages ──────────────────────────────────────────────────────────
@@ -116,7 +118,21 @@ test('contact page has all 5 channels', async ({ page }) => {
 test('journey page loads', async ({ page }) => {
   await page.goto('/journey/');
   await expect(page).toHaveTitle(/journey/i);
-  await expect(page.getByText('Twelve years')).toBeVisible();
+  await expect(page.getByText('AI systems and revenue operations')).toBeVisible();
+});
+
+test('recovery service makes scope and payment explicit', async ({ page }) => {
+  await page.goto('/revenue-recovery/');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.getByText('$5,000 fixed project fee')).toBeVisible();
+  await expect(page.getByText(/Production integration, ongoing operation and guaranteed revenue/)).toBeVisible();
+  await expect(page.getByTestId('service-cta')).toHaveAttribute('href', /^mailto:dima@zapleo.com/);
+});
+
+test('archived AI-Dima guide is clearly marked and noindexed', async ({ page }) => {
+  await page.goto('/ai-dima/');
+  await expect(page.locator('.archive-notice')).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
 });
 
 test('now page loads', async ({ page }) => {
@@ -177,4 +193,6 @@ test('sitemap.xml is present', async ({ page }) => {
   const body = await response.text();
   expect(body).toContain('zapleo.com');
   expect(body).toContain('/work/aibroker/');
+  expect(body).toContain('/revenue-recovery/');
+  expect(body).not.toContain('/ai-dima/');
 });

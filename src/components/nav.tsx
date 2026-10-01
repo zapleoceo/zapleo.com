@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { isLocale, type Locale } from '@/i18n/config';
 import { getDict } from '@/i18n/dict';
+import { RECOVERY_COPY, recoveryPath } from '@/content/recovery';
 import { LangSwitcher } from './lang-switcher';
 
 /** Home paths where the nav starts hidden and appears on scroll. */
@@ -60,10 +61,9 @@ export function Nav() {
   useEffect(() => setOpen(false), [pathname]);
 
   const links: [string, string][] = [
+    [RECOVERY_COPY[locale].nav, recoveryPath(locale)],
     [t.nav.work, `${base}/work/`],
     [t.nav.journey, `${base}/journey/`],
-    [t.nav.now, `${base}/now/`],
-    [t.nav.journal, `${base}/journal/`],
     [t.nav.contact, `${base}/contact/`],
   ];
 

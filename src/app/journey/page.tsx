@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Dnipro → Weligama → Vietnam → Jakarta. The timeline behind the operator.',
   openGraph: {
     title: 'Journey · Dmitriy Zaporozhets',
-    description: 'From a Dnipro web agency to running an IT academy in Jakarta. The full 2010–present timeline.',
+    description: 'From building a digital agency to leading operations and creating AI-assisted systems. Selected milestones, not a full chronology.',
     type: 'website',
     url: 'https://zapleo.com/journey/',
     images: [{ url: 'https://zapleo.com/og.svg', width: 1200, height: 630, alt: 'Journey — zapleo' }],

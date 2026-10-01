@@ -1,25 +1,5 @@
-import { AIPitch } from '@/components/ai-pitch';
-import { CTABlock } from '@/components/cta-block';
-import { Footer } from '@/components/footer';
-import { Hero } from '@/components/hero';
-import { NowThen } from '@/components/now-then';
-import { PullQuote } from '@/components/pull-quote';
-import { TrustedStrip } from '@/components/trusted-strip';
-import { WorkTeaser } from '@/components/work-teaser';
+import { ClientHome } from '@/components/client-home';
 
 export default function Home() {
-  return (
-    <>
-      <main>
-        <Hero locale="en" />
-        <NowThen locale="en" />
-        <TrustedStrip locale="en" />
-        <AIPitch />
-        <WorkTeaser />
-        <PullQuote locale="en" />
-        <CTABlock locale="en" />
-      </main>
-      <Footer locale="en" />
-    </>
-  );
+  return <ClientHome locale="en" />;
 }

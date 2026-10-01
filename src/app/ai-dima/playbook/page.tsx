@@ -174,7 +174,7 @@ export default function PlaybookPage() {
                 <p className="eyebrow" style={{ marginBottom: 14 }}>The human in the chair</p>
                 <p style={{ margin: 0, fontSize: 'clamp(15px, 1.1vw, 17px)', color: 'var(--color-ink)', lineHeight: 1.6 }}>
                   <a href="/" className="link-line" style={{ color: 'var(--color-amber)' }}>Dmitriy Zaporozhets</a>
-                  {' '}— Branch Director at IT STEP Academy Jakarta. 12 years of agency and operator work across Ukraine
+                  {' '}— former Branch Director at IT STEP Academy Jakarta, with agency and operator work across Ukraine
                   and Southeast Asia: Dnipro (UA) → Weligama (LK) → Nha Trang (VN) → Jakarta (ID).
                 </p>
                 <p className="marginalia" style={{ marginTop: 12, fontStyle: 'italic' }}>

@@ -83,7 +83,7 @@ export function AIDimaLayout({
               <a href="/" className="link-line" style={{ color: 'var(--color-ink)' }}>
                 Dmitriy Zaporozhets
               </a>{' '}
-              · 12 years shipping software · Branch Director at IT STEP Academy Jakarta
+              · Former IT STEP Jakarta Branch Director · AI systems and operations
             </p>
           </div>
           <a

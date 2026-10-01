@@ -5,20 +5,10 @@ import type { Locale } from '@/i18n/config';
 type Era = 'pre' | 'agency' | 'transition' | 'now';
 
 const TIMELINE: Array<{ year: string; place: string; title: string; body: string; era: Era }> = [
-  { year: '~2007', place: 'Dnipropetrovsk, UA', title: 'Oles Honchar National University', body: 'Studied at DNU. First freelance gigs while in school.', era: 'pre' },
-  { year: 'mid-2000s', place: 'Dnipro, UA', title: 'Privat24 → InMotion Soft → Pinta', body: 'Bank operations to web/mobile project management. Operator habits formed here — process, capacity, ship dates.', era: 'pre' },
-  { year: '2010', place: 'Dnipro, UA', title: 'Zapleo founded', body: 'Two laptops, one office. Web, mobile, brand microsites. PHP, WordPress, MODx, then Rails, then React.', era: 'agency' },
-  { year: '2012-2014', place: 'Dnipro, UA', title: 'The grind years', body: 'Subcontract sprints for studios. Classifieds, retail, hardware launches. Team grows from two to eight.', era: 'agency' },
-  { year: '2016', place: 'Dnipro, UA', title: 'CMS era', body: 'Custom CMS work for independent news (opentv.media), industry portals, niche e-commerce.', era: 'agency' },
-  { year: '2018', place: 'Dnipro, UA', title: 'apcu.ua ships', body: 'Industry-association portal for cosmetics & perfumery of Ukraine. Still iterates today, eight years on.', era: 'agency' },
-  { year: '2020', place: 'Remote, UA', title: 'Pandemic. Remote-first.', body: 'Agency goes distributed. Half the team leaves. The other half rebuilds.', era: 'agency' },
-  { year: '2022 · Feb', place: 'En route', title: 'February 24', body: 'Move family south. Close ops in Dnipro. Stop being just an agency-CEO; become something else.', era: 'transition' },
-  { year: '2022', place: 'Weligama, LK', title: 'Pasijou opens', body: 'First hospitality venture. Coworking + restaurant + cinema + yoga, in one room. 4.9 on Tripadvisor.', era: 'transition' },
-  { year: '2023', place: 'Vietnam', title: 'Veranda', body: 'Second F&B project. Same playbook: a place where work and food belong together.', era: 'transition' },
-  { year: '2023 · Nov', place: 'Online', title: 'PM(O) pivot', body: 'Public LinkedIn post: open to Senior PM / CCO roles. Operator label gets sharper.', era: 'transition' },
-  { year: '2024', place: 'Jakarta, ID', title: 'First year in SEA', body: 'Met the Indonesian market as consultant. Saw the English-content gap. Started building toward it.', era: 'now' },
-  { year: '2026 · Apr', place: 'Jakarta, ID', title: 'IT STEP Branch Director', body: 'Took over operations of IT STEP Academy Jakarta branch. Curriculum, hiring, ops, growth.', era: 'now' },
-  { year: '2026 · now', place: 'Jakarta, ID', title: 'Vibe Coding launches', body: 'AI-augmented English-language teaching for SEA learners. Personal voice on social. Honest about the AI in the workflow.', era: 'now' },
+  { year: '2010', place: 'Ukraine', title: 'Zapleo founded', body: 'Built and led a digital agency, delivering web products and coordinating cross-functional teams for clients.', era: 'agency' },
+  { year: '2020s', place: 'Southeast Asia', title: 'Operating businesses', body: 'Moved from agency delivery into running businesses and solving operational problems directly.', era: 'transition' },
+  { year: '2026 · Apr–Aug', place: 'Jakarta, ID', title: 'IT STEP Jakarta', body: 'Led the branch while building and testing AI-assisted sales and operational tools in a live business.', era: 'now' },
+  { year: '2026 · now', place: 'Remote · GMT+7', title: 'AI systems and revenue operations', body: 'Focus: connect fragmented lead, CRM and conversation data; find handoff failures; and ship practical improvements.', era: 'now' },
 ];
 
 const ERA_COLOR: Record<Era, string> = {

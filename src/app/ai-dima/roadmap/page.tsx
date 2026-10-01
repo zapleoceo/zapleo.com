@@ -516,8 +516,8 @@ export default function AIRoadmapPage() {
               format="In-person · Jakarta · 8 months"
               url="https://itstep.id/python"
               urlLabel="itstep.id/python"
-              why="The only school on this list I run. Covers Python, Django, REST APIs, LangChain integration, and OpenAI API. I'm the Branch Director — full transparency."
-              disclosure="I run this branch. I include it because it's genuinely good — not as a sales pitch. Judge the curriculum, not my endorsement."
+              why="I was Branch Director of this school in Jakarta in 2026. This is an archived recommendation; verify the current curriculum directly."
+              disclosure="I previously led this branch. This guide has not been refreshed since 2026. Check current courses, prices and availability with the school."
             />
 
             {/* Purwadhika */}

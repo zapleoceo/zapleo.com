@@ -238,3 +238,231 @@ body.motion-ok [data-reveal="visible"] {
 .nav-offset {
   padding-top: 56px;
 }
+
+/* Client-facing offer pages reuse the existing type and color tokens. */
+.offer-accent {
+  color: var(--color-amber);
+  font-style: italic;
+  font-weight: 250;
+}
+
+.offer-section {
+  padding: clamp(72px, 10vw, 132px) clamp(24px, 6vw, 96px);
+  border-top: 1px solid var(--color-line);
+  background: var(--color-bg-base);
+}
+
+.offer-section-raised {
+  background: var(--color-bg-elevated);
+}
+
+.offer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.offer-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: clamp(32px, 7vw, 112px);
+  align-items: start;
+}
+
+.offer-section-title {
+  max-width: 16ch;
+  margin: 20px 0 0;
+  font-size: clamp(36px, 5.5vw, 76px);
+  font-weight: 450;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.offer-section-copy,
+.offer-section-intro {
+  max-width: 62ch;
+  color: var(--color-ink-mute);
+  font-size: clamp(17px, 1.25vw, 21px);
+  line-height: 1.65;
+}
+
+.offer-section-copy {
+  margin: 0;
+}
+
+.offer-section-copy p {
+  margin: 0 0 30px;
+}
+
+.offer-section-intro {
+  margin: 28px 0 0;
+}
+
+.offer-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: clamp(38px, 5vw, 64px);
+}
+
+.offer-card {
+  position: relative;
+  min-height: 250px;
+  padding: clamp(28px, 3vw, 42px);
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-line-bright);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.offer-card-link {
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.offer-card-link:hover,
+.offer-card-link:focus-visible {
+  border-color: var(--color-amber);
+  transform: translateY(-3px);
+}
+
+.offer-card-index {
+  display: block;
+  margin-bottom: 30px;
+  color: var(--color-amber);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.offer-card h3,
+.offer-step h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.1vw, 30px);
+  font-weight: 420;
+  line-height: 1.12;
+}
+
+.offer-card p,
+.offer-step p {
+  margin-top: 16px;
+  color: var(--color-ink-mute);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.offer-card-arrow {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: var(--color-amber);
+}
+
+.offer-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 50px;
+  padding: 13px 22px;
+  background: var(--color-amber);
+  color: var(--color-bg-deep);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+.offer-button:hover,
+.offer-button:focus-visible {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.offer-text-link {
+  display: inline-block;
+  margin-top: 32px;
+  color: var(--color-amber);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.offer-actions {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  margin-top: 38px;
+}
+
+.offer-home-close .offer-section-title {
+  max-width: 18ch;
+}
+
+.offer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offer-list li,
+.offer-step {
+  padding: 25px 0;
+  border-top: 1px solid var(--color-line-bright);
+}
+
+.offer-list li {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.7vw, 24px);
+  line-height: 1.4;
+}
+
+.offer-steps {
+  display: grid;
+}
+
+.offer-step h3 {
+  margin: 0;
+}
+
+.offer-fee {
+  margin: 36px 0 0;
+  color: var(--color-amber);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+}
+
+.offer-fee-note {
+  max-width: 48ch;
+  margin-top: 12px;
+  color: var(--color-ink-mute);
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .offer-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-card {
+    min-height: auto;
+  }
+}
+.archive-notice {
+  padding: 12px clamp(24px, 6vw, 96px);
+  background: #392b20;
+  color: #f7dfb5;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.archive-notice a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

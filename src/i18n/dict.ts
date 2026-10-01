@@ -110,8 +110,8 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Qualifies leads. Closes in DMs. Ships in days.',
-          body: 'AI sales agent for Instagram, WhatsApp and Messenger DMs. Responds in seconds, qualifies leads, handles objections, follows up on silent leads. Coach it in plain words — no developer ticket, no redeploy.',
+          tagline: 'AI sales conversations connected to CRM.',
+          body: 'AI sales agent for Instagram and WhatsApp. It qualifies leads, checks claims against business facts, records context and hands off to a person when needed. Built and tested in a live education funnel.',
         },
         aibroker: {
           tagline: 'LLM key broker · multi-provider · cost-guarded',
@@ -123,7 +123,7 @@ export const DICTS = {
         },
         veranda: {
           tagline: 'Second hospitality venture, same playbook',
-          body: 'A place where work and food belong in one room. Currently semi-private — public launch in progress.',
+          body: 'Hospitality project in Vietnam, combining operations, guest experience and the systems behind a physical venue.',
         },
         apcu: {
           tagline: 'Industry portal · Cosmetics & Perfumery Association of Ukraine',
@@ -327,8 +327,8 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Кваліфікує ліди. Закриває в DM. Готовий за дні.',
-          body: 'AI-агент продажів для DM в Instagram, WhatsApp та Messenger. Відповідає за секунди, кваліфікує ліди, обробляє заперечення, повертає тихих лідів. Навчаєте словами — без коду, без деплою.',
+          tagline: 'AI-розмови з лідами, підключені до CRM.',
+          body: 'AI-агент для розмов в Instagram і WhatsApp. Кваліфікує лідів, перевіряє твердження за фактами компанії, зберігає контекст і передає розмову людині за потреби. Перевірений на реальній навчальній воронці.',
         },
         aibroker: {
           tagline: 'Брокер LLM-ключів · мульти-провайдер · з обмеженням витрат',
@@ -340,7 +340,7 @@ export const DICTS = {
         },
         veranda: {
           tagline: 'Другий гостинний проєкт, той самий плейбук',
-          body: 'Місце, де робота та їжа в одній кімнаті. Наразі напівприватне — публічний запуск готується.',
+          body: 'Гостинний проєкт у В’єтнамі: операційна робота, досвід гостей і системи для фізичного закладу.',
         },
         apcu: {
           tagline: 'Галузевий портал · Асоціація косметики та парфумерії України',
@@ -544,8 +544,8 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Квалифицирует лиды. Закрывает в DM. Готов за дни.',
-          body: 'AI-агент продаж для DM в Instagram, WhatsApp и Messenger. Отвечает за секунды, квалифицирует лиды, обрабатывает возражения, возвращает тихих лидов. Обучаете словами — без кода, без деплоя.',
+          tagline: 'ИИ-разговоры с лидами, подключённые к CRM.',
+          body: 'ИИ-агент для разговоров в Instagram и WhatsApp. Квалифицирует лидов, проверяет утверждения по фактам компании, сохраняет контекст и передаёт разговор человеку при необходимости. Проверен на реальной учебной воронке.',
         },
         aibroker: {
           tagline: 'Брокер LLM-ключей · мульти-провайдер · с ограничением стоимости',
@@ -557,7 +557,7 @@ export const DICTS = {
         },
         veranda: {
           tagline: 'Второй гостиничный проект, тот же плейбук',
-          body: 'Место, где работа и еда в одной комнате. Сейчас полуприватное — публичный запуск готовится.',
+          body: 'Гостиничный проект во Вьетнаме: операционная работа, опыт гостей и системы для физического заведения.',
         },
         apcu: {
           tagline: 'Отраслевой портал · Ассоциация косметики и парфюмерии Украины',
@@ -761,8 +761,8 @@ export const DICTS = {
       },
       items: {
         'ai-sales-assistant': {
-          tagline: 'Kualifikasi leads. Tutup di DM. Siap dalam hitungan hari.',
-          body: 'Agen penjualan AI untuk DM Instagram, WhatsApp dan Messenger. Respons dalam detik, kualifikasi leads, tangani keberatan, follow up leads yang diam. Anda melatihnya dengan kata-kata — tanpa kode, tanpa redeploy.',
+          tagline: 'Percakapan penjualan AI yang terhubung ke CRM.',
+          body: 'Agen AI untuk percakapan Instagram dan WhatsApp. Ia mengualifikasi prospek, memeriksa klaim terhadap fakta bisnis, menyimpan konteks, dan menyerahkan percakapan kepada manusia bila perlu. Diuji pada alur penjualan pendidikan yang nyata.',
         },
         aibroker: {
           tagline: 'Broker kunci LLM · multi-provider · terbatas biaya',
@@ -774,7 +774,7 @@ export const DICTS = {
         },
         veranda: {
           tagline: 'Usaha hospitality kedua, playbook yang sama',
-          body: 'Tempat di mana kerja dan makanan masuk dalam satu ruangan. Saat ini semi-privat — peluncuran publik sedang dipersiapkan.',
+          body: 'Proyek hospitality di Vietnam yang menggabungkan operasi, pengalaman tamu, dan sistem untuk tempat fisik.',
         },
         apcu: {
           tagline: 'Portal industri · Asosiasi Kosmetik & Parfum Ukraina',

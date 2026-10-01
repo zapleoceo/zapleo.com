@@ -4,10 +4,10 @@ import { pageAlternates } from '@/i18n/seo';
 
 export const metadata: Metadata = {
   title: 'Work',
-  description: '12 years, 40+ engagements. The defensible slice — apcu.ua, mobilshina (earlier), opentv.media, Pasijou, Veranda, and more.',
+  description: 'Selected work across AI systems, operations, hospitality and web delivery.',
   openGraph: {
     title: 'Work · Dmitriy Zaporozhets',
-    description: '12 years of web agency work out of Dnipro. Selected engagements: apcu.ua, opentv.media, Pasijou, Veranda bar.',
+    description: 'Selected AI, operational and web projects: Stepan, AIbroker, apcu.ua, Pasijou and Veranda.',
     type: 'website',
     url: 'https://zapleo.com/work/',
     images: [{ url: 'https://zapleo.com/og.svg', width: 1200, height: 630, alt: 'Work — zapleo' }],

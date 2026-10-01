@@ -1,46 +1,29 @@
 # zapleo — Dmitriy Zaporozhets
 
-> Operator-turned-educator. 12 years of Ukrainian web agency work, now running an IT academy branch in Jakarta. Personal site at zapleo.com.
+Dmitriy Zaporozhets is a Ukrainian business operator and AI integrator based in Nha Trang, Vietnam. He founded Zapleo, led an IT STEP Academy branch in Jakarta from April to August 2026, and built AI systems alongside that work. He does not represent himself as a traditional programmer; he designs and delivers systems with AI-assisted development and human review.
 
-## About
+## Current service
 
-Dmitriy Zaporozhets is a software operator and EdTech professional based in Jakarta, Indonesia. He founded a web agency in Dnipro, Ukraine in 2010, delivered 40+ client projects over 12 years, then pivoted to education — currently serving as Branch Director at IT STEP Academy Jakarta (since April 2026).
+Revenue Recovery Sprint: a fixed-scope, ten-business-day diagnostic of one inbound sales funnel. It traces leads from source through CRM, calls, messages and handoffs. Deliverables: measured loss map, opportunity model with stated assumptions, and a first-fix implementation blueprint. Fee: US$5,000, split between start and deliverable review. Full production integration and guaranteed revenue are outside this sprint.
 
-His public persona (handle: @zapleosoft, brand: zapleo) sits at the intersection of software engineering, operator-level business management, and AI-augmented education.
+Service page: https://zapleo.com/revenue-recovery/
+Contact: dima@zapleo.com
 
-## Key pages
+## Selected work
 
-- [Home](https://zapleo.com/) — overview, current focus, contact links
-- [Journey](https://zapleo.com/journey/) — full timeline from Dnipro (2010) through Sri Lanka, Vietnam to Jakarta (2026)
-- [Now](https://zapleo.com/now/) — what he is doing this month (updated monthly, nownownow.com format)
-- [Work](https://zapleo.com/work/) — selected projects: AI Sales Assistant (conversational AI for lead qualification), AIbroker (LLM key broker), Pasijou (hospitality, Sri Lanka), apcu.ua (industry portal)
-- [Journal](https://zapleo.com/journal/) — long-form essays on AI-augmented work, Southeast Asia tech careers, founder unit economics
-- [Contact](https://zapleo.com/contact/) — email, WhatsApp, Telegram, LinkedIn
-- [AI-Dima](https://zapleo.com/ai-dima/) — AI-augmented version of the zapleo brand; roadmaps, resources, playbooks for educators
+- Stepan: AI sales conversations connected to messaging and CRM, with human handoff and checks on claims. https://stepan2.zapleo.com/
+- AIbroker: model gateway for routing, cost tracking and provider control. https://zapleo.com/work/aibroker/
+- Vera: personal memory system integrating communications into a searchable store. https://github.com/zapleoceo/muai
+- Veranda: hospitality operation in Nha Trang, Vietnam.
 
-## Languages
+Past-project figures are not future-performance promises. The site should not be read as a guarantee of extra sales or a statement that Dmitriy is still director of IT STEP Jakarta.
 
-Site available in English, Ukrainian (/uk/), Russian (/ru/), Bahasa Indonesia (/id/).
+## Site map
 
-## Projects
+- Home: https://zapleo.com/
+- Revenue Recovery Sprint: https://zapleo.com/revenue-recovery/
+- Selected work: https://zapleo.com/work/
+- Profile: https://zapleo.com/now/
+- Contact: https://zapleo.com/contact/
 
-- AI Sales Assistant — conversational AI for sales channels (Instagram DMs, Telegram, WhatsApp). Qualifies leads 24/7, handles objections, books appointments. Includes a coach interface: business owners update scripts and product knowledge without code. Live in production in Jakarta. Available as a custom build for other businesses. Case study: https://zapleo.com/work/ai-sales-assistant/
-- AIbroker — centralized LLM API key broker (FastAPI, PostgreSQL, LiteLLM). Self-hosted on Hetzner. Proxy mode + vending mode. Per-project cost caps, health monitoring, Telegram alerts. Dashboard: https://aib.zapleo.com | GitHub: https://github.com/zapleoceo/AIbroker | Case study: https://zapleo.com/work/aibroker/
-- Pasijou — coworking + restaurant + cinema hybrid in Weligama, Sri Lanka. Operator role. Tripadvisor 4.9. Case study: https://zapleo.com/work/pasijou/
-- apcu.ua — industry portal for the Ukrainian Cosmetics & Perfumery Association. Custom WordPress, live since 2018. Case study: https://zapleo.com/work/apcu/
-
-## Services
-
-Zapleo builds custom AI assistants for businesses with high-volume inbound sales channels. Key capabilities: multi-channel conversational AI (Instagram, Telegram, WhatsApp, web), real-time coach interface for non-technical training, CRM integration, lead qualification flows, escalation logic. Contact: dima@zapleo.com
-
-## Identity signals
-
-- LinkedIn: https://www.linkedin.com/in/dmitriy-zaporozhets-83b15375/
-- GitHub: https://github.com/zapleo
-- Instagram: https://www.instagram.com/ai_dimaz/
-- Telegram: https://t.me/zapleosoft
-- X: https://x.com/zapleosoft
-
-## Disclosure
-
-Where IT STEP Academy Jakarta appears as a recommendation or employer on this site, the author is its Branch Director. Full disclosure on all such references.
+English, Ukrainian, Russian and Indonesian versions are available. AI-Dima pages are a historical education project archive and are not a current service offer.
