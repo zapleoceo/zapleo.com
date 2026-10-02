@@ -48,6 +48,9 @@ jobs:
       - name: Typecheck
         run: pnpm exec tsc --noEmit
 
+      - name: Verify deployment safety contract
+        run: node --test tests/deploy-contract.test.mjs
+
       - name: Build (Next.js static export)
         run: pnpm build
         env:
@@ -89,8 +92,11 @@ jobs:
   deploy:
     name: Deploy to production
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 40
     needs: test
+    env:
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
     environment:
       name: production
       url: https://zapleo.com
@@ -113,6 +119,7 @@ jobs:
       - name: Rsync to production
         run: |
           rsync -avz --delete \
+            --filter='protect /_next/static/***' \
             --exclude='.well-known' \
             --exclude='legacy-*' \
             -e "ssh -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts -o IdentitiesOnly=yes" \
@@ -121,27 +128,34 @@ jobs:
 
       - name: Purge Cloudflare cache
         if: ${{ env.CF_API_TOKEN != '' && env.CF_ZONE_ID != '' }}
-        env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
         run: |
           curl -fsSL -X POST \
             "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
             -H "Authorization: Bearer ${CF_API_TOKEN}" \
             -H "Content-Type: application/json" \
             --data '{"purge_everything":true}' \
-            && echo "✓ Cloudflare cache purged" \
-            || echo "⚠ CF purge failed (non-fatal)"
+            --output "$RUNNER_TEMP/cf-purge.json"
+          jq -e '.success == true' "$RUNNER_TEMP/cf-purge.json" > /dev/null
+          echo "✓ Cloudflare cache purged"
+
+      - name: Explain missing cache credentials
+        if: ${{ env.CF_API_TOKEN == '' || env.CF_ZONE_ID == '' }}
+        run: |
+          echo "::warning::Cloudflare purge credentials are missing. Normal-URL verification must still pass; stale HTML is not a successful release."
 
       - name: Health check
         run: |
-          sleep 3
-          STATUS=$(curl -sSL -o /dev/null -w "%{http_code}" "https://zapleo.com/?ci=${{ github.sha }}")
-          if [ "$STATUS" != "200" ]; then
-            echo "::error::Health check failed: HTTP $STATUS"
-            exit 1
-          fi
-          echo "✓ Site responded HTTP 200"
+          for attempt in $(seq 1 62); do
+            if curl -fsSL --max-time 30 https://zapleo.com/ --output "$RUNNER_TEMP/live-home.html" \
+              && cmp -s out/index.html "$RUNNER_TEMP/live-home.html"; then
+              echo "✓ Normal homepage URL serves the exact deployed HTML"
+              exit 0
+            fi
+            echo "Waiting for normal-URL cache revalidation (attempt ${attempt}/62)"
+            sleep 30
+          done
+          echo "::error::Normal homepage URL does not match this release. Check edge cache; query-string HTTP 200 is not acceptance proof."
+          exit 1
 
       - name: Cleanup SSH key
         if: always()

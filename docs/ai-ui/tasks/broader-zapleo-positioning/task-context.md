@@ -29,8 +29,8 @@ Make zapleo.com a credible, distinctive front door for Dmitriy's broader AI inte
 
 ## Стан
 
-- Current: implementation and all four translations complete; final lint cleanup and release check.
+- Current: source release ac13da6 deployed; normal-URL production checks found stale cached English homepage. Cache incident is being corrected with Claude.
 - Evidence: TypeScript and production build pass (63 pages); 44/44 browser tests pass at 375/1440px across four locales, internal routes, keyboard and mobile menu regressions. Claude independently repeated 44/44 and scanned static HTML; content/fact approval in coordinator message63. Codex independently checked the attribution measurement transcript and guard/monitor code. Selected-component lint passes. Screenshots inspected; private Vera example no longer links to absent proof. Analytics/privacy contradiction and stale archive text corrected.
-- Next: rebuild final lint/minor locale corrections; verify test pass and reciprocal release approval; commit scoped sources/docs, publish via GitHub Actions, verify live routes and UI.
-- Blockers: none identified in agreed content. Final deployment and live evidence are not yet done; do not claim published until verified. Original test-results/ remains untouched by staging.
+- Next: purge stale cache, independently review deployment safeguards, publish safeguards, repeat the normal-URL browser suite and obtain Claude's live approval.
+- Blockers: production suite initially 39/44; five failures exclusively stale English root. All three other locale roots and case/about/service/contact pages passed. Original test-results/ remains untouched by staging.
 - Updated: 2026-10-02 ICT.
