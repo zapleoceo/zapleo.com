@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { JourneyPageContent } from '@/components/pages/journey-content';
-import { pageAlternates } from '@/i18n/seo';
+import { AboutPageContent } from '@/components/pages/about-content';
 import { HOME_COPY } from '@/content/home';
+import { pageAlternates } from '@/i18n/seo';
 
 export const metadata: Metadata = {
   title: HOME_COPY.en.about.title,
@@ -9,6 +9,6 @@ export const metadata: Metadata = {
   alternates: pageAlternates('about'),
 };
 
-export default function JourneyPage() {
-  return <JourneyPageContent locale="en" />;
+export default function AboutPage() {
+  return <AboutPageContent locale="en" />;
 }

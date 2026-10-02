@@ -1,16 +1,18 @@
 import { PageShell } from '@/components/page-shell';
 import { RECOVERY_COPY, recoveryEmailHref } from '@/content/recovery';
 import type { Locale } from '@/i18n/config';
+import { getDict } from '@/i18n/dict';
 
 export function RecoveryLanding({ locale }: { locale: Locale }) {
   const copy = RECOVERY_COPY[locale].service;
+  const t = getDict(locale);
 
   return (
     <PageShell eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} chapter="SERVICE / 01" locale={locale}>
       <section className="offer-section offer-section-raised" data-testid="service-fit">
         <div className="offer-container offer-two-col">
           <div>
-            <p className="eyebrow">01 / Fit</p>
+            <p className="eyebrow">01</p>
             <h2 className="display offer-section-title">{copy.fitTitle}</h2>
             <p className="offer-section-intro">{copy.fitBody}</p>
           </div>
@@ -22,7 +24,7 @@ export function RecoveryLanding({ locale }: { locale: Locale }) {
 
       <section className="offer-section">
         <div className="offer-container">
-          <p className="eyebrow">02 / Diagnosis</p>
+          <p className="eyebrow">02</p>
           <h2 className="display offer-section-title">{copy.leaksTitle}</h2>
           <div className="offer-cards">
             {copy.leaks.map((item, i) => <article className="offer-card" key={item.title}>
@@ -35,7 +37,7 @@ export function RecoveryLanding({ locale }: { locale: Locale }) {
 
       <section className="offer-section offer-section-raised">
         <div className="offer-container">
-          <p className="eyebrow">03 / Deliverables</p>
+          <p className="eyebrow">03</p>
           <h2 className="display offer-section-title">{copy.deliverTitle}</h2>
           <div className="offer-cards">
             {copy.deliver.map((item, i) => <article className="offer-card" key={item.title}>
@@ -49,7 +51,7 @@ export function RecoveryLanding({ locale }: { locale: Locale }) {
       <section className="offer-section">
         <div className="offer-container offer-two-col">
           <div>
-            <p className="eyebrow">04 / Process</p>
+            <p className="eyebrow">04</p>
             <h2 className="display offer-section-title">{copy.processTitle}</h2>
           </div>
           <div className="offer-steps">
@@ -63,7 +65,7 @@ export function RecoveryLanding({ locale }: { locale: Locale }) {
       <section className="offer-section offer-section-raised">
         <div className="offer-container offer-two-col">
           <div>
-            <p className="eyebrow">05 / Evidence</p>
+            <p className="eyebrow">05</p>
             <h2 className="display offer-section-title">{copy.proofTitle}</h2>
           </div>
           <p className="offer-section-copy">{copy.proofBody}</p>
@@ -73,7 +75,7 @@ export function RecoveryLanding({ locale }: { locale: Locale }) {
       <section className="offer-section" data-testid="service-terms">
         <div className="offer-container offer-two-col">
           <div>
-            <p className="eyebrow">06 / Scope and fee</p>
+            <p className="eyebrow">06 / {t.colophon.notes.scopeFee}</p>
             <h2 className="display offer-section-title">{copy.termsTitle}</h2>
             <p className="offer-fee">{copy.fee}</p>
             <p className="offer-fee-note">{copy.feeNote}</p>

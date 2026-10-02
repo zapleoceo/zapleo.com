@@ -63,7 +63,7 @@ export function WorkPageContent({ locale }: { locale: Locale }) {
                   >
                     <div>
                       <span className="mono uppercase" style={{ fontSize: 11, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>
-                        {w.year} &nbsp;·&nbsp; {w.place}
+                        {w.year} &nbsp;·&nbsp; {tw.items[w.slug]?.place ?? w.place}
                       </span>
                       <h3
                         className="display"

@@ -15,75 +15,52 @@ export type CaseStudy = {
 export const CASES: Record<string, CaseStudy> = {
   pasijou: {
     name: 'Pasijou',
-    tagline: 'Coworking, kitchen, cinema. One room.',
-    year: '2022 — present',
+    tagline: 'Coworking, kitchen and community in one place.',
+    year: '2023 — 2026',
     place: 'Weligama, Sri Lanka',
-    role: 'Founder, operator',
-    team: '8 (local kitchen + ops + community)',
-    stack: ['Hospitality ops', 'Community programming', 'Tripadvisor 4.9', 'IG @pasijou'],
+    role: 'Co-owner, operator',
+    team: 'Local kitchen and operations team',
+    stack: ['Hospitality operations', 'Network infrastructure', 'Digital ordering', 'Guest communications'],
     brief:
-      'After the agency closed in early 2022, the first project on the south coast was not a startup. It was a building — with a kitchen, twelve coworking seats, a small cinema room, and a yoga deck. Pasijou opened in Weligama as a place where digital nomads could work, eat, and have actual human evenings on the same plot of land.',
+      'Pasijou was a coworking space and restaurant on the south coast of Sri Lanka. I co-owned and operated it from February 2023 until March 2026, when the lease ended and the project closed.',
     sections: [
       {
-        title: 'Why a clubhouse instead of a SaaS',
+        title: 'What I was responsible for',
         body:
-          'The brief I gave myself was selfish: build the place I wanted to spend my own months in. A coworking with a real kitchen. Ukrainian comfort food, fast Wi-Fi, lunch you do not have to leave for, and a community calendar that runs music nights and movie evenings without becoming a hostel.',
-        note: 'Coworking-only is fragile in a town with monsoons; a kitchen makes you indispensable.',
+          'Day-to-day operations and everything technical behind them: the network that guests worked on — routing, VPN, mesh Wi-Fi, load balancing and backup power — and the digital side of the business: ordering, analytics and guest communications.',
+        note: 'A coworking space lives or dies by its Wi-Fi.',
       },
       {
-        title: 'What an engineer learns running F&B',
+        title: 'Outcome',
         body:
-          'Inventory is a database with worse error messages. Staff scheduling is a constraint solver. Menu engineering is product. The first six months we lost money on a beef burger we kept on the menu because guests asked for it; once we replaced it with a curry-of-the-week, margin went from -8% to +21%. Same code-review discipline, different vocabulary.',
-        note: 'F&B taught me cost control faster than 12 years of agency P&L.',
+          'The project reached breakeven in eight months and kept a 4.9 out of 5 guest rating while it ran. It closed in March 2026 at the end of the lease.',
       },
       {
-        title: 'Outcome and what stayed',
+        title: 'What it taught me',
         body:
-          'Three years in. Tripadvisor 4.9 on a hundred-plus reviews. Uber Eats Sri Lanka live. A small loyal regulars list that knows the staff by name. The cinema room runs at 30% utilisation and that is fine — it pays for itself in retention, not ticket sales.',
-        note: 'The clubhouse model works in towns where nomad density is high but venue density is low.',
+          'Running a physical business is where operations stop being abstract. Stock, staff shifts and guest messages are data problems with real consequences — the same problems I now solve for other businesses with AI.',
       },
     ],
-    links: [
-      { label: 'Pasijou on Instagram', href: 'https://www.instagram.com/pasijou/' },
-      {
-        label: 'Tripadvisor reviews',
-        href: 'https://www.tripadvisor.com/Restaurant_Review-g612380-d24111150-Reviews-Pasijou_Coworking_And_Food-Weligama_Matara_Southern_Province.html',
-      },
-      {
-        label: 'Uber Eats LK',
-        href: 'https://www.ubereats.com/lk/store/pasijou-restaurant-coworking-cinema-yoga-space-for-anything-weligama/3otPqT1CV2iYMCDEpmuYxg',
-      },
-    ],
+    links: [{ label: 'Pasijou on Instagram', href: 'https://www.instagram.com/pasijou/' }],
     accent: 'oklch(78% 0.14 165)',
   },
 
   apcu: {
     name: 'apcu.ua',
-    tagline: 'Industry portal that still iterates after eight years.',
-    year: '2018 — present',
+    tagline: 'The website of the Association of Perfumery and Cosmetics of Ukraine.',
+    year: 'Zapleo project',
     place: 'Ukraine · live',
-    role: 'Tech lead at Zapleo',
-    team: '3 (PM + dev + design)',
-    stack: ['WordPress (custom theme)', 'PHP', 'Regulatory CMS', 'Member directory'],
+    role: 'Zapleo — development',
+    team: 'Zapleo team',
+    stack: ['WordPress', 'PHP', 'Editorial CMS'],
     brief:
-      'Official portal for the Ukrainian Cosmetics & Perfumery Association — APCU. Members are manufacturers, importers, distributors. The portal had to handle three audiences without three sites: industry news, regulatory updates, and a public-facing membership directory.',
+      'Zapleo built the website of the Ukrainian association of perfumery and cosmetics manufacturers. The site is still live and still credits Zapleo for its development.',
     sections: [
       {
-        title: 'Why custom WordPress in 2018',
+        title: 'What the site does',
         body:
-          'The first instinct was to skip WordPress and build it on Symfony. Wrong instinct. The non-technical editorial team is a single person, working evenings. WordPress with a tight custom theme means she ships on her schedule, not ours. Eight years later, the editorial cadence still works without a developer in the loop.',
-        note: 'Choose stack by maintenance reality, not engineer preference.',
-      },
-      {
-        title: 'The regulatory bit',
-        body:
-          'EU cosmetic regulations change quarterly. The portal tracks notification labelling, INCI updates, ingredient bans, and the Ukrainian equivalents. Originally a flat CMS; we added a structured "regulation" content type with sort-by-effective-date and a per-document changelog. Boring. Critical.',
-        note: 'Boring features keep users from leaving for Telegram channels.',
-      },
-      {
-        title: 'Outcome',
-        body:
-          'Live since 2018. Still on the same custom theme. Multiple ownership transitions on the association side — the portal kept publishing through all of them. The strongest signal an agency build worked is that it still works after the agency closed.',
+          'It publishes industry news and regulatory updates for association members and the public, and is run by the association’s own editors without a developer in the loop.',
+        note: 'A build is finished when the client can run it without you.',
       },
     ],
     links: [{ label: 'Visit apcu.ua', href: 'https://apcu.ua/' }],
@@ -91,78 +68,70 @@ export const CASES: Record<string, CaseStudy> = {
   },
 
   'ai-sales-assistant': {
-    name: 'AI Sales Assistant',
-    tagline: 'Talks to leads. Learns from coaching.',
-    year: '2025 — present',
-    place: 'Jakarta · live in production',
-    role: 'Architect and builder',
-    team: '1 engineer + client as trainer',
-    stack: ['Python', 'Telegram Bot API', 'Instagram Graph API', 'LLM (OpenAI-compatible)', 'PostgreSQL'],
+    name: 'Stepan — AI sales agent',
+    tagline: 'An AI agent that talks to leads and hands them to people.',
+    year: '2026',
+    place: 'Built for IT STEP Academy Jakarta',
+    role: 'Idea, architecture and build',
+    team: 'Built by me with AI-assisted development',
+    stack: ['Python', 'Instagram', 'WhatsApp', 'CRM integration', 'LLM'],
     brief:
-      'Most businesses lose 60-80% of inbound leads not because the product is wrong, but because no one replied fast enough. This AI assistant closes that gap — it responds on Instagram, Telegram, and WhatsApp in seconds, 24/7, and gets smarter every week through a built-in coaching interface that requires no code to operate.',
+      'I built Stepan for the IT STEP branch I ran in Jakarta, when the idea had no one else to take it on. It answered inbound messages on Instagram and WhatsApp, held a staged sales conversation in the customer’s language, and handed the lead to a manager with a stated reason. Over July and August 2026 it handled about 80 inbound conversations a day.',
     sections: [
       {
-        title: 'Speed-to-lead is the variable no one optimizes',
+        title: 'Why it was needed',
         body:
-          'Research across industries is consistent: a lead that gets a reply within five minutes is 21 times more likely to convert than one that waits an hour. Most businesses operate as if this number does not exist — the sales team is in a meeting, it is 11pm, it is Sunday. The AI assistant has no such schedule. It handles the first contact, qualifies the lead through a scripted conversation flow, and either books the appointment or escalates to a human — without the lead ever experiencing a wait.',
-        note: 'First response speed matters more than first response quality.',
+          'The branch paid for leads, but a large share of them went quiet after a missed call or a slow first reply. Managers also moved conversations into personal chats, where nobody could see what happened next.',
       },
       {
-        title: 'Coach mode: your team trains the AI, not the other way around',
+        title: 'What it did',
         body:
-          'The most common failure mode with AI chatbots is that they go stale. Scripts that converted in March stop working in June — pricing changes, new products launch, objections evolve. Coach mode solves this at the source. When the AI gives a wrong or outdated answer, the business owner — or any team member — corrects it in a simple interface. The correction is stored, applied immediately across all conversations, and the AI does not repeat the mistake. No redeploy. No developer ticket. The people who understand your product best are the ones who update the AI.',
-        note: 'An AI your team cannot update is an AI that becomes wrong.',
+          'It answered inbound conversations, qualified the lead, recorded the context and passed it to a person when a human decision was needed. It was connected to the CRM so that a missed call could trigger a follow-up.',
+        note: 'The agent works the queue; people make the calls that matter.',
       },
       {
-        title: 'One assistant, every channel where your leads already are',
+        title: 'The safety check that matters most',
         body:
-          'Leads arrive through multiple channels simultaneously — Instagram DMs, Telegram, WhatsApp, web chat. Each expects a reply within minutes. One AI assistant serves all of them from a single knowledge base, adapting tone per channel automatically. Every conversation is logged, searchable, and tagged by outcome: which channel converts, which script fails, exactly where in the flow leads drop off. When a CRM is connected, lead status updates without a human touching it.',
-        note: 'Same product knowledge, different conversation styles per channel.',
-      },
-      {
-        title: 'What gets built and what you operate',
-        body:
-          'A custom AI assistant trained on your product, pricing, and objection library. Connected to your active sales channels. A coach interface that any non-technical team member can use to update it day-to-day. Initial build takes 2-4 weeks depending on channel count and script complexity. A 30-day calibration period follows where edge cases get handled and the conversion flow gets tuned. After handover, your team trains it — Zapleo supports when the architecture needs to grow.',
-        note: 'Fits EdTech, hospitality, retail, services — any business with a high-volume inbound channel.',
+          'Once, in a live chat, the agent stated a price that did not exist. After that, replies that mention a price, a link or an offer are checked against the business’s own facts before sending. If a claim is not supported, the agent rewrites the reply or hands the conversation to a person.',
+        note: 'An AI that can invent a price needs a check, not a better prompt.',
       },
     ],
-    links: [{ label: 'Discuss building one for your business', href: '/contact/' }],
+    links: [
+      { label: 'Stepan', href: 'https://stepan2.zapleo.com/' },
+      { label: 'Discuss an agent for your business', href: '/contact/' },
+    ],
     accent: 'oklch(68% 0.20 280)',
   },
 
   aibroker: {
     name: 'AIbroker',
-    tagline: 'One control plane for every API key you use.',
-    year: '2024 — present',
-    place: 'Self-hosted · Hetzner',
-    role: 'Sole architect and builder',
-    team: '1',
-    stack: ['FastAPI', 'Python 3.12', 'PostgreSQL', 'LiteLLM', 'Docker'],
+    tagline: 'One gateway for every AI provider my systems use.',
+    year: '2026',
+    place: 'Self-hosted',
+    role: 'Architecture and build',
+    team: 'Built by me with AI-assisted development',
+    stack: ['FastAPI', 'Python', 'PostgreSQL', 'LiteLLM', 'Docker'],
     brief:
-      'Running two AI-powered products from a single server — Vera (personal assistant) and Stepan (Instagram sales agent) — the recurring problem was API key sprawl and invisible cost. AIbroker is the single control plane: every LLM call across all projects routes through it, with per-project caps, automatic cooldown on 429s, and a Telegram alert the moment a key dies.',
+      'My AI systems — the Vera memory and the Stepan sales agent among them — call many model providers. AIbroker is the single gateway in front of all of them: provider keys are kept in one place, with calls proxied or given time-limited lease access, every call is logged with an estimated cost, and dead or rate-limited keys are taken out of rotation automatically.',
     sections: [
       {
-        title: 'The cost incident that made it necessary',
+        title: 'Why cost has to be checked, not trusted',
         body:
-          'In June 2026, a stale cost multiplier in LiteLLM caused provider calls to be logged at 1/20th of actual price. The cost guard thought it had budget remaining; it did not. A $25 bill arrived. AIbroker was already in development; the incident pushed it from "useful experiment" to "production requirement." The broker reads real USD from usage logs, not model-tier estimates.',
-        note: 'Any cost guard that uses estimated prices instead of real prices is not a cost guard.',
+          'On 27 June 2026 a library update silently changed how call costs were calculated, and every logged cost became $0. Later a gap of $122 appeared between logged spend and a provider invoice. Since then, logged costs are treated as estimates and checked against the provider’s own invoice.',
+        note: 'A cost guard that trusts its own estimates is not a cost guard.',
       },
       {
-        title: 'Two modes for two problems',
+        title: 'Two ways to serve a project',
         body:
-          'Proxy mode: the broker calls the provider via LiteLLM SDK, returns the response, logs the cost. The client project never sees the API key. Vending mode: the broker issues a short-lived key lease; the client calls the provider directly, reports usage back on release. Vending handles providers that do not conform to the OpenAI-compatible interface.',
-        note: 'Vending costs an extra round-trip but is unavoidable for non-LLM APIs.',
+          'Proxy mode: the broker calls the model and returns the answer, so the project never sees a key. Lease mode: for APIs that do not fit the standard interface, the broker hands out a short-lived key and records the usage when it comes back.',
       },
       {
-        title: 'What runs in production',
+        title: 'What keeps it running',
         body:
-          'LRU-aware key selection avoids hot-rotating one key while others sit idle. Per-project daily and monthly cost caps enforce budget discipline across all connected clients. A health monitor runs every 10 minutes — cheapest valid call per provider — and marks dead keys immediately with a Telegram alert. A live dashboard shows cost, key health, and per-project usage.',
+          'A monitor runs every ten minutes: failing keys are re-checked on every pass, healthy ones about once an hour. A key that hits a rate limit is parked for a few minutes; one that runs out of a monthly quota is parked until the quota resets. Spending limits are set per project.',
       },
     ],
-    links: [
-      { label: 'AIbroker dashboard', href: 'https://aib.zapleo.com' },
-      { label: 'GitHub — zapleoceo/AIbroker', href: 'https://github.com/zapleoceo/AIbroker' },
-    ],
+    links: [{ label: 'GitHub — zapleoceo/AIbroker', href: 'https://github.com/zapleoceo/AIbroker' }],
     accent: 'oklch(68% 0.17 250)',
   },
 };

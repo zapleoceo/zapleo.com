@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t.nav.journal,
     description: t.journal.intro,
+    robots: { index: false, follow: true },
     alternates: localeAlternates(locale, 'journal'),
   };
 }

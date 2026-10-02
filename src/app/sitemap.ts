@@ -3,7 +3,7 @@ import { hreflang } from '@/i18n/seo';
 
 export const dynamic = 'force-static';
 
-const MULTI_ROUTES = ['', 'revenue-recovery', 'work', 'journey', 'now', 'journal', 'contact', 'colophon'];
+const MULTI_ROUTES = ['', 'about', 'work', 'revenue-recovery', 'contact', 'colophon'];
 const WORK_SLUGS = ['pasijou', 'apcu', 'aibroker'];
 const NON_EN_LOCALES = ['uk', 'ru', 'id'] as const;
 
@@ -18,8 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({
       url,
       lastModified: now,
-      changeFrequency: route === 'now' ? 'monthly' : 'yearly',
-      priority: route === '' ? 1.0 : route === 'revenue-recovery' ? 0.95 : 0.7,
+      changeFrequency: route === 'about' ? 'monthly' : 'yearly',
+      priority: route === '' ? 1.0 : route === 'about' || route === 'work' ? 0.8 : 0.65,
       alternates: { languages: hreflang(route) },
     });
   }
@@ -38,8 +38,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `https://zapleo.com/${locale}/${route}/`,
         lastModified: now,
-        changeFrequency: route === 'now' ? 'monthly' : 'yearly',
-        priority: route === 'revenue-recovery' ? 0.85 : 0.65,
+        changeFrequency: route === 'about' ? 'monthly' : 'yearly',
+        priority: route === 'about' || route === 'work' ? 0.7 : 0.6,
         alternates: { languages: hreflang(route) },
       });
     }

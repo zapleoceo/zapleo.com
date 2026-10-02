@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { NowPageContent } from '@/components/pages/now-content';
+import { AboutPageContent } from '@/components/pages/about-content';
 import { HOME_COPY } from '@/content/home';
 import { isLocale, type Locale } from '@/i18n/config';
 import { localeAlternates } from '@/i18n/seo';
@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function LocaleNowPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function LocaleAboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale) || locale === 'en') notFound();
-  return <NowPageContent locale={locale as Locale} />;
+  return <AboutPageContent locale={locale as Locale} />;
 }

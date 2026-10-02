@@ -1,7 +1,8 @@
 import { PageShell } from '@/components/page-shell';
 import { getDict } from '@/i18n/dict';
 import type { Locale } from '@/i18n/config';
-import { RECOVERY_COPY, recoveryPath } from '@/content/recovery';
+import { HOME_COPY } from '@/content/home';
+import { recoveryPath } from '@/content/recovery';
 
 // Static hrefs and primary flag — not locale-specific
 const CHANNEL_META = [
@@ -16,7 +17,7 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
   const t = getDict(locale);
   const tct = t.contact;
   const tc = t.common;
-  const offer = RECOVERY_COPY[locale];
+  const home = HOME_COPY[locale];
 
   const channels = tct.channels.map((c, i) => ({
     ...CHANNEL_META[i],
@@ -28,8 +29,8 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
   return (
     <PageShell
       eyebrow={tct.eyebrow}
-      title={offer.home.contactTitle}
-      intro={offer.home.contactBody}
+      title={home.contact.title}
+      intro={home.contact.body}
       chapter={tc.chapter(6, 6)}
       locale={locale}
     >
@@ -84,7 +85,7 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
         </ul>
 
         <p className="marginalia" style={{ marginTop: 'clamp(56px, 8vh, 80px)', maxWidth: '60ch', fontStyle: 'italic' }}>
-          <a className="link-line" href={recoveryPath(locale)}>{offer.links.offer} →</a>
+          <a className="link-line" href={recoveryPath(locale)}>{home.nav.sprint} →</a>
         </p>
       </div>
 

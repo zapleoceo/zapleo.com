@@ -7,33 +7,23 @@ const STACK = [
   { k: 'Framework', v: 'Next.js 16.2 (App Router, static export)' },
   { k: 'Language', v: 'TypeScript 5.9 (strict)' },
   { k: 'Styling', v: 'Tailwind CSS 4 (oklch native), CSS @theme tokens' },
-  { k: 'Motion', v: 'Motion 12 (Framer Motion lineage), GSAP, Lenis smooth scroll' },
-  { k: '3D moment', v: 'react-three-fiber + drei (one scene on /journey)' },
-  { k: 'i18n', v: 'next-intl, 4 locales (EN / UK / RU / ID)' },
-  { k: 'Forms', v: 'react-hook-form + zod (no form on /contact by default)' },
+  { k: 'Motion', v: 'CSS animation, IntersectionObserver, Lenis smooth scroll' },
+  { k: 'i18n', v: 'Typed content dictionaries, 4 locales (EN / UK / RU / ID)' },
+  { k: 'Contact', v: 'Direct email and messaging links; no website form' },
   { k: 'Lint + format', v: 'Biome (replaces eslint + prettier)' },
   { k: 'Package manager', v: 'pnpm@9' },
 ];
 
 const FONTS = [
-  { k: 'Display', v: 'Fraunces (variable: wght · SOFT · WONK · opsz)', note: 'Pangram-feel editorial, single-axis serif for cinematic emphasis.' },
-  { k: 'Body', v: 'Newsreader (variable opsz)', note: 'Designed for long reading at body sizes.' },
-  { k: 'Mono', v: 'JetBrains Mono', note: 'Eyebrows, year stamps, marginalia, switcher.' },
+  { k: 'Display', v: 'Bricolage Grotesque' },
+  { k: 'Body', v: 'Literata' },
+  { k: 'Mono', v: 'JetBrains Mono' },
 ];
 
 const INFRA = [
-  { k: 'Hosting', v: 'Bare nginx on Debian, static files via rsync' },
-  { k: 'CI/CD', v: 'GitHub Actions on push to main → build → rsync to /var/www/zapleo.com (~50s end-to-end)' },
-  { k: 'TLS', v: 'Cloudflare Origin Cert + edge proxy' },
-  { k: 'Analytics', v: 'Cloudflare Web Analytics (cookieless)' },
-  { k: 'Backups', v: 'Server-side nightly snapshots, off-site mirror' },
-];
-
-const AI_ROWS = [
-  { k: 'Design system', v: 'Drafted with Claude · reviewed and adjusted by Dmitriy' },
-  { k: 'Copy', v: 'Co-authored with Claude · facts cross-checked against LinkedIn, GitHub, Clutch, DOU, Tripadvisor public records' },
-  { k: 'Photos / b-roll', v: 'Mine. Or labelled stock when used.' },
-  { k: 'Voice in social', v: 'AI-augmented per Vibe Coding strategy. Decisions and replies — mine.' },
+  { k: 'Hosting', v: 'Static export served through nginx and Cloudflare' },
+  { k: 'CI/CD', v: 'GitHub Actions → typecheck, build and browser tests → rsync deployment' },
+  { k: 'Analytics', v: 'No Google Analytics script is loaded by this version. Hosting and CDN services may process technical request logs.' },
 ];
 
 function Block({ title, rows }: { title: string; rows: { k: string; v: string; note?: string }[] }) {
@@ -78,7 +68,6 @@ function Block({ title, rows }: { title: string; rows: { k: string; v: string; n
 export function ColophonPageContent({ locale }: { locale: Locale }) {
   const t = getDict(locale);
   const tco = t.colophon;
-  const tc = t.common;
 
   return (
     <PageShell
@@ -101,10 +90,10 @@ export function ColophonPageContent({ locale }: { locale: Locale }) {
           margin: '0 auto',
         }}
       >
-        <Block title={tco.sections.stack} rows={STACK} />
+        <Block title={tco.sections.stack} rows={STACK.map((row) => row.k === 'Contact' ? { ...row, v: tco.notes.contact } : row)} />
         <Block title={tco.sections.type} rows={FONTS} />
-        <Block title={tco.sections.infra} rows={INFRA} />
-        <Block title={tco.sections.ai} rows={AI_ROWS} />
+        <Block title={tco.sections.infra} rows={INFRA.map((row) => row.k === 'Analytics' ? { ...row, v: tco.notes.analytics } : row)} />
+        <Block title={tco.sections.ai} rows={[{ k: 'Claude / Codex', v: tco.notes.ai }]} />
 
         <section data-reveal style={{ marginTop: 'clamp(64px, 10vh, 120px)' }}>
           <p className="eyebrow" style={{ marginBottom: 16 }}>

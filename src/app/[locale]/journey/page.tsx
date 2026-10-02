@@ -1,18 +1,17 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { JourneyPageContent } from '@/components/pages/journey-content';
-import { getDict } from '@/i18n/dict';
+import { HOME_COPY } from '@/content/home';
 import { isLocale, type Locale } from '@/i18n/config';
 import { localeAlternates } from '@/i18n/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale) || locale === 'en') return {};
-  const t = getDict(locale);
   return {
-    title: t.nav.journey,
-    description: t.journey.intro,
-    alternates: localeAlternates(locale, 'journey'),
+    title: HOME_COPY[locale].about.title,
+    description: HOME_COPY[locale].about.intro,
+    alternates: localeAlternates(locale, 'about'),
   };
 }
 

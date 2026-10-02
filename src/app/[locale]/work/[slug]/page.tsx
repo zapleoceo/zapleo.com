@@ -6,6 +6,7 @@ import { Stepan2Redirect } from '@/components/stepan2-redirect';
 import { CASES } from '@/data/cases';
 import { isLocale, type Locale } from '@/i18n/config';
 import { getDict } from '@/i18n/dict';
+import { getCaseI18n } from '@/i18n/cases-i18n';
 import { localeAlternates } from '@/i18n/seo';
 
 const STEPAN2_URL = 'https://stepan2.zapleo.com';
@@ -43,7 +44,7 @@ export async function generateMetadata({
       url: `https://zapleo.com/${locale}/work/${slug}/`,
       title: `${c.name} — zapleo`,
       description: localTagline,
-      images: [{ url: 'https://zapleo.com/og.svg', width: 1200, height: 630 }],
+      images: [{ url: 'https://zapleo.com/og.png', width: 1200, height: 630 }],
     },
     alternates: localeAlternates(locale, `work/${slug}`),
   };
@@ -65,11 +66,12 @@ export default async function LocaleCaseStudyPage({
   }
 
   const t = getDict(locale as Locale);
-  const tagline = t.work.items[slug]?.tagline ?? c.tagline;
+  const localCase = getCaseI18n(slug, locale as Locale);
+  const tagline = localCase?.tagline ?? t.work.items[slug]?.tagline ?? c.tagline;
 
   return (
     <PageShell
-      eyebrow={`${t.common.chapter(2, 6)} · ${c.year}`}
+      eyebrow={`${t.common.chapter(2, 6)} · ${localCase?.year ?? c.year}`}
       title={
         <>
           {c.name}.{' '}

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Selected AI, operational and web projects: Stepan, AIbroker, apcu.ua, Pasijou and Veranda.',
     type: 'website',
     url: 'https://zapleo.com/work/',
-    images: [{ url: 'https://zapleo.com/og.svg', width: 1200, height: 630, alt: 'Work — zapleo' }],
+    images: [{ url: 'https://zapleo.com/og.png', width: 1200, height: 630, alt: 'Work — zapleo' }],
   },
   alternates: pageAlternates('work'),
 };

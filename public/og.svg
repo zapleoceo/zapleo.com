@@ -1,53 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Zapleo — AI that works in your business">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="oklch(9% 0.015 55)"/>
-      <stop offset="100%" stop-color="oklch(14% 0.020 60)"/>
-    </linearGradient>
-    <radialGradient id="bloom" cx="0.75" cy="0.25" r="0.8">
-      <stop offset="0%" stop-color="oklch(60% 0.18 50 / 0.30)"/>
-      <stop offset="60%" stop-color="oklch(60% 0.18 50 / 0)"/>
-    </radialGradient>
-    <radialGradient id="bloom2" cx="0.25" cy="0.85" r="0.7">
-      <stop offset="0%" stop-color="oklch(40% 0.12 30 / 0.30)"/>
-      <stop offset="65%" stop-color="oklch(40% 0.12 30 / 0)"/>
-    </radialGradient>
-    <filter id="noise">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
-      <feColorMatrix values="0 0 0 0 0.9 0 0 0 0 0.7 0 0 0 0 0.3 0 0 0 0.05 0"/>
-    </filter>
+    <radialGradient id="glow" cx="72%" cy="42%" r="48%"><stop stop-color="#72501a" stop-opacity=".34"/><stop offset="1" stop-color="#080a0f" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#222731" stroke-width="1"/></pattern>
   </defs>
-
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#bloom)"/>
-  <rect width="1200" height="630" fill="url(#bloom2)"/>
-  <rect width="1200" height="630" filter="url(#noise)" opacity="0.5"/>
-
-  <!-- eyebrow -->
-  <text x="80" y="120" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="20" fill="oklch(70% 0.03 70)" letter-spacing="4">
-    DMITRIY ZAPOROZHETS  ·  AI INTEGRATION
-  </text>
-
-  <!-- big headline -->
-  <text x="80" y="290" font-family="Georgia, 'Fraunces', serif" font-size="116" fill="oklch(95% 0.03 80)" font-weight="300" letter-spacing="-3">
-    Find lost leads.
-  </text>
-  <text x="80" y="400" font-family="Georgia, 'Fraunces', serif" font-size="116" fill="oklch(82% 0.18 70)" font-style="italic" font-weight="300" letter-spacing="-3">
-    Fix the funnel.
-  </text>
-
-  <!-- under-line -->
-  <text x="80" y="490" font-family="Georgia, serif" font-size="28" fill="oklch(70% 0.03 70)" font-style="italic">
-    CRM · calls · messages · AI-assisted operations
-  </text>
-
-  <!-- wordmark bottom -->
-  <text x="80" y="570" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="22" fill="oklch(82% 0.18 70)" letter-spacing="6">
-    ZAPLEO.COM
-  </text>
-
-  <!-- chapter marker right -->
-  <text x="1120" y="570" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="18" fill="oklch(50% 0.025 65)" text-anchor="end" letter-spacing="4">
-    DMITRIY ZAPOROZHETS
-  </text>
+  <rect width="1200" height="630" fill="#080a0f"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity=".55"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g fill="none" stroke="#8dabc2" stroke-width="2" opacity=".72">
+    <path d="M862 194 1022 314"/><path d="M862 314h160"/><path d="M862 434 1022 314"/>
+  </g>
+  <g fill="#8dabc2"><circle cx="862" cy="194" r="7"/><circle cx="862" cy="314" r="7"/><circle cx="862" cy="434" r="7"/></g>
+  <circle cx="1022" cy="314" r="26" fill="#f6aa15"/><circle cx="1022" cy="314" r="52" fill="none" stroke="#f6aa15" opacity=".22"/>
+  <text x="80" y="98" fill="#f6aa15" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="4">ZAPLEO · DMITRIY ZAPOROZHETS</text>
+  <text x="80" y="244" fill="#f6f3ed" font-family="Arial, sans-serif" font-size="70" font-weight="700">AI that works in</text>
+  <text x="80" y="326" fill="#f6f3ed" font-family="Arial, sans-serif" font-size="70" font-weight="700">your business,</text>
+  <text x="80" y="408" fill="#f6aa15" font-family="Arial, sans-serif" font-size="70" font-weight="700">not just in the demo.</text>
+  <text x="80" y="544" fill="#a7a39d" font-family="Arial, sans-serif" font-size="26">Sales · Operations · AI systems</text>
+  <text x="1120" y="572" fill="#f6aa15" font-family="Arial, sans-serif" font-size="20" text-anchor="end" letter-spacing="3">ZAPLEO.COM</text>
 </svg>

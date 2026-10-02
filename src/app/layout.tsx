@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Literata, JetBrains_Mono } from 'next/font/google';
 import { pageAlternates } from '@/i18n/seo';
+import { HOME_COPY } from '@/content/home';
 import { JsonLd } from '@/components/json-ld';
 import { LenisInit } from '@/components/lenis-init';
 import { Nav } from '@/components/nav';
@@ -41,11 +42,10 @@ const jbMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://zapleo.com'),
   title: {
-    default: 'Dmitriy Zaporozhets — zapleo',
+    default: HOME_COPY.en.meta.title,
     template: '%s · zapleo',
   },
-  description:
-    'Dmitriy Zaporozhets traces lost leads across ads, CRM, calls and messages, then builds practical AI-assisted fixes for real business operations.',
+  description: HOME_COPY.en.meta.description,
   authors: [{ name: 'Dmitriy Zaporozhets', url: 'https://zapleo.com' }],
   creator: 'Dmitriy Zaporozhets',
   openGraph: {
@@ -53,11 +53,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://zapleo.com',
     siteName: 'zapleo',
-    title: 'Dmitriy Zaporozhets — zapleo',
-    description: 'Find where paid leads disappear. AI integration and a ten-day revenue recovery diagnostic by Dmitriy Zaporozhets.',
+    title: HOME_COPY.en.meta.title,
+    description: HOME_COPY.en.meta.description,
     images: [
       {
-        url: 'https://zapleo.com/og.svg',
+        url: 'https://zapleo.com/og.png',
         width: 1200,
         height: 630,
         alt: 'zapleo — AI integration for real operations',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     creator: '@zapleosoft',
-    images: ['https://zapleo.com/og.svg'],
+    images: ['https://zapleo.com/og.png'],
   },
   robots: { index: true, follow: true },
   manifest: '/manifest.webmanifest',
@@ -81,21 +81,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${bricolage.variable} ${literata.variable} ${jbMono.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        {/* Google Analytics 4 — G-DKW7C84LRB */}
-        {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKW7C84LRB" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-DKW7C84LRB');
-            `,
-          }}
-        />
-      </head>
       <body>
         {/* Film grain overlay */}
         <div className="grain" aria-hidden="true" />

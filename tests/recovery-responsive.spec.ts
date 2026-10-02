@@ -8,11 +8,14 @@ for (const [name, width, height] of [
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     await page.setViewportSize({ width, height });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
 
     for (const route of ['/', '/revenue-recovery/']) {
       await page.goto(route);
+      await page.evaluate(() => document.fonts.ready);
+      if (route === '/') await page.screenshot({ path: `docs/ai-ui/tasks/broader-zapleo-positioning/screenshots/${name}-fold.png` });
       await page.screenshot({
-        path: `test-results/revenue-recovery-site/${name}-${route === '/' ? 'home' : 'service'}.png`,
+        path: `docs/ai-ui/tasks/broader-zapleo-positioning/screenshots/${name}-${route === '/' ? 'home' : 'service'}.png`,
         fullPage: true,
       });
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);

@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { isLocale, type Locale } from '@/i18n/config';
 import { getDict } from '@/i18n/dict';
-import { RECOVERY_COPY, recoveryPath } from '@/content/recovery';
+import { HOME_COPY } from '@/content/home';
+import { recoveryPath } from '@/content/recovery';
 import { LangSwitcher } from './lang-switcher';
 
 /** Home paths where the nav starts hidden and appears on scroll. */
@@ -28,10 +29,13 @@ export function Nav() {
   const locale: Locale = (segments.length > 0 && isLocale(segments[0]) ? segments[0] : 'en') as Locale;
   const base = locale === 'en' ? '' : `/${locale}`;
   const t = getDict(locale);
+  const home = HOME_COPY[locale];
 
   const [visible, setVisible] = useState(!onHome);
   const [open, setOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+  const previousPath = useRef(pathname);
 
   // Scroll-triggered reveal (homepage only)
   useEffect(() => {
@@ -58,18 +62,34 @@ export function Nav() {
   }, [open]);
 
   // Close on route change
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    if (previousPath.current === pathname) return;
+    previousPath.current = pathname;
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setOpen(false);
+      burgerRef.current?.focus();
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
 
   const links: [string, string][] = [
-    [RECOVERY_COPY[locale].nav, recoveryPath(locale)],
-    [t.nav.work, `${base}/work/`],
-    [t.nav.journey, `${base}/journey/`],
-    [t.nav.contact, `${base}/contact/`],
+    [home.nav.work, `${base}/work/`],
+    [home.nav.about, `${base}/about/`],
+    [home.nav.sprint, recoveryPath(locale)],
+    [home.nav.contact, `${base}/contact/`],
   ];
 
   return (
     <nav
       aria-label="Main navigation"
+      inert={!visible}
       style={{
         position: 'fixed',
         top: 0,
@@ -128,9 +148,12 @@ export function Nav() {
 
         {/* Hamburger (mobile) */}
         <button
+          type="button"
+          ref={burgerRef}
           className="nav-burger"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           onClick={() => setOpen((v) => !v)}
           style={{
             display: 'none',
@@ -194,7 +217,9 @@ export function Nav() {
 
       {/* Mobile drawer */}
       <div
+        id="mobile-navigation"
         ref={drawerRef}
+        inert={!open}
         style={{
           position: 'absolute',
           top: 56,
@@ -226,7 +251,7 @@ export function Nav() {
           </a>
         ))}
         <a
-          href={`${base}/ai-dima/`}
+          href="/ai-dima/"
           onClick={() => setOpen(false)}
           className="mono uppercase"
           style={{ fontSize: 15, letterSpacing: '0.18em', color: 'var(--color-amber)', textDecoration: 'none', marginTop: 4 }}

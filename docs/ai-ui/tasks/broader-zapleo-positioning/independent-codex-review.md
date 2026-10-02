@@ -1,0 +1,31 @@
+# Independent bounded review — GPT / Codex
+
+Reviewer: GPT-based Codex, not Claude. Reviewed 2026-10-02 ICT against working-tree changes on HEAD `5bfff12c6fcb0edddb5551a2decda95d26f4356c`. Source changes remain in progress; this is a snapshot review, not release approval.
+
+Read the task context and implementation plan, existing design guidance in `docs/spec.md` and the revenue-recovery task documents, homepage/content, navigation/footer, page components, routes, styles, case/work dictionaries and existing tests. No dedicated KB tool was available; attempted discovery for knowledge/KB search capabilities returned none. No source edits, push or deployment performed.
+
+## Blocking findings
+
+1. **[P1] The AIbroker security promise contradicts its supported lease mode.** `src/content/home.ts:126`, `src/data/work.ts:39`, `src/i18n/dict.ts:118`, `src/data/cases.ts:115` say projects never hold provider keys. Yet `src/data/cases.ts:126` explicitly says the broker hands a key to the project in lease mode. The [public repository README](https://github.com/zapleoceo/AIbroker#what-it-does) independently confirms that the client receives the key and calls the provider directly. This materially misstates the boundary a buyer is being asked to trust. Qualify the promise as applying to proxy mode and describe temporary key exposure for leases consistently across all four surfaces.
+
+2. **[P2] Hidden navigation remains keyboard-focusable.** `src/components/nav.tsx:90`–`93` hides the homepage nav using a transform and pointer-events only; `src/components/nav.tsx:212`–`217` collapses the drawer and sets aria-hidden without removing its links from keyboard navigation. Desktop Chrome reproduction on the exported homepage: the first nine Tab presses focus links above the viewport (y approximately -38px), then five presses focus links inside the closed aria-hidden drawer. The visible homepage brand is reached only on press 15. Keyboard users encounter invisible controls; aria-hidden controls also lack an accessible context. Make the hidden nav/drawer inert or otherwise exclude their descendants from tab order; reveal navigation when needed for keyboard use. This is inherited navigation behavior, reproduced in the current export, rather than introduced by the copy change.
+
+3. **[P2] Localized mobile archive links point to nonexistent routes.** `src/components/nav.tsx:231` generates `/uk/ai-dima/`, `/ru/ai-dima/`, `/id/ai-dima/`; the archive exists only at `src/app/ai-dima/page.tsx`. At 375px, opening the UK About menu exposes `/uk/ai-dima/`. All three paths return HTTP 404 from the static export; localized About paths return 200. Link to the actual English archive, and use the language switcher's existing home-only behavior on pages without translations. This is an inherited route mismatch, still present on the refreshed navigation.
+
+## Known release blockers, not rediscovered
+
+- `src/content/home.ts:177` aliases UK/RU/ID to EN; `src/i18n/cases-i18n.ts` retains older case translations. These were explicitly disclosed as unfinished; no broad re-audit of them was performed.
+- `src/content/home.ts:117`–`119` still publishes 1,956 calls and 45% → 93.6% attribution without a named audit period, attribution denominator or source reference. `src/content/recovery.ts:67` repeats the figures and points proof back to the offer itself. The task context already lists these figures as unverified. The service export contains the metrics but no July period or explicit sample denominator. Keep the existing fact gate: attach reviewed evidence/qualification or remove the figures. This review does not establish that they are false.
+
+## Additional concrete defects
+
+- **[P2] The three problem doors omit the proposed solution.** `src/content/home.ts:77`, `88`, `95` supply `approach`, but `src/components/client-home.tsx:71`–`74` renders only the problem and proof links. Exported homepage text confirms the operations approach is absent. The main decision section tells a buyer what hurts without explaining what Dmitriy will do; rendering the prepared approach would close this gap.
+- **[P2] Vera's depth example has no corresponding proof destination.** `src/content/home.ts:105` / `src/components/client-home.tsx:119` sends readers to `/work/`, whose six project headings contain no Vera entry (`src/data/work.ts`). Vera appears only as an incidental mention in AIbroker's description. The URL works, but the reader cannot inspect the featured system there. Supply an actual Vera explanation/proof destination or make the link's limited purpose explicit.
+- **[P3] Output-line reveal uses the wrong dash offset.** `src/app/globals.css:493` gives the 140-unit output path (`src/components/client-home.tsx:45`) a 150-unit dash array but reuses keyframes starting at 520 (`src/app/globals.css:494`). Its dash/gap period is 300; offset 520 wraps to 220, leaving a visible segment even during the 1.4s delay, and the line passes through repeated dash phases rather than drawing once. Use pathLength normalization or matching per-path dash/offset values. Reduced-motion override is present and correctly disables this animation.
+
+## Evidence limits and checks
+
+- Port 3002 refused connections at review time. Served the existing `out/` on temporary port 3003 for targeted headless installed-Chrome checks; `out/index.html` timestamp was 2026-10-02 02:23:50. No rebuild was performed. Main owns production-export/semantic tests; this review does not claim their completion.
+- [Stepan](https://stepan2.zapleo.com/), [AIbroker source](https://github.com/zapleoceo/AIbroker), and [APCU](https://apcu.ua/) were publicly reachable. APCU displays the Zapleo development credit. No unreachable external proof URL was established in this sample.
+- Existing smoke tests check nav visibility after scrolling and archive behavior only at `/ai-dima/`; they do not cover initial keyboard tab order or localized mobile archive links. Their source-link assertion checks presence, not external availability.
+- Homepage email CTA is encoded and direct contact alternatives exist. No unsupported free-call or reply-time promise was established in the new EN homepage. Broader ownership/outcome claims were not independently established beyond the sources above.

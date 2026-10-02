@@ -4,13 +4,13 @@ import { pageAlternates } from '@/i18n/seo';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Contact Dmitriy Zaporozhets about AI integration and finding lost inbound leads in your CRM, calls and messages.',
+  description: 'Talk to Dmitriy Zaporozhets about AI integration for sales, operations and the tools your business already uses.',
   openGraph: {
     title: 'Contact · Dmitriy Zaporozhets',
     description: 'Email, WhatsApp, Telegram, LinkedIn — direct line, no middleman.',
     type: 'website',
     url: 'https://zapleo.com/contact/',
-    images: [{ url: 'https://zapleo.com/og.svg', width: 1200, height: 630, alt: 'Contact — zapleo' }],
+    images: [{ url: 'https://zapleo.com/og.png', width: 1200, height: 630, alt: 'Contact — zapleo' }],
   },
   alternates: pageAlternates('contact'),
 };

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ClientHome } from '@/components/client-home';
-import { RECOVERY_COPY } from '@/content/recovery';
+import { HOME_COPY } from '@/content/home';
 import { isLocale, type Locale } from '@/i18n/config';
 import { localeAlternates } from '@/i18n/seo';
 
@@ -13,8 +13,8 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale) || locale === 'en') return {};
   return {
-    title: 'Dmitriy Zaporozhets · zapleo',
-    description: RECOVERY_COPY[locale].home.lead,
+    title: HOME_COPY[locale].meta.title,
+    description: HOME_COPY[locale].meta.description,
     alternates: localeAlternates(locale, ''),
   };
 }

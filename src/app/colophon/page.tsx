@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Next.js static export, Bricolage Grotesque + Literata, deployed on Hetzner. The full making-of.',
     type: 'website',
     url: 'https://zapleo.com/colophon/',
-    images: [{ url: 'https://zapleo.com/og.svg', width: 1200, height: 630, alt: 'Colophon — zapleo' }],
+    images: [{ url: 'https://zapleo.com/og.png', width: 1200, height: 630, alt: 'Colophon — zapleo' }],
   },
   alternates: pageAlternates('colophon'),
 };

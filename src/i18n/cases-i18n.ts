@@ -4,312 +4,339 @@ export type CaseI18n = {
   brief: string;
   sections: { title: string; body: string; note?: string }[];
   links: { label: string }[];
+  tagline?: string;
+  place?: string;
+  role?: string;
+  team?: string;
+  year?: string;
+  stack?: string[];
 };
 
 export const CASES_I18N: Partial<Record<string, Partial<Record<Exclude<Locale, 'en'>, CaseI18n>>>> = {
-  'ai-sales-assistant': {
-    ru: {
-      brief:
-        'Большинство бизнесов теряют 60–80% входящих лидов не потому, что продукт плохой, а потому что никто не ответил достаточно быстро. Этот AI-ассистент закрывает разрыв — отвечает в Instagram, Telegram и WhatsApp за секунды, 24/7, и умнеет каждую неделю через встроенный интерфейс коучинга, не требующий кода.',
-      sections: [
-        {
-          title: 'Скорость ответа — переменная, которую никто не оптимизирует',
-          body: 'Исследования во всех индустриях последовательны: лид, получивший ответ в течение пяти минут, в 21 раз вероятнее конвертируется, чем тот, кто ждёт час. Большинство бизнесов действует так, словно этого числа не существует — команда на совещании, сейчас 23:00, воскресенье. У AI-ассистента нет такого расписания. Он обрабатывает первый контакт, квалифицирует лида через скриптованный разговорный флоу и либо записывает на встречу, либо эскалирует к человеку — без того чтобы лид когда-либо ждал.',
-          note: 'Скорость первого ответа важнее его качества.',
-        },
-        {
-          title: 'Режим коуча: ваша команда обучает AI',
-          body: 'Самый распространённый режим отказа AI-чатботов — они устаревают. Скрипты, которые конвертировали в марте, перестают работать в июне — цены меняются, запускаются новые продукты, возражения эволюционируют. Режим коуча решает это в источнике. Когда AI даёт неправильный или устаревший ответ, владелец бизнеса — или любой член команды — исправляет его в простом интерфейсе. Исправление сохраняется, применяется немедленно ко всем разговорам, и AI не повторяет ошибку. Без передеплоя. Без тикета разработчику. Люди, которые лучше всего понимают ваш продукт, — именно они обновляют AI.',
-          note: 'AI, который команда не может обновить, — AI, который становится неправильным.',
-        },
-        {
-          title: 'Один ассистент на каждом канале, где уже есть ваши лиды',
-          body: 'Лиды приходят через несколько каналов одновременно — Instagram DM, Telegram, WhatsApp, веб-чат. Каждый ожидает ответа в течение минут. Один AI-ассистент обслуживает их всех из единой базы знаний, автоматически адаптируя тон под канал. Каждый разговор логируется, доступен для поиска и помечен по исходу: какой канал конвертирует, какой скрипт не работает, где именно в флоу лиды отваливаются. При подключении CRM статус лида обновляется без участия человека.',
-          note: 'Те же знания о продукте, разные стили разговора на каждом канале.',
-        },
-        {
-          title: 'Что строится и что вы получаете в управление',
-          body: 'Кастомный AI-ассистент, обученный на вашем продукте, ценах и библиотеке возражений. Подключён к вашим активным каналам продаж. Интерфейс коуча, который любой нетехнический член команды может использовать для ежедневного обновления. Начальная сборка занимает 2–4 недели в зависимости от количества каналов и сложности скрипта. Затем следует 30-дневный период калибровки, где обрабатываются крайние случаи и настраивается конверсионный флоу. После передачи ваша команда обучает его — Zapleo поддерживает, когда архитектура требует роста.',
-          note: 'Подходит для EdTech, гостеприимства, ритейла, услуг — любого бизнеса с высоким объёмом входящих.',
-        },
-      ],
-      links: [{ label: 'Обсудить сборку для вашего бизнеса' }],
-    },
+  "pasijou": {
     uk: {
-      brief:
-        'Більшість бізнесів втрачають 60–80% вхідних лідів не тому, що продукт поганий, а тому що ніхто не відповів достатньо швидко. Цей AI-асистент закриває прогалину — відповідає в Instagram, Telegram і WhatsApp за секунди, 24/7, і стає розумнішим щотижня через вбудований інтерфейс коучингу, що не потребує коду.',
-      sections: [
+      "stack": ["Операційна робота закладу","Мережева інфраструктура","Цифрові замовлення","Комунікація з гостями"],
+      "brief": "Pasijou — коворкінг і ресторан на південному узбережжі Шрі-Ланки. Я був його співвласником і керував ним з лютого 2023 року до березня 2026-го, коли закінчилася оренда і проєкт закрився.",
+      "sections": [
         {
-          title: 'Швидкість відповіді — змінна, яку ніхто не оптимізує',
-          body: 'Дослідження в усіх галузях послідовні: лід, який отримав відповідь протягом п\'яти хвилин, у 21 раз вірогідніше конвертується, ніж той, хто чекає годину. Більшість бізнесів діє так, ніби цього числа не існує — команда на нараді, зараз 23:00, неділя. У AI-асистента немає такого розкладу. Він обробляє перший контакт, кваліфікує ліда через скриптований розмовний флоу та або записує на зустріч, або ескалює до людини — без того щоб лід коли-небудь чекав.',
-          note: 'Швидкість першої відповіді важливіша за її якість.',
+          "title": "За що я відповідав",
+          "body": "Щоденну роботу і всю технічну частину за нею: мережу, в якій працювали гості, — маршрутизацію, VPN, mesh Wi-Fi, балансування навантаження і резервне живлення, — а також цифрову частину бізнесу: замовлення, аналітику і комунікацію з гостями.",
+          "note": "Коворкінг живе або вмирає разом зі своїм Wi-Fi."
         },
         {
-          title: 'Режим коуча: ваша команда навчає AI',
-          body: 'Найпоширеніший режим відмови AI-чатботів — вони застарівають. Скрипти, що конвертували в березні, перестають працювати в червні — ціни змінюються, виходять нові продукти, заперечення еволюціонують. Режим коуча вирішує це в джерелі. Коли AI дає неправильну або застарілу відповідь, власник бізнесу — або будь-який член команди — виправляє це в простому інтерфейсі. Виправлення зберігається, застосовується негайно до всіх розмов, і AI не повторює помилку. Без переодеплою. Без тікета розробнику. Люди, які найкраще розуміють ваш продукт, — саме вони оновлюють AI.',
-          note: 'AI, який команда не може оновити, — AI, який стає неправильним.',
+          "title": "Результат",
+          "body": "Проєкт вийшов на беззбитковість за вісім місяців і, поки працював, тримав оцінку гостей 4,9 з 5. Він закрився в березні 2026 року, коли закінчилася оренда."
         },
         {
-          title: 'Один асистент на кожному каналі, де є ваші ліди',
-          body: 'Ліди надходять через декілька каналів одночасно — Instagram DM, Telegram, WhatsApp, веб-чат. Кожен очікує відповіді протягом хвилин. Один AI-асистент обслуговує їх усіх з єдиної бази знань, автоматично адаптуючи тон під канал. Кожна розмова логується, доступна для пошуку та помічена за результатом: який канал конвертує, який скрипт не працює, де саме у флоу ліди відвалюються. При підключенні CRM статус ліда оновлюється без участі людини.',
-          note: 'Ті самі знання про продукт, різні стилі розмови на кожному каналі.',
-        },
-        {
-          title: 'Що будується і що ви отримуєте в управління',
-          body: 'Кастомний AI-асистент, навчений на вашому продукті, цінах та бібліотеці заперечень. Підключений до ваших активних каналів продажів. Інтерфейс коуча, який може використовувати будь-який нетехнічний член команди для щоденного оновлення. Початкова збірка займає 2–4 тижні залежно від кількості каналів та складності скрипту. Потім слідує 30-денний період калібрування, де обробляються крайні випадки та налаштовується конверсійний флоу. Після передачі ваша команда навчає його — Zapleo підтримує, коли архітектура потребує зростання.',
-          note: 'Підходить для EdTech, гостинності, роздрібу, послуг — будь-якого бізнесу з великим обсягом вхідних.',
-        },
+          "title": "Чого це мене навчило",
+          "body": "У фізичному бізнесі операційна робота перестає бути абстракцією. Запаси, зміни персоналу й повідомлення гостей — це задачі з даними, які мають реальні наслідки. Ті самі задачі я тепер розв’язую для інших бізнесів за допомогою ШІ."
+        }
       ],
-      links: [{ label: 'Обговорити збірку для вашого бізнесу' }],
+      "links": [
+        {
+          "label": "Pasijou в Instagram"
+        }
+      ],
+      "tagline": "Коворкінг, кухня і спільнота в одному місці.",
+      "place": "Велігама, Шрі-Ланка",
+      "role": "Співвласник, керуючий",
+      "team": "Місцева команда кухні та операційної роботи"
+    },
+    ru: {
+      "stack": ["Операционная работа заведения","Сетевая инфраструктура","Цифровые заказы","Коммуникация с гостями"],
+      "tagline": "Коворкинг, кухня и комьюнити в одном месте.",
+      "place": "Велигама, Шри-Ланка",
+      "role": "Совладелец, управляющий",
+      "team": "Местная команда кухни и операционного персонала",
+      "brief": "Pasijou — коворкинг и ресторан на южном побережье Шри-Ланки. Я был его совладельцем и управляющим с февраля 2023 по март 2026 года, когда закончилась аренда и проект закрылся.",
+      "sections": [
+        {
+          "title": "За что я отвечал",
+          "body": "Ежедневная работа и вся техника за ней: сеть, в которой работали гости, — маршрутизация, VPN, mesh Wi-Fi, балансировка нагрузки и резервное питание, — и цифровая часть бизнеса: заказы, аналитика и общение с гостями.",
+          "note": "Коворкинг живёт или умирает вместе со своим Wi-Fi."
+        },
+        {
+          "title": "Результат",
+          "body": "Проект вышел в безубыточность за восемь месяцев и всё время работы держал оценку гостей 4,9 из 5. Закрылся в марте 2026 года, когда закончилась аренда."
+        },
+        {
+          "title": "Чему это меня научило",
+          "body": "В офлайн-бизнесе операционка перестаёт быть абстракцией. Склад, смены персонала и сообщения гостей — это задачи с данными и с реальными последствиями. Те же задачи я сейчас решаю для других бизнесов с помощью ИИ."
+        }
+      ],
+      "links": [
+        {
+          "label": "Pasijou в Instagram"
+        }
+      ]
     },
     id: {
-      brief:
-        'Sebagian besar bisnis kehilangan 60–80% leads masuk bukan karena produknya salah, tapi karena tidak ada yang membalas cukup cepat. Asisten AI ini menutup celah itu — merespons di Instagram, Telegram, dan WhatsApp dalam hitungan detik, 24/7, dan semakin pintar setiap minggu melalui antarmuka coaching bawaan yang tidak memerlukan kode.',
-      sections: [
+      "stack": ["Operasional hospitality","Infrastruktur jaringan","Pemesanan digital","Komunikasi dengan tamu"],
+      "tagline": "Coworking, dapur, dan komunitas dalam satu tempat.",
+      "place": "Weligama, Sri Lanka",
+      "role": "Co-owner, operator",
+      "team": "Tim dapur dan operasional lokal",
+      "brief": "Pasijou adalah coworking space dan restoran di pantai selatan Sri Lanka. Saya ikut memiliki dan mengelolanya dari Februari 2023 sampai Maret 2026, saat masa sewa berakhir dan proyek ini ditutup.",
+      "sections": [
         {
-          title: 'Kecepatan respons — variabel yang tidak dioptimalkan siapa pun',
-          body: 'Penelitian di berbagai industri konsisten: leads yang mendapat balasan dalam lima menit 21 kali lebih mungkin konversi dibanding yang menunggu satu jam. Kebanyakan bisnis beroperasi seolah angka ini tidak ada — tim penjualan sedang rapat, sudah jam 11 malam, hari Minggu. Asisten AI tidak punya jadwal seperti itu. Ia menangani kontak pertama, mengkualifikasi leads melalui alur percakapan terskrip, dan baik memesan janji maupun mengeskalasinya ke manusia — tanpa leads pernah mengalami penantian.',
-          note: 'Kecepatan respons pertama lebih penting daripada kualitasnya.',
+          "title": "Tanggung jawab saya",
+          "body": "Operasional sehari-hari dan semua hal teknis di baliknya: jaringan yang dipakai tamu untuk bekerja — routing, VPN, mesh Wi-Fi, load balancing, dan daya cadangan — serta sisi digital bisnis: pemesanan, analitik, dan komunikasi dengan tamu.",
+          "note": "Hidup matinya coworking space ditentukan oleh Wi-Fi-nya."
         },
         {
-          title: 'Mode coach: tim Anda melatih AI, bukan sebaliknya',
-          body: 'Mode kegagalan paling umum chatbot AI adalah menjadi usang. Skrip yang berhasil di Maret berhenti bekerja di Juni — harga berubah, produk baru diluncurkan, keberatan berkembang. Mode coach menyelesaikan ini di sumbernya. Ketika AI memberi jawaban yang salah atau ketinggalan zaman, pemilik bisnis — atau anggota tim mana pun — mengoreksinya di antarmuka sederhana. Koreksi disimpan, diterapkan langsung ke semua percakapan, dan AI tidak mengulangi kesalahan itu. Tidak perlu redeploy. Tidak perlu tiket developer. Orang yang paling memahami produk Anda itulah yang memperbarui AI.',
-          note: 'AI yang tidak bisa diperbarui tim Anda adalah AI yang menjadi salah.',
+          "title": "Hasil",
+          "body": "Proyek ini mencapai titik impas dalam delapan bulan dan mempertahankan rating tamu 4,9 dari 5 selama beroperasi. Proyek ditutup pada Maret 2026 saat masa sewa berakhir."
         },
         {
-          title: 'Satu asisten, di setiap saluran tempat leads Anda sudah berada',
-          body: 'Leads datang melalui beberapa saluran sekaligus — Instagram DM, Telegram, WhatsApp, web chat. Masing-masing mengharapkan balasan dalam hitungan menit. Satu asisten AI melayani semua dari satu basis pengetahuan, secara otomatis menyesuaikan nada per saluran. Setiap percakapan dicatat, dapat dicari, dan ditandai berdasarkan hasil: saluran mana yang konversi, skrip mana yang gagal, persis di mana dalam alur leads keluar. Ketika CRM terhubung, status leads diperbarui tanpa manusia menyentuhnya.',
-          note: 'Pengetahuan produk yang sama, gaya percakapan berbeda per saluran.',
-        },
-        {
-          title: 'Apa yang dibangun dan apa yang Anda operasikan',
-          body: 'Asisten AI kustom yang dilatih pada produk, harga, dan perpustakaan keberatan Anda. Terhubung ke saluran penjualan aktif Anda. Antarmuka coach yang dapat digunakan anggota tim non-teknis mana pun untuk memperbaruinya sehari-hari. Build awal membutuhkan 2–4 minggu tergantung jumlah saluran dan kompleksitas skrip. Periode kalibrasi 30 hari menyusul di mana kasus tepi ditangani dan alur konversi disetel. Setelah serah terima, tim Anda melatihnya — Zapleo mendukung ketika arsitektur perlu berkembang.',
-          note: 'Cocok untuk EdTech, hospitality, retail, jasa — bisnis apa pun dengan saluran masuk volume tinggi.',
-        },
+          "title": "Apa yang saya pelajari",
+          "body": "Menjalankan bisnis fisik adalah tempat di mana operasional berhenti menjadi hal abstrak. Stok, shift staf, dan pesan tamu adalah masalah data dengan konsekuensi nyata — masalah yang sama yang sekarang saya selesaikan untuk bisnis lain dengan AI."
+        }
       ],
-      links: [{ label: 'Diskusikan membangun satu untuk bisnis Anda' }],
+      "links": [
+        {
+          "label": "Pasijou di Instagram"
+        }
+      ]
     },
   },
-
-  aibroker: {
-    ru: {
-      brief:
-        'Запуская два AI-продукта с одного сервера — Vera (персональный ассистент) и Stepan (Instagram-агент продаж) — повторяющейся проблемой было размножение API-ключей и невидимые затраты. AIbroker — единая управляющая плоскость: каждый LLM-вызов во всех проектах маршрутизируется через неё, с ограничениями затрат на проект, автоматическим охлаждением на 429-ых и Telegram-алертом в момент смерти ключа.',
-      sections: [
-        {
-          title: 'Инцидент с затратами, который сделал это необходимым',
-          body: 'В июне 2026 года устаревший множитель затрат в LiteLLM привёл к тому, что провайдерские вызовы логировались по 1/20 реальной цены. Охранник затрат думал, что бюджет остался; его не было. Пришёл счёт на $25. AIbroker уже находился в разработке; инцидент перевёл его из «полезного эксперимента» в «требование продакшена». Брокер читает реальные USD из логов использования, а не оценки по уровню модели.',
-          note: 'Любой охранник затрат, использующий расчётные цены вместо реальных, — не охранник.',
-        },
-        {
-          title: 'Два режима для двух проблем',
-          body: 'Режим прокси: брокер вызывает провайдера через LiteLLM SDK, возвращает ответ, логирует затраты. Клиентский проект никогда не видит API-ключ. Режим выдачи: брокер выдаёт краткосрочную аренду ключа; клиент вызывает провайдера напрямую, сообщает об использовании при освобождении. Выдача обрабатывает провайдеров, не совместимых с OpenAI-интерфейсом.',
-          note: 'Выдача стоит один дополнительный круговой рейс, но неизбежна для не-LLM API.',
-        },
-        {
-          title: 'Что работает в продакшене',
-          body: 'LRU-aware выбор ключей избегает горячей ротации одного ключа, пока другие простаивают. Дневные и месячные ограничения затрат на проект обеспечивают бюджетную дисциплину по всем подключённым клиентам. Монитор здоровья запускается каждые 10 минут — дешевейший валидный вызов на провайдера — и немедленно отмечает мёртвые ключи с Telegram-алертом. Живая панель показывает затраты, здоровье ключей и использование по проектам.',
-        },
-      ],
-      links: [
-        { label: 'Панель AIbroker' },
-        { label: 'GitHub — zapleoceo/AIbroker' },
-      ],
-    },
+  "apcu": {
     uk: {
-      brief:
-        'Запускаючи два AI-продукти з одного сервера — Vera (персональний асистент) та Stepan (Instagram-агент продажів) — повторюваною проблемою було розростання API-ключів та невидимі витрати. AIbroker — єдина управляюча площина: кожен LLM-виклик по всіх проєктах маршрутизується через неї, з обмеженнями витрат на проєкт, автоматичним охолодженням на 429-их та Telegram-алертом в момент смерті ключа.',
-      sections: [
+      "brief": "Zapleo розробила сайт української асоціації виробників парфумерії та косметики. Сайт досі працює, і на ньому досі вказано, що його розробила Zapleo.",
+      "sections": [
         {
-          title: 'Інцидент з витратами, що зробив це необхідним',
-          body: 'У червні 2026 року застарілий множник витрат у LiteLLM призвів до того, що провайдерські виклики логувалися по 1/20 реальної ціни. Охоронник витрат думав, що бюджет залишився; його не було. Прийшов рахунок на $25. AIbroker вже перебував у розробці; інцидент перевів його з «корисного експерименту» в «вимогу продакшену». Брокер читає реальні USD з журналів використання, а не оцінки по рівню моделі.',
-          note: 'Будь-який охоронник витрат, що використовує розрахункові ціни замість реальних, — не охоронник.',
-        },
-        {
-          title: 'Два режими для двох проблем',
-          body: 'Режим проксі: брокер викликає провайдера через LiteLLM SDK, повертає відповідь, логує витрати. Клієнтський проєкт ніколи не бачить API-ключ. Режим видачі: брокер видає короткострокову оренду ключа; клієнт викликає провайдера напряму, звітує про використання при звільненні. Видача обробляє провайдерів, несумісних з OpenAI-інтерфейсом.',
-          note: 'Видача коштує один додатковий round-trip, але неминуча для не-LLM API.',
-        },
-        {
-          title: 'Що працює в продакшені',
-          body: 'LRU-aware вибір ключів уникає гарячої ротації одного ключа, поки інші простоюють. Денні та місячні обмеження витрат на проєкт забезпечують бюджетну дисципліну по всіх підключених клієнтах. Монітор здоров\'я запускається кожні 10 хвилин — найдешевший валідний виклик на провайдера — і негайно відмічає мертві ключі Telegram-алертом. Жива панель показує витрати, здоров\'я ключів та використання по проєктах.',
-        },
+          "title": "Що робить сайт",
+          "body": "Публікує галузеві новини та зміни в регулюванні для членів асоціації і для всіх охочих. Веде його власна редакція асоціації, без участі розробника.",
+          "note": "Розробку завершено, коли клієнт може вести сайт без вас."
+        }
       ],
-      links: [
-        { label: 'Панель AIbroker' },
-        { label: 'GitHub — zapleoceo/AIbroker' },
+      "links": [
+        {
+          "label": "Перейти на apcu.ua"
+        }
       ],
+      "tagline": "Сайт Асоціації парфумерії та косметики України.",
+      "year": "Проєкт Zapleo",
+      "place": "Україна · працює",
+      "role": "Zapleo — розробка",
+      "team": "Команда Zapleo"
+    },
+    ru: {
+      "tagline": "Сайт Ассоциации парфюмерии и косметики Украины.",
+      "year": "Проект Zapleo",
+      "place": "Украина · работает",
+      "role": "Zapleo — разработка",
+      "team": "Команда Zapleo",
+      "brief": "Zapleo сделала сайт украинской ассоциации производителей парфюмерии и косметики. Сайт до сих пор работает, и в нём по-прежнему указано, что разработала его Zapleo.",
+      "sections": [
+        {
+          "title": "Что делает сайт",
+          "body": "Публикует новости отрасли и изменения в регулировании для членов ассоциации и всех желающих. Ведут его редакторы самой ассоциации, без участия разработчика.",
+          "note": "Работа закончена, когда клиент может вести проект без вас."
+        }
+      ],
+      "links": [
+        {
+          "label": "Открыть apcu.ua"
+        }
+      ]
     },
     id: {
-      brief:
-        'Menjalankan dua produk bertenaga AI dari satu server — Vera (asisten pribadi) dan Stepan (agen penjualan Instagram) — masalah berulangnya adalah proliferasi kunci API dan biaya yang tidak terlihat. AIbroker adalah control plane tunggal: setiap panggilan LLM di semua proyek melewatinya, dengan batas biaya per proyek, cooldown otomatis pada 429, dan peringatan Telegram saat kunci mati.',
-      sections: [
+      "tagline": "Situs web Asosiasi Parfum dan Kosmetik Ukraina.",
+      "year": "Proyek Zapleo",
+      "place": "Ukraina · aktif",
+      "role": "Zapleo — pengembangan",
+      "team": "Tim Zapleo",
+      "brief": "Zapleo membangun situs web asosiasi produsen parfum dan kosmetik Ukraina. Situs ini masih aktif dan masih mencantumkan Zapleo sebagai pengembangnya.",
+      "sections": [
         {
-          title: 'Insiden biaya yang membuatnya perlu',
-          body: 'Pada Juni 2026, cost multiplier yang usang di LiteLLM menyebabkan panggilan provider dicatat dengan 1/20 harga sebenarnya. Cost guard mengira masih ada anggaran; ternyata tidak. Tagihan $25 datang. AIbroker sudah dalam pengembangan; insiden itu mendorongnya dari "eksperimen berguna" menjadi "persyaratan produksi". Broker membaca USD nyata dari log penggunaan, bukan estimasi dari tier model.',
-          note: 'Cost guard mana pun yang menggunakan harga perkiraan daripada harga nyata — bukan cost guard.',
-        },
-        {
-          title: 'Dua mode untuk dua masalah',
-          body: 'Mode proxy: broker memanggil provider via LiteLLM SDK, mengembalikan respons, mencatat biaya. Proyek klien tidak pernah melihat kunci API. Mode vending: broker menerbitkan lease kunci jangka pendek; klien memanggil provider langsung, melaporkan penggunaan saat rilis. Vending menangani provider yang tidak sesuai antarmuka OpenAI-compatible.',
-          note: 'Vending menghabiskan satu round-trip ekstra tapi tidak terhindarkan untuk non-LLM API.',
-        },
-        {
-          title: 'Yang berjalan di produksi',
-          body: 'Pemilihan kunci LRU-aware menghindari rotasi panas satu kunci sementara yang lain menganggur. Batas biaya harian dan bulanan per proyek menegakkan disiplin anggaran di semua klien yang terhubung. Monitor kesehatan berjalan setiap 10 menit — panggilan valid termurah per provider — dan langsung menandai kunci mati dengan peringatan Telegram. Dashboard langsung menampilkan biaya, kesehatan kunci, dan penggunaan per proyek.',
-        },
+          "title": "Fungsi situs ini",
+          "body": "Situs ini menerbitkan berita industri dan pembaruan regulasi untuk anggota asosiasi dan publik, dan dikelola oleh editor asosiasi sendiri tanpa perlu melibatkan developer.",
+          "note": "Sebuah proyek selesai saat klien bisa menjalankannya tanpa Anda."
+        }
       ],
-      links: [
-        { label: 'Dashboard AIbroker' },
-        { label: 'GitHub — zapleoceo/AIbroker' },
-      ],
+      "links": [
+        {
+          "label": "Kunjungi apcu.ua"
+        }
+      ]
     },
   },
-
-  pasijou: {
-    ru: {
-      brief:
-        'После закрытия агентства в начале 2022 года первым проектом на южном побережье был не стартап. Это было здание — с кухней, двенадцатью рабочими местами, небольшим кинозалом и йога-террасой. Pasijou открылся в Велигаме как место, где цифровые кочевники могли работать, есть и проводить настоящие человеческие вечера на одном участке земли.',
-      sections: [
-        {
-          title: 'Почему клубхаус, а не SaaS',
-          body: 'Бриф, который я дал себе, был эгоистичным: построить место, где сам хотел бы провести свои месяцы. Коворкинг с настоящей кухней. Украинская домашняя еда, быстрый Wi-Fi, обед из которого не надо уходить, и сообщество, которое проводит музыкальные вечера и кино-показы без превращения в хостел.',
-          note: 'Только коворкинг хрупок в городе с муссонами; кухня делает тебя незаменимым.',
-        },
-        {
-          title: 'Что инженер узнаёт, управляя F&B',
-          body: 'Инвентарь — это база данных с худшими сообщениями об ошибках. Составление расписания персонала — решатель ограничений. Инженерия меню — это продукт. Первые шесть месяцев мы теряли деньги на бургере, который оставляли в меню по просьбе гостей; когда заменили его на карри недели, маржа выросла с -8% до +21%. Та же дисциплина код-ревью, другой словарный запас.',
-          note: 'F&B научил меня контролю затрат быстрее, чем 12 лет P&L агентства.',
-        },
-        {
-          title: 'Результат и что осталось',
-          body: 'Три года. Tripadvisor 4.9 на сотне отзывов. Uber Eats Sri Lanka живой. Небольшой список лояльных постоянных гостей, знающих персонал по имени. Кинозал работает на 30% загрузки — это нормально, он окупается удержанием, а не продажей билетов.',
-          note: 'Модель клубхауса работает в городах с высокой плотностью кочевников и низкой плотностью заведений.',
-        },
-      ],
-      links: [
-        { label: 'Pasijou в Instagram' },
-        { label: 'Отзывы на Tripadvisor' },
-        { label: 'Uber Eats LK' },
-      ],
-    },
+  "ai-sales-assistant": {
     uk: {
-      brief:
-        'Після закриття агенції на початку 2022 року першим проєктом на південному узбережжі був не стартап. Це була будівля — з кухнею, дванадцятьма робочими місцями, невеликим кінозалом і йога-терасою. Pasijou відкрився у Велігамі як місце, де цифрові кочівники могли працювати, їсти та проводити справжні людські вечори на одній ділянці землі.',
-      sections: [
+      "brief": "Я створив Stepan для філії IT STEP, якою керував у Джакарті, коли за цю ідею більше нікому було взятися. Він відповідав на вхідні повідомлення в Instagram і WhatsApp, вів поетапну розмову про продаж мовою клієнта й передавав ліда менеджеру з указаною причиною. У липні та серпні 2026 року він обробляв близько 80 вхідних розмов на день.",
+      "sections": [
         {
-          title: 'Чому клубхаус, а не SaaS',
-          body: 'Бриф, який я дав собі, був егоїстичним: побудувати місце, де сам хотів би провести свої місяці. Коворкінг зі справжньою кухнею. Українська домашня їжа, швидкий Wi-Fi, обід з якого не треба йти, і спільнота, що проводить музичні вечори та кінопокази без перетворення на хостел.',
-          note: 'Тільки коворкінг крихкий у місті з мусонами; кухня робить тебе незамінним.',
+          "title": "Навіщо це було потрібно",
+          "body": "Філія платила за ліди, але значна частина з них замовкала після пропущеного дзвінка або повільної першої відповіді. До того ж менеджери переводили розмови в особисті чати, де ніхто не бачив, що відбувається далі."
         },
         {
-          title: 'Що інженер дізнається, керуючи F&B',
-          body: 'Інвентар — це база даних з гіршими повідомленнями про помилки. Складання розкладу персоналу — вирішувач обмежень. Інженерія меню — це продукт. Перші шість місяців ми втрачали гроші на бургері, який тримали в меню, бо гості просили; коли замінили його на каррі тижня, маржа зросла з -8% до +21%. Та сама дисципліна код-рев\'ю, інший словниковий запас.',
-          note: 'F&B навчив мене контролю витрат швидше, ніж 12 років P&L агенції.',
+          "title": "Що він робив",
+          "body": "Відповідав на вхідні розмови, кваліфікував ліда, фіксував контекст і передавав розмову людині, коли було потрібне людське рішення. Він був підключений до CRM, тож пропущений дзвінок міг запускати повторний контакт.",
+          "note": "Агент розбирає чергу; важливі рішення ухвалюють люди."
         },
         {
-          title: 'Результат і що залишилося',
-          body: 'Три роки. Tripadvisor 4.9 на сотні відгуків. Uber Eats Sri Lanka живий. Невеликий список лояльних постійних гостей, що знають персонал на ім\'я. Кінозал працює на 30% завантаження — це нормально, він окупається утриманням, а не продажем квитків.',
-          note: 'Модель клубхаусу працює в містах з високою щільністю кочівників і низькою щільністю закладів.',
-        },
+          "title": "Найважливіша перевірка безпеки",
+          "body": "Одного разу в живому чаті агент назвав ціну, якої не існувало. Відтоді відповіді, де згадано ціну, посилання чи пропозицію, перед надсиланням звіряються з фактами самого бізнесу. Якщо твердження нічим не підкріплене, агент переписує відповідь або передає розмову людині.",
+          "note": "ШІ, який може вигадати ціну, потребує перевірки, а не кращого промпту."
+        }
       ],
-      links: [
-        { label: 'Pasijou в Instagram' },
-        { label: 'Відгуки на Tripadvisor' },
-        { label: 'Uber Eats LK' },
+      "links": [
+        {
+          "label": "Stepan"
+        },
+        {
+          "label": "Обговорити агента для вашого бізнесу"
+        }
       ],
+      "tagline": "ШІ-агент, який спілкується з лідами й передає їх людям.",
+      "place": "Створено для IT STEP Academy Jakarta",
+      "role": "Ідея, архітектура і розробка",
+      "team": "Зробив сам, із розробкою за допомогою ШІ"
+    },
+    ru: {
+      "tagline": "ИИ-агент, который общается с заявками и передаёт их людям.",
+      "place": "Сделан для IT STEP Academy Jakarta",
+      "role": "Идея, архитектура и разработка",
+      "team": "Сделал сам, с разработкой при помощи ИИ",
+      "brief": "Я сделал Stepan для филиала IT STEP, которым руководил в Джакарте, — взяться за эту идею было больше некому. Он отвечал на входящие сообщения в Instagram и WhatsApp, вёл продажный разговор по этапам на языке клиента и передавал заявку менеджеру с указанием причины. В июле и августе 2026 года он обрабатывал около 80 входящих диалогов в день.",
+      "sections": [
+        {
+          "title": "Зачем он был нужен",
+          "body": "Филиал платил за заявки, но большая их часть замолкала после пропущенного звонка или медленного первого ответа. К тому же менеджеры уводили диалоги в личные чаты, где никто не видел, что происходит дальше."
+        },
+        {
+          "title": "Что он делал",
+          "body": "Отвечал на входящие диалоги, квалифицировал заявку, записывал контекст и передавал её человеку, когда требовалось решение человека. Он был подключён к CRM, чтобы пропущенный звонок мог запускать повторный контакт.",
+          "note": "Агент разбирает очередь, а важные решения принимают люди."
+        },
+        {
+          "title": "Самая важная проверка",
+          "body": "Однажды в живом чате агент назвал цену, которой не существовало. После этого ответы, где упоминается цена, ссылка или предложение, перед отправкой сверяются с фактами самого бизнеса. Если утверждение не подтверждается, агент переписывает ответ или передаёт диалог человеку.",
+          "note": "ИИ, способному выдумать цену, нужна проверка, а не промпт получше."
+        }
+      ],
+      "links": [
+        {
+          "label": "Stepan"
+        },
+        {
+          "label": "Обсудить агента для вашего бизнеса"
+        }
+      ]
     },
     id: {
-      brief:
-        'Setelah agensi tutup di awal 2022, proyek pertama di pesisir selatan bukan startup. Itu sebuah bangunan — dengan dapur, dua belas kursi coworking, ruang bioskop kecil, dan dek yoga. Pasijou dibuka di Weligama sebagai tempat di mana digital nomad bisa bekerja, makan, dan menghabiskan malam yang benar-benar manusiawi di sebidang tanah yang sama.',
-      sections: [
+      "tagline": "AI agent yang berbicara dengan leads dan menyerahkannya ke manusia.",
+      "place": "Dibangun untuk IT STEP Academy Jakarta",
+      "role": "Ide, arsitektur, dan pembangunan",
+      "team": "Saya bangun sendiri dengan pengembangan berbantuan AI",
+      "brief": "Saya membangun Stepan untuk cabang IT STEP yang saya pimpin di Jakarta, karena tidak ada orang lain yang bisa mengerjakan ide ini. Stepan menjawab pesan masuk di Instagram dan WhatsApp, menjalankan percakapan penjualan bertahap dalam bahasa pelanggan, lalu menyerahkan lead ke manajer dengan alasan yang jelas. Selama Juli dan Agustus 2026, Stepan menangani sekitar 80 percakapan masuk per hari.",
+      "sections": [
         {
-          title: 'Mengapa clubhouse, bukan SaaS',
-          body: 'Brief yang saya beri diri sendiri bersifat egois: bangun tempat yang saya sendiri ingin habiskan berbulan-bulan di sana. Coworking dengan dapur sungguhan. Makanan nyaman Ukraina, Wi-Fi cepat, makan siang yang tidak perlu pergi jauh, dan komunitas yang menyelenggarakan malam musik dan pemutaran film tanpa berubah menjadi hostel.',
-          note: 'Coworking saja rapuh di kota dengan musim hujan; dapur membuat Anda tak tergantikan.',
+          "title": "Mengapa ini dibutuhkan",
+          "body": "Cabang ini membayar untuk leads, tetapi banyak di antaranya berhenti merespons setelah panggilan tidak terjawab atau balasan pertama yang lambat. Para manajer juga memindahkan percakapan ke chat pribadi, sehingga tidak ada yang bisa melihat apa yang terjadi selanjutnya."
         },
         {
-          title: 'Yang dipelajari engineer dalam menjalankan F&B',
-          body: 'Inventaris adalah database dengan pesan error yang lebih buruk. Penjadwalan staf adalah constraint solver. Menu engineering adalah produk. Enam bulan pertama kami rugi pada burger yang terus ada di menu karena tamu memintanya; setelah menggantinya dengan curry of the week, margin naik dari -8% menjadi +21%. Disiplin code review yang sama, kosakata yang berbeda.',
-          note: 'F&B mengajarkan kontrol biaya lebih cepat dari 12 tahun P&L agensi.',
+          "title": "Apa yang dilakukannya",
+          "body": "Stepan menjawab percakapan masuk, mengkualifikasi lead, mencatat konteksnya, dan meneruskannya ke orang saat dibutuhkan keputusan manusia. Stepan terhubung ke CRM, sehingga panggilan yang tidak terjawab bisa memicu follow-up.",
+          "note": "Agent mengerjakan antrean; manusia mengambil keputusan yang penting."
         },
         {
-          title: 'Hasil dan yang tersisa',
-          body: 'Tiga tahun. Tripadvisor 4.9 dari lebih dari seratus ulasan. Uber Eats Sri Lanka live. Daftar pelanggan setia kecil yang mengenal staf by name. Ruang bioskop berjalan di 30% utilisasi dan itu tidak masalah — ia membayar dirinya sendiri dalam retensi, bukan penjualan tiket.',
-          note: 'Model clubhouse berhasil di kota dengan kepadatan nomad tinggi tapi kepadatan venue rendah.',
-        },
+          "title": "Pengecekan keamanan yang paling penting",
+          "body": "Satu kali, di chat langsung, agent menyebutkan harga yang tidak ada. Sejak itu, balasan yang menyebut harga, link, atau penawaran dicek terhadap fakta bisnis sendiri sebelum dikirim. Jika sebuah klaim tidak didukung fakta, agent menulis ulang balasannya atau menyerahkan percakapan ke manusia.",
+          "note": "AI yang bisa mengarang harga butuh pengecekan, bukan prompt yang lebih bagus."
+        }
       ],
-      links: [
-        { label: 'Pasijou di Instagram' },
-        { label: 'Ulasan Tripadvisor' },
-        { label: 'Uber Eats LK' },
-      ],
+      "links": [
+        {
+          "label": "Stepan"
+        },
+        {
+          "label": "Diskusikan agent untuk bisnis Anda"
+        }
+      ]
     },
   },
-
-  apcu: {
-    ru: {
-      brief:
-        'Официальный портал Ассоциации косметики и парфюмерии Украины — APCU. Члены — производители, импортёры, дистрибьюторы. Портал должен был обслуживать три аудитории без трёх сайтов: отраслевые новости, регуляторные обновления и публичный каталог участников.',
-      sections: [
-        {
-          title: 'Почему кастомный WordPress в 2018',
-          body: 'Первый инстинкт — пропустить WordPress и построить на Symfony. Неверный инстинкт. Нетехническая редакционная команда — это один человек, работающий по вечерам. WordPress с жёстко кастомной темой означает, что она публикует по своему расписанию, а не нашему. Восемь лет спустя редакционный ритм всё ещё работает без разработчика в цикле.',
-          note: 'Выбирай стек по реальности обслуживания, а не по предпочтению инженера.',
-        },
-        {
-          title: 'Регуляторная часть',
-          body: 'Нормативы ЕС по косметике меняются ежеквартально. Портал отслеживает нотификационную маркировку, обновления INCI, запреты ингредиентов и украинские эквиваленты. Изначально плоская CMS; мы добавили структурированный тип контента «регуляторный документ» с сортировкой по дате вступления в силу и историей изменений. Скучно. Критично.',
-          note: 'Скучные функции удерживают пользователей от ухода в Telegram-каналы.',
-        },
-        {
-          title: 'Результат',
-          body: 'В эфире с 2018 года. До сих пор на той же кастомной теме. Несколько смен владельцев на стороне ассоциации — портал продолжал публиковаться через все из них. Самый сильный сигнал, что сборка агентства сработала — то, что она всё ещё работает после закрытия агентства.',
-        },
-      ],
-      links: [{ label: 'Посетить apcu.ua' }],
-    },
+  "aibroker": {
     uk: {
-      brief:
-        'Офіційний портал Асоціації косметики та парфумерії України — APCU. Члени — виробники, імпортери, дистриб\'ютори. Портал мав обслуговувати три аудиторії без трьох сайтів: галузеві новини, регуляторні оновлення та публічний каталог учасників.',
-      sections: [
+      "brief": "Мої ШІ-системи — серед них пам’ять Vera і агент з продажів Stepan — звертаються до багатьох провайдерів моделей. AIbroker — єдиний шлюз перед усіма ними: ключі провайдерів зберігаються в одному місці, а виклики йдуть через шлюз або з тимчасовим доступом, кожен виклик записується з оцінкою вартості, а непрацюючі ключі та ключі, що вперлися в ліміт запитів, автоматично виводяться з ротації.",
+      "sections": [
         {
-          title: 'Чому кастомний WordPress у 2018',
-          body: 'Перший інстинкт — пропустити WordPress і зробити на Symfony. Неправильний інстинкт. Нетехнічна редакційна команда — це одна людина, що працює ввечері. WordPress з жорстко кастомною темою означає, що вона публікує за своїм розкладом, а не за нашим. Вісім років потому редакційний ритм досі працює без розробника в циклі.',
-          note: 'Обирай стек за реальністю обслуговування, а не за перевагою інженера.',
+          "title": "Чому витрати треба перевіряти, а не вірити їм",
+          "body": "27 червня 2026 року оновлення бібліотеки непомітно змінило спосіб розрахунку вартості викликів, і всі записані витрати стали $0. Пізніше між записаними витратами й рахунком провайдера виникла розбіжність у $122. Відтоді записані витрати вважаються оцінкою і звіряються з рахунком самого провайдера.",
+          "note": "Контроль витрат, який вірить власним оцінкам, — не контроль витрат."
         },
         {
-          title: 'Регуляторна частина',
-          body: 'Нормативи ЄС по косметиці змінюються щокварталу. Портал відстежує нотифікаційне маркування, оновлення INCI, заборони інгредієнтів та українські еквіваленти. Спочатку плоска CMS; ми додали структурований тип контенту «регуляторний документ» із сортуванням за датою набрання чинності та журналом змін. Нудно. Критично.',
-          note: 'Нудні функції утримують користувачів від переходу в Telegram-канали.',
+          "title": "Два способи обслуговувати проєкт",
+          "body": "Режим проксі: брокер сам звертається до моделі й повертає відповідь, тож проєкт ніколи не бачить ключа. Режим оренди: для API, які не вкладаються в стандартний інтерфейс, брокер видає короткоживучий ключ і записує використання, коли дані про нього повертаються."
         },
         {
-          title: 'Результат',
-          body: 'В ефірі з 2018 року. Досі на тій самій кастомній темі. Кілька змін власників на стороні асоціації — портал продовжував публікувати крізь усі. Найсильніший сигнал, що збірка агенції спрацювала — те, що вона досі працює після закриття агенції.',
-        },
+          "title": "Що тримає систему в робочому стані",
+          "body": "Монітор запускається кожні десять хвилин: збійні ключі перевіряє щоразу, справні — приблизно раз на годину. Ключ, що вперся в ліміт запитів, відкладається на кілька хвилин; ключ, що вичерпав місячну квоту, — до її оновлення. Ліміти витрат задаються для кожного проєкту окремо."
+        }
       ],
-      links: [{ label: 'Відвідати apcu.ua' }],
+      "links": [
+        {
+          "label": "GitHub — zapleoceo/AIbroker"
+        }
+      ],
+      "tagline": "Один шлюз для всіх ШІ-провайдерів, якими користуються мої системи.",
+      "place": "На власному сервері",
+      "role": "Архітектура і розробка",
+      "team": "Зробив сам, із розробкою за допомогою ШІ"
+    },
+    ru: {
+      "tagline": "Единый шлюз ко всем ИИ-провайдерам, которые используют мои системы.",
+      "place": "На собственном сервере",
+      "role": "Архитектура и разработка",
+      "team": "Сделал сам, с разработкой при помощи ИИ",
+      "brief": "Мои ИИ-системы — среди них память Vera и агент продаж Stepan — обращаются ко многим провайдерам моделей. AIbroker — единый шлюз перед всеми ними: ключи провайдеров хранятся в одном месте, а вызовы идут через шлюз или с временным доступом, каждый вызов записывается с оценкой стоимости, а мёртвые ключи и ключи, упёршиеся в лимит, автоматически убираются из ротации.",
+      "sections": [
+        {
+          "title": "Почему расходы нужно проверять, а не принимать на веру",
+          "body": "27 июня 2026 года обновление библиотеки незаметно изменило расчёт стоимости вызовов, и все записанные расходы стали $0. Позже обнаружилось расхождение в $122 между записанными расходами и счётом провайдера. С тех пор записанные расходы считаются оценкой и сверяются с собственным счётом провайдера.",
+          "note": "Контроль расходов, который верит своим же оценкам, — это не контроль."
+        },
+        {
+          "title": "Два способа обслуживать проект",
+          "body": "Режим прокси: брокер сам вызывает модель и возвращает ответ, так что проект никогда не видит ключ. Режим аренды: для API, которые не укладываются в стандартный интерфейс, брокер выдаёт ключ на короткий срок и записывает расход, когда ключ возвращается."
+        },
+        {
+          "title": "Что обеспечивает работу",
+          "body": "Мониторинг запускается каждые десять минут: сбойные ключи проверяет каждый раз, исправные — примерно раз в час. Ключ, упёршийся в лимит запросов, откладывается на несколько минут; ключ, исчерпавший месячную квоту, — до её обновления. Лимиты расходов задаются для каждого проекта."
+        }
+      ],
+      "links": [
+        {
+          "label": "GitHub — zapleoceo/AIbroker"
+        }
+      ]
     },
     id: {
-      brief:
-        'Portal resmi Asosiasi Kosmetik & Parfum Ukraina — APCU. Anggotanya adalah produsen, importir, distributor. Portal harus melayani tiga audiens tanpa tiga situs: berita industri, pembaruan regulasi, dan direktori keanggotaan publik.',
-      sections: [
+      "tagline": "Satu gateway untuk semua penyedia AI yang dipakai sistem saya.",
+      "place": "Self-hosted",
+      "role": "Arsitektur dan pembangunan",
+      "team": "Saya bangun sendiri dengan pengembangan berbantuan AI",
+      "brief": "Sistem AI saya — termasuk memori Vera dan sales agent Stepan — memanggil banyak penyedia model. AIbroker adalah satu gateway di depan semuanya: key penyedia disimpan di satu tempat, dengan panggilan lewat gateway atau akses sewa berbatas waktu, setiap panggilan dicatat dengan estimasi biaya, dan key yang mati atau terkena rate limit dikeluarkan dari rotasi secara otomatis.",
+      "sections": [
         {
-          title: 'Mengapa WordPress kustom di 2018',
-          body: 'Insting pertama adalah melewati WordPress dan membangun dengan Symfony. Insting yang salah. Tim editorial non-teknis adalah satu orang yang bekerja di malam hari. WordPress dengan tema kustom yang ketat berarti ia menerbitkan sesuai jadwalnya, bukan jadwal kami. Delapan tahun kemudian, ritme editorial masih berjalan tanpa developer dalam loop.',
-          note: 'Pilih stack berdasarkan realitas pemeliharaan, bukan preferensi engineer.',
+          "title": "Mengapa biaya harus dicek, bukan dipercaya",
+          "body": "Pada 27 Juni 2026, sebuah update library diam-diam mengubah cara biaya panggilan dihitung, dan semua biaya yang tercatat menjadi $0. Kemudian muncul selisih $122 antara pengeluaran yang tercatat dan invoice dari penyedia. Sejak itu, biaya yang tercatat diperlakukan sebagai estimasi dan dicocokkan dengan invoice dari penyedia itu sendiri.",
+          "note": "Pengaman biaya yang percaya pada estimasinya sendiri bukanlah pengaman biaya."
         },
         {
-          title: 'Bagian regulasi',
-          body: 'Regulasi kosmetik UE berubah setiap kuartal. Portal melacak pelabelan notifikasi, pembaruan INCI, larangan bahan, dan setara Ukrainanya. Awalnya CMS flat; kami menambahkan tipe konten "regulasi" terstruktur dengan sort-by-effective-date dan changelog per dokumen. Membosankan. Kritis.',
-          note: 'Fitur membosankan membuat pengguna tidak kabur ke kanal Telegram.',
+          "title": "Dua cara melayani proyek",
+          "body": "Mode proxy: broker memanggil model dan mengembalikan jawabannya, sehingga proyek tidak pernah melihat key. Mode lease: untuk API yang tidak cocok dengan interface standar, broker memberikan key berumur pendek dan mencatat pemakaiannya saat key itu dikembalikan."
         },
         {
-          title: 'Hasil',
-          body: 'Live sejak 2018. Masih di tema kustom yang sama. Beberapa pergantian kepemilikan di sisi asosiasi — portal terus menerbitkan melalui semuanya. Sinyal terkuat bahwa build agensi berhasil adalah bahwa ia masih bekerja setelah agensi tutup.',
-        },
+          "title": "Yang membuatnya tetap berjalan",
+          "body": "Sebuah monitor berjalan setiap sepuluh menit: key yang bermasalah dicek di setiap putaran, key yang sehat kira-kira sekali per jam. Key yang terkena rate limit diparkir beberapa menit; key yang kuota bulanannya habis diparkir sampai kuotanya direset. Batas pengeluaran diatur per proyek."
+        }
       ],
-      links: [{ label: 'Kunjungi apcu.ua' }],
+      "links": [
+        {
+          "label": "GitHub — zapleoceo/AIbroker"
+        }
+      ]
     },
   },
 };

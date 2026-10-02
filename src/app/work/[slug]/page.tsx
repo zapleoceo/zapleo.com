@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://zapleo.com/work/${slug}/`,
       title: `${c.name} — zapleo`,
       description: c.tagline,
-      images: [{ url: 'https://zapleo.com/og.svg', width: 1200, height: 630 }],
+      images: [{ url: 'https://zapleo.com/og.png', width: 1200, height: 630 }],
     },
     alternates: pageAlternates(`work/${slug}`),
   };

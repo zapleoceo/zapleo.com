@@ -38,10 +38,10 @@ export function CaseContent({ c, locale = 'en', slug }: { c: CaseStudy; locale?:
         }}
       >
         {([
-          [ts.place, c.place],
-          [ts.role, c.role],
-          [ts.team, c.team],
-          [ts.stack, c.stack.slice(0, 2).join(' · ')],
+          [ts.place, i18n?.place ?? c.place],
+          [ts.role, i18n?.role ?? c.role],
+          [ts.team, i18n?.team ?? c.team],
+          [ts.stack, (i18n?.stack ?? c.stack).slice(0, 2).join(' · ')],
         ] as [string, string][]).map(([k, v]) => (
           <div key={k}>
             <dt className="mono uppercase" style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--color-ink-faint)' }}>

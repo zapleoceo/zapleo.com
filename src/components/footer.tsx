@@ -1,11 +1,12 @@
 import type { Locale } from '@/i18n/config';
 import { getDict } from '@/i18n/dict';
-import { RECOVERY_COPY, recoveryPath } from '@/content/recovery';
+import { HOME_COPY } from '@/content/home';
+import { recoveryPath } from '@/content/recovery';
 
 export function Footer({ locale }: { locale: Locale }) {
   const t = getDict(locale);
   const base = locale === 'en' ? '' : `/${locale}`;
-  const offer = RECOVERY_COPY[locale];
+  const home = HOME_COPY[locale];
 
   return (
     <footer
@@ -39,7 +40,7 @@ export function Footer({ locale }: { locale: Locale }) {
             zapleo
           </h3>
           <p className="marginalia" style={{ marginTop: 16, maxWidth: '38ch', color: 'var(--color-ink-faint)', whiteSpace: 'pre-line' }}>
-            {offer.home.context}
+            {home.footer.tagline}
           </p>
         </div>
 
@@ -47,12 +48,10 @@ export function Footer({ locale }: { locale: Locale }) {
           <p className="eyebrow" style={{ marginBottom: 16 }}>{t.footer.mapLabel}</p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
             {[
-              [offer.nav, recoveryPath(locale)],
-              [t.nav.work, `${base}/work/`],
-              [t.nav.journey, `${base}/journey/`],
-              [t.nav.now, `${base}/now/`],
-              [t.nav.journal, `${base}/journal/`],
-              [t.nav.contact, `${base}/contact/`],
+              [home.nav.work, `${base}/work/`],
+              [home.nav.about, `${base}/about/`],
+              [home.nav.sprint, recoveryPath(locale)],
+              [home.nav.contact, `${base}/contact/`],
               [t.nav.colophon, `${base}/colophon/`],
             ].map(([label, href]) => (
               <li key={href}>
@@ -69,10 +68,8 @@ export function Footer({ locale }: { locale: Locale }) {
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
             {[
               ['LinkedIn', 'https://www.linkedin.com/in/dmitriy-zaporozhets-83b15375/'],
-              ['GitHub · org', 'https://github.com/zapleo'],
+              ['GitHub', 'https://github.com/zapleo'],
               ['Instagram · @ai_dimaz', 'https://www.instagram.com/ai_dimaz/'],
-              ['Telegram · @zapleosoft', 'https://t.me/zapleosoft'],
-              ['X · zapleosoft', 'https://x.com/zapleosoft'],
             ].map(([label, href]) => (
               <li key={href}>
                 <a href={href} target="_blank" rel="noopener" className="link-line" style={{ fontSize: 14, color: 'var(--color-ink-mute)' }}>
@@ -89,7 +86,6 @@ export function Footer({ locale }: { locale: Locale }) {
             <li><a href="mailto:dima@zapleo.com" className="link-line" style={{ fontSize: 14, color: 'var(--color-amber)' }}>dima@zapleo.com</a></li>
             <li><a href="https://wa.me/380994811889" className="link-line" style={{ fontSize: 14, color: 'var(--color-ink-mute)' }}>WhatsApp</a></li>
             <li><a href="https://t.me/zapleosoft" target="_blank" rel="noopener" className="link-line" style={{ fontSize: 14, color: 'var(--color-ink-mute)' }}>Telegram</a></li>
-            <li><a href={`${base}/colophon/`} className="link-line" style={{ fontSize: 14, color: 'var(--color-ink-mute)' }}>Colophon</a></li>
           </ul>
         </div>
       </div>
@@ -112,7 +108,7 @@ export function Footer({ locale }: { locale: Locale }) {
           {t.footer.copy.replace('{year}', String(new Date().getFullYear()))}
         </span>
         <span className="mono" style={{ fontSize: 11, letterSpacing: '0.18em', color: 'var(--color-ink-ghost)' }}>
-          Nha Trang · GMT+7
+          {t.footer.meta}
         </span>
       </div>
 

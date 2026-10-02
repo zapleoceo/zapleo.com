@@ -2,44 +2,7 @@ import { PageShell } from '@/components/page-shell';
 import { getDict } from '@/i18n/dict';
 import type { Locale } from '@/i18n/config';
 
-// Essay content stays in English — proper titles, slugs, professional record
 const ESSAYS: Array<{ slug: string; year: string; title: string; teaser: string; min: number; lang: string; status: 'draft' | 'soon' | 'published' }> = [
-  {
-    slug: 'why-jakarta',
-    year: '2026',
-    title: 'Why I moved to Jakarta to run an IT school',
-    teaser: 'Southeast Asia has the tech demand the West already used up. Three reasons the math works.',
-    min: 7,
-    lang: 'EN',
-    status: 'soon',
-  },
-  {
-    slug: 'ai-in-classroom',
-    year: '2026',
-    title: 'AI in the classroom is not a feature; it is the curriculum',
-    teaser: 'How Vibe Coding teaches the AI-augmented workflow without producing prompt monkeys.',
-    min: 9,
-    lang: 'EN',
-    status: 'soon',
-  },
-  {
-    slug: 'agency-economics-2010s',
-    year: '2026',
-    title: 'A 12-year agency P&L, in honest numbers',
-    teaser: 'What 40+ engagements taught me about pricing, scope, and the moment to walk away.',
-    min: 12,
-    lang: 'EN',
-    status: 'draft',
-  },
-  {
-    slug: 'pasijou-postmortem',
-    year: '2025',
-    title: 'Three years of running a clubhouse in Sri Lanka',
-    teaser: 'Food cost, monsoon, staff, the cinema night nobody attended. What an engineer learns when the kitchen breaks.',
-    min: 10,
-    lang: 'EN',
-    status: 'draft',
-  },
 ];
 
 export function JournalPageContent({ locale }: { locale: Locale }) {
@@ -134,9 +97,8 @@ export function JournalPageContent({ locale }: { locale: Locale }) {
         </ul>
 
         <p className="marginalia" style={{ marginTop: 64, maxWidth: '60ch' }}>
-          {tj.footnote}{' '}
-          <a href="https://t.me/zapleosoft" target="_blank" rel="noopener" className="link-line">
-            t.me/zapleosoft →
+          <a href={`${locale === 'en' ? '' : `/${locale}`}/work/`} className="link-line">
+            {t.nav.work} →
           </a>
         </p>
       </div>

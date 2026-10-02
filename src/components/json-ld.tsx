@@ -1,6 +1,6 @@
 /**
  * Person + WebSite schema for the homepage.
- * All claims cross-referenced to public sources (LinkedIn, GitHub, DOU, Clutch).
+ * Only stable, publicly supported identity and service facts belong here.
  */
 export function JsonLd() {
   const data = {
@@ -13,26 +13,9 @@ export function JsonLd() {
         url: 'https://zapleo.com',
         description:
           'AI integrator and business operator. Founder of Zapleo and former branch director of IT STEP Academy Jakarta.',
-        jobTitle: 'AI Integrator and Founder',
+        jobTitle: 'Founder, AI integration',
         worksFor: { '@type': 'Organization', name: 'Zapleo' },
-        alumniOf: {
-          '@type': 'CollegeOrUniversity',
-          name: 'Oles Honchar Dnipro National University',
-        },
-        founder: [
-          { '@type': 'Organization', name: 'Zapleo', url: 'https://zapleo.com' },
-          { '@type': 'Organization', name: 'Pasijou', url: 'https://www.instagram.com/pasijou/' },
-        ],
-        owns: {
-          '@type': 'SoftwareApplication',
-          name: 'AIbroker',
-          applicationCategory: 'DeveloperApplication',
-          url: 'https://aib.zapleo.com',
-          codeRepository: 'https://github.com/zapleoceo/AIbroker',
-          description: 'Centralized LLM API key broker with LRU routing, per-project cost caps, and health monitoring. Self-hosted on Hetzner.',
-          operatingSystem: 'Linux',
-          author: { '@id': 'https://zapleo.com/#person' },
-        },
+        founder: { '@type': 'Organization', name: 'Zapleo', url: 'https://zapleo.com' },
         knowsAbout: [
           'Software engineering',
           'Web development',
@@ -40,14 +23,12 @@ export function JsonLd() {
           'AI sales automation',
           'Project management',
           'EdTech',
-          'AI-augmented education',
+          'Business operations automation',
         ],
         sameAs: [
           'https://www.linkedin.com/in/dmitriy-zaporozhets-83b15375/',
           'https://github.com/zapleo',
           'https://www.instagram.com/ai_dimaz/',
-          'https://t.me/zapleosoft',
-          'https://x.com/zapleosoft',
         ],
       },
       {
@@ -71,7 +52,7 @@ export function JsonLd() {
         url: 'https://zapleo.com',
         name: 'zapleo',
         description:
-          'Dmitriy Zaporozhets helps businesses find lost inbound leads and build AI-assisted operational fixes.',
+          'Dmitriy Zaporozhets builds and tests AI systems inside live business operations.',
         publisher: { '@id': 'https://zapleo.com/#person' },
         inLanguage: ['en', 'uk', 'ru', 'id'],
       },

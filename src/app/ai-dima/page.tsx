@@ -180,8 +180,8 @@ export default function AIDimaHub() {
                   <a href="/" className="link-line" style={{ color: 'var(--color-amber)' }}>
                     Dmitriy Zaporozhets
                   </a>{' '}
-                  — former IT STEP Jakarta Branch Director and agency founder
-                  across Ukraine and Southeast Asia. The avatar and the voice are AI-augmented.
+                  — founder of Zapleo (2010), formerly director of IT STEP Academy Jakarta.
+                  The avatar and the voice are AI-augmented.
                   The strategy, the curriculum choices, and the editorial calls are mine.
                 </p>
                 <p className="marginalia" style={{ marginTop: 12, fontStyle: 'italic' }}>
