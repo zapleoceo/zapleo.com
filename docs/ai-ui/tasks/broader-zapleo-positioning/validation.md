@@ -13,4 +13,10 @@
 
 ## Release evidence
 
-Pending GitHub Actions deployment and actual production browser verification. Build/test success alone is not deployment proof.
+- Content release: `ac13da665d2647cc20c97665d1ae66de7d7d4d93`; deployment safeguards: `50ce874faeb3334a751a275476c06b2adc442a53`.
+- [GitHub Actions 36975341946](https://github.com/zapleoceo/zapleo.com/actions/runs/36975341946): Build & Test and Deploy to production both success. CI browser suite 44/44; three deployment-contract checks passed. Normal-URL homepage HTML exactly matched the uploaded build artifact.
+- First live suite caught stale cached English root: 39/44, five failures. Details and safeguards in `release-cache-incident.md`; this failure was not ignored or weakened away.
+- After the user cleared Cloudflare cache and enabled Development Mode: full normal-URL production suite **44/44**, 2.2 minutes, exit 0. Four locales, mobile 375px and desktop 1440px, real routes, no page errors or GA scripts, navigation and keyboard behavior verified.
+- Codex inspected fresh live mobile and desktop fold screenshots: styling, fonts, hero, CTA and desktop process diagram load without clipping.
+- Cloudflare cache-purge credentials remain unconfigured; nginx/origin configuration was not modified. Future releases preserve previous immutable assets and cannot pass with stale homepage HTML. The temporary Development Mode setting is not represented as a permanent fix.
+- Final independent Claude production verdict: coordinator message85, APPROVE; 44/44 live browser tests plus four-language route and content checks. A browser that cached the former homepage may need a hard refresh; new normal-URL requests serve the current site.
