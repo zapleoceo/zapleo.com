@@ -24,3 +24,9 @@ test('configured cache purge runs and requires API-level success', () => {
   assert.match(purge, /jq -e '\.success == true'/);
   assert.doesNotMatch(purge, /non-fatal|\|\| echo/);
 });
+
+
+test('pull requests run checks but cannot deploy', () => {
+  assert.match(workflow, /pull_request:\s+branches: \[main\]/);
+  assert.match(workflow, /deploy:\s+if: github.ref == 'refs\/heads\/main' && github.event_name != 'pull_request'/);
+});

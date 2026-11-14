@@ -7,6 +7,8 @@ on:
       - '**.md'
       - '.archive/**'
       - 'docs/**'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -90,6 +92,7 @@ jobs:
 
   # ── JOB 2: deploy (only if tests pass) ────────────────────────────────────
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     name: Deploy to production
     runs-on: ubuntu-latest
     timeout-minutes: 40
