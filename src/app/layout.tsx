@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/json-ld';
 import { LenisInit } from '@/components/lenis-init';
 import { Nav } from '@/components/nav';
 import { ScrollReveal } from '@/components/scroll-reveal';
+import { AnalyticsConsent } from '@/components/analytics-consent';
 import './globals.css';
 
 /**
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd />
 
         {children}
+        <AnalyticsConsent />
 
       </body>
     </html>
