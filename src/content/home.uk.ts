@@ -1,3 +1,4 @@
+import { JAKARTA_CASE_PATH } from '@/data/jakarta-case';
 import type { HomeCopy } from './home';
 
 export const uk: HomeCopy = {
@@ -27,7 +28,7 @@ export const uk: HomeCopy = {
         approach: 'Я простежую одну воронку від початку до кінця, вимірюю, де люди відпадають, і проєктую та пілотую рішення — від ШІ-агента, який відповідає мовою клієнта, до чіткої передачі ліда вашому відділу продажів.',
         proof: [
           { label: 'Stepan', href: 'https://stepan2.zapleo.com/' },
-          { label: 'Воронка IT STEP Jakarta', href: '/revenue-recovery/' },
+          { label: 'Воронка IT STEP Jakarta', href: JAKARTA_CASE_PATH },
         ],
         entry: { label: 'Revenue Recovery Sprint', href: '/revenue-recovery/' },
       },
@@ -67,7 +68,7 @@ export const uk: HomeCopy = {
         built: 'Атрибуція від реклами до ліда, розбір звіту CRM про 1 956 дзвінків за квітень 2026 року і ШІ-агент з продажів в Instagram і WhatsApp із передачею розмови людині.',
         observed: 'Атрибуція зросла з 45,2% до 93,6% лідів із реклами (1 335 лідів, липень 2026). За звітом близько 40% дзвінків так і не з’єдналися, ще чверть тривали менше 30 секунд: втрати виникали після пропущеного дзвінка, а не в кількості лідів.',
         limits: 'Одна філія, один ринок. Аналіз показав, де втрати; сам по собі він продажів не підняв.',
-        href: '/revenue-recovery/',
+        href: JAKARTA_CASE_PATH,
       },
       {
         slug: 'aibroker',

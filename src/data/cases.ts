@@ -1,3 +1,5 @@
+import { JAKARTA_CASE, JAKARTA_CASE_SLUG } from '@/data/jakarta-case';
+
 export type CaseStudy = {
   name: string;
   tagline: string;
@@ -13,6 +15,7 @@ export type CaseStudy = {
 };
 
 export const CASES: Record<string, CaseStudy> = {
+  [JAKARTA_CASE_SLUG]: JAKARTA_CASE,
   pasijou: {
     name: 'Pasijou',
     tagline: 'Coworking, kitchen and community in one place.',

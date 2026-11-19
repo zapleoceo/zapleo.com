@@ -1,3 +1,4 @@
+import { JAKARTA_CASE_PATH } from '@/data/jakarta-case';
 import type { Locale } from '@/i18n/config';
 import { id } from './home.id';
 import { ru } from './home.ru';
@@ -80,7 +81,7 @@ const en: HomeCopy = {
         approach: 'I trace one funnel end to end, measure where people drop out, and design and pilot the fix — from an AI agent that answers in the customer’s language to a clean handover to your sales team.',
         proof: [
           { label: 'Stepan', href: 'https://stepan2.zapleo.com/' },
-          { label: 'IT STEP Jakarta funnel', href: '/revenue-recovery/' },
+          { label: 'IT STEP Jakarta funnel', href: JAKARTA_CASE_PATH },
         ],
         entry: { label: 'Revenue Recovery Sprint', href: '/revenue-recovery/' },
       },
@@ -120,7 +121,7 @@ const en: HomeCopy = {
         built: 'Ad-to-lead attribution, a review of a CRM report covering 1,956 calls from April 2026, and an AI sales agent on Instagram and WhatsApp with human handover.',
         observed: 'Attribution went from 45.2% to 93.6% of ad-sourced leads (1,335 leads, July 2026). In the call report about 40% of calls never connected and another quarter lasted under 30 seconds: the loss sat in what happened after a missed call, not in the number of leads.',
         limits: 'One branch, one market. The analysis located the loss; it did not by itself raise sales.',
-        href: '/revenue-recovery/',
+        href: JAKARTA_CASE_PATH,
       },
       {
         slug: 'aibroker',

@@ -1,3 +1,4 @@
+import { JAKARTA_CASE_PATH } from '@/data/jakarta-case';
 import type { HomeCopy } from './home';
 
 export const id: HomeCopy = {
@@ -27,7 +28,7 @@ export const id: HomeCopy = {
         approach: 'Saya menelusuri satu funnel dari awal sampai akhir, mengukur di mana orang keluar, lalu merancang dan menguji perbaikannya — mulai dari AI agent yang menjawab dalam bahasa pelanggan sampai serah terima yang rapi ke tim sales Anda.',
         proof: [
           { label: 'Stepan', href: 'https://stepan2.zapleo.com/' },
-          { label: 'Funnel IT STEP Jakarta', href: '/revenue-recovery/' },
+          { label: 'Funnel IT STEP Jakarta', href: JAKARTA_CASE_PATH },
         ],
         entry: { label: 'Revenue Recovery Sprint', href: '/revenue-recovery/' },
       },
@@ -67,7 +68,7 @@ export const id: HomeCopy = {
         built: 'Atribusi dari iklan ke lead, tinjauan laporan CRM atas 1.956 panggilan selama April 2026, dan AI sales agent di Instagram dan WhatsApp dengan serah terima ke manusia.',
         observed: 'Atribusi naik dari 45,2% menjadi 93,6% dari lead yang berasal dari iklan (1.335 lead, Juli 2026). Menurut laporan itu, sekitar 40% panggilan tidak pernah tersambung dan seperempat lainnya kurang dari 30 detik: kebocorannya ada setelah panggilan tidak terjawab, bukan pada jumlah lead.',
         limits: 'Satu cabang, satu pasar. Analisis ini menemukan letak kebocoran; analisis itu sendiri tidak menaikkan penjualan.',
-        href: '/revenue-recovery/',
+        href: JAKARTA_CASE_PATH,
       },
       {
         slug: 'aibroker',

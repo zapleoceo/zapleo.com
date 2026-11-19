@@ -1,3 +1,4 @@
+import { JAKARTA_CASE_SLUG } from '@/data/jakarta-case';
 import type { Locale } from './config';
 
 export type CaseI18n = {
@@ -13,6 +14,104 @@ export type CaseI18n = {
 };
 
 export const CASES_I18N: Partial<Record<string, Partial<Record<Exclude<Locale, 'en'>, CaseI18n>>>> = {
+  [JAKARTA_CASE_SLUG]: {
+    "uk": {
+      "tagline": "Аудит воронки продажів: Instagram, WhatsApp, дзвінки та CRM",
+      "brief": "Засновник Zapleo Дмитро Запорожець об’єднав дані про вхідні продажі та кваліфікацію заявок за допомогою ШІ у філії IT STEP Academy у Джакарті.",
+      "sections": [
+        {
+          "title": "Де губилися заявки",
+          "body": "Філія платила за залучення лідів, але не могла надійно визначити, яка реклама приводить заявки і де ті губляться до продажу."
+        },
+        {
+          "title": "Що зробили",
+          "body": "Zapleo зв’язав рекламу із заявками, розібрав звіт CRM про 1 956 дзвінків за квітень 2026 року та підключив агента Stepan для Instagram і WhatsApp до подій CRM. Stepan кваліфікував заявки та передавав їх співробітникам із зазначенням причини."
+        },
+        {
+          "title": "Що показали дані",
+          "body": "У липні 2026 року повнота атрибуції зросла з 45,2% до 93,6% серед 1 335 заявок із реклами. У квітневому звіті близько 40% дзвінків не з’єдналися, ще приблизно чверть тривали менше ніж 30 секунд."
+        },
+        {
+          "title": "Чого ці цифри не показують",
+          "body": "Повнота атрибуції не вимірює конверсію чи виручку. Це дані однієї філії й одного ринку; сам аналіз не збільшив продажі."
+        }
+      ],
+      "links": [
+        {
+          "label": "Про Revenue Recovery Sprint"
+        },
+        {
+          "label": "Сайт Stepan"
+        }
+      ],
+      "place": "Джакарта, Індонезія",
+      "role": "Операційна робота філії та впровадження ШІ"
+    },
+    "ru": {
+      "tagline": "Аудит воронки продаж: Instagram, WhatsApp, звонки и CRM",
+      "brief": "Основатель Zapleo Дмитрий Запорожец связал данные по входящим продажам и квалификацию заявок с помощью ИИ в филиале IT STEP Academy в Джакарте.",
+      "sections": [
+        {
+          "title": "Где терялись заявки",
+          "body": "Филиал платил за привлечение заявок, но не мог надёжно определить, какая реклама их приносит и где они теряются до продажи."
+        },
+        {
+          "title": "Что сделали",
+          "body": "Zapleo связал данные рекламы с заявками, разобрал отчёт CRM по 1 956 звонкам за апрель 2026 года и подключил к событиям CRM ИИ-агента Stepan для Instagram и WhatsApp. Stepan квалифицировал заявки и передавал их сотрудникам с указанием причины."
+        },
+        {
+          "title": "Что показали данные",
+          "body": "В июле 2026 года полнота атрибуции выросла с 45,2% до 93,6% среди 1 335 заявок из рекламы. В апрельском отчёте около 40% звонков не соединились, ещё примерно четверть длилась меньше 30 секунд."
+        },
+        {
+          "title": "Чего эти цифры не показывают",
+          "body": "Полнота атрибуции не измеряет конверсию или выручку. Это данные одного филиала и одного рынка; сам анализ не увеличил продажи."
+        }
+      ],
+      "links": [
+        {
+          "label": "О Revenue Recovery Sprint"
+        },
+        {
+          "label": "Сайт Stepan"
+        }
+      ],
+      "place": "Джакарта, Индонезия",
+      "role": "Работа филиала и внедрение ИИ"
+    },
+    "id": {
+      "tagline": "Audit funnel penjualan: Instagram, WhatsApp, panggilan, dan CRM",
+      "brief": "Pendiri Zapleo Dmitriy Zaporozhets menghubungkan data penjualan inbound dengan kualifikasi lead berbantuan AI di IT STEP Academy Jakarta.",
+      "sections": [
+        {
+          "title": "Di mana lead hilang",
+          "body": "Cabang membayar untuk memperoleh lead, tetapi tidak dapat menentukan iklan mana yang menghasilkan lead atau di tahap mana lead hilang sebelum penjualan."
+        },
+        {
+          "title": "Apa yang diterapkan",
+          "body": "Zapleo menghubungkan iklan dengan lead, menelaah laporan CRM berisi 1.956 panggilan pada April 2026, dan menghubungkan agen AI Stepan untuk Instagram dan WhatsApp dengan peristiwa di CRM. Stepan mengualifikasi lead dan meneruskannya ke staf dengan alasan yang jelas."
+        },
+        {
+          "title": "Temuan dari data",
+          "body": "Cakupan atribusi naik dari 45,2% menjadi 93,6% di antara 1.335 lead dari iklan pada Juli 2026. Dalam laporan April, sekitar 40% panggilan tidak tersambung dan sekitar seperempat lainnya berlangsung kurang dari 30 detik."
+        },
+        {
+          "title": "Batasan data",
+          "body": "Cakupan atribusi tidak mengukur konversi atau pendapatan. Temuan ini berasal dari satu cabang di satu pasar; analisisnya sendiri tidak meningkatkan penjualan."
+        }
+      ],
+      "links": [
+        {
+          "label": "Lihat Revenue Recovery Sprint"
+        },
+        {
+          "label": "Kunjungi situs Stepan"
+        }
+      ],
+      "place": "Jakarta, Indonesia",
+      "role": "Operasional cabang dan penerapan AI"
+    }
+  },
   "pasijou": {
     uk: {
       "stack": ["Операційна робота закладу","Мережева інфраструктура","Цифрові замовлення","Комунікація з гостями"],

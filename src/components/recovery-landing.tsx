@@ -1,3 +1,4 @@
+import { jakartaCaseLink } from '@/data/jakarta-case';
 import { PageShell } from '@/components/page-shell';
 import { RECOVERY_COPY, recoveryEmailHref } from '@/content/recovery';
 import type { Locale } from '@/i18n/config';
@@ -6,6 +7,7 @@ import { getDict } from '@/i18n/dict';
 export function RecoveryLanding({ locale }: { locale: Locale }) {
   const copy = RECOVERY_COPY[locale].service;
   const t = getDict(locale);
+  const jakarta = jakartaCaseLink(locale);
 
   return (
     <PageShell eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} chapter="SERVICE / 01" locale={locale}>
@@ -69,6 +71,7 @@ export function RecoveryLanding({ locale }: { locale: Locale }) {
             <h2 className="display offer-section-title">{copy.proofTitle}</h2>
           </div>
           <p className="offer-section-copy">{copy.proofBody}</p>
+          <p className="offer-section-copy"><a href={jakarta.href}>{jakarta.label}</a></p>
         </div>
       </section>
 
