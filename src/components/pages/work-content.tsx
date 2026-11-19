@@ -1,3 +1,4 @@
+import { jakartaCaseLink } from '@/data/jakarta-case';
 import { PageShell } from '@/components/page-shell';
 import { getDict } from '@/i18n/dict';
 import type { Locale } from '@/i18n/config';
@@ -6,6 +7,7 @@ import { WORK_ERAS, CASE_SLUGS } from '@/data/work';
 export function WorkPageContent({ locale }: { locale: Locale }) {
   const t = getDict(locale);
   const tw = t.work;
+  const jakarta = jakartaCaseLink(locale);
   const tc = t.common;
 
   return (
@@ -22,6 +24,7 @@ export function WorkPageContent({ locale }: { locale: Locale }) {
       locale={locale}
     >
       <div style={{ padding: 'clamp(64px, 10vh, 120px) clamp(24px, 6vw, 96px)' }}>
+        <p style={{ marginBottom: 32 }}><a href={jakarta.href}>{jakarta.label}</a></p>
         {WORK_ERAS.map((era) => (
           <section key={era.eraKey} style={{ marginBottom: 'clamp(80px, 12vh, 140px)' }}>
             <p className="eyebrow" data-reveal style={{ marginBottom: 'clamp(32px, 5vh, 56px)' }}>

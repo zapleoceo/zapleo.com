@@ -1,3 +1,4 @@
+import { JAKARTA_CASE_PATH } from '@/data/jakarta-case';
 import type { HomeCopy } from './home';
 
 export const ru: HomeCopy = {
@@ -27,7 +28,7 @@ export const ru: HomeCopy = {
         approach: 'Прохожу одну воронку от начала до конца, измеряю, где отваливаются люди, и проектирую и запускаю в пилот исправление — от ИИ-агента, который отвечает клиенту на его языке, до чёткой передачи заявки вашим продажникам.',
         proof: [
           { label: 'Stepan', href: 'https://stepan2.zapleo.com/' },
-          { label: 'Воронка IT STEP Jakarta', href: '/revenue-recovery/' },
+          { label: 'Воронка IT STEP Jakarta', href: JAKARTA_CASE_PATH },
         ],
         entry: { label: 'Revenue Recovery Sprint', href: '/revenue-recovery/' },
       },
@@ -67,7 +68,7 @@ export const ru: HomeCopy = {
         built: 'Привязку заявок к рекламе, разбор отчёта CRM по 1 956 звонкам за апрель 2026 года и ИИ-агента продаж в Instagram и WhatsApp с передачей диалога человеку.',
         observed: 'Доля заявок из рекламы с известным источником выросла с 45,2% до 93,6% (1 335 заявок, июль 2026). По отчёту около 40% звонков так и не соединились, ещё четверть длились меньше 30 секунд: потери были после пропущенного звонка, а не в количестве заявок.',
         limits: 'Один филиал, один рынок. Анализ показал, где теряются деньги, но сам по себе продажи не поднял.',
-        href: '/revenue-recovery/',
+        href: JAKARTA_CASE_PATH,
       },
       {
         slug: 'aibroker',

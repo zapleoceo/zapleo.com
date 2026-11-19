@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
+import { JAKARTA_CASE_SLUG } from '@/data/jakarta-case';
 import { hreflang } from '@/i18n/seo';
 
 export const dynamic = 'force-static';
 
 const MULTI_ROUTES = ['', 'about', 'work', 'revenue-recovery', 'contact', 'colophon'];
-const WORK_SLUGS = ['pasijou', 'apcu', 'aibroker'];
+const WORK_SLUGS = ['pasijou', 'apcu', 'aibroker', JAKARTA_CASE_SLUG];
 const NON_EN_LOCALES = ['uk', 'ru', 'id'] as const;
 
 
