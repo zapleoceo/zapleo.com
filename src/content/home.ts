@@ -163,7 +163,7 @@ const en: HomeCopy = {
     eyebrow: 'About',
     title: 'An operator who builds with AI.',
     intro: 'I have run a software company, carried the P&L of an education branch, and co-own and operate a restaurant in Nha Trang. I build the systems I need myself.',
-    story: 'Zapleo started in 2010 as a development company for US and European clients. In 2026 I ran IT STEP Academy’s branch in Jakarta, where I built the sales agent and the funnel analytics described on this site. I live in Nha Trang, Vietnam, and work with companies remotely.',
+    story: 'Zapleo started in 2010 as a development company for US and European clients. I use the name Zapleo Soft for Stepan, my assistant for business messaging. In 2026 I ran IT STEP Academy’s branch in Jakarta, where I built the sales agent and the funnel analytics described on this site. I live in Nha Trang, Vietnam, and work with companies remotely.',
     methodTitle: 'Why this works',
     methodBody: 'I would rather find a simple fix for a hard problem than talk about it for months. I measure before I build, keep a human where judgement matters, and check the system after it goes live.',
   },

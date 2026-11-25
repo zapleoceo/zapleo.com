@@ -110,7 +110,7 @@ export const id: HomeCopy = {
     eyebrow: 'Tentang',
     title: 'Operator yang membangun dengan AI.',
     intro: 'Saya pernah menjalankan perusahaan software, memegang P&L sebuah cabang pendidikan, dan kini ikut memiliki serta mengelola sebuah restoran di Nha Trang. Sistem yang saya butuhkan, saya bangun sendiri.',
-    story: 'Zapleo dimulai pada 2010 sebagai perusahaan pengembangan untuk klien di AS dan Eropa. Pada 2026 saya memimpin cabang IT STEP Academy di Jakarta, tempat saya membangun sales agent dan analitik funnel yang dijelaskan di situs ini. Saya tinggal di Nha Trang, Vietnam, dan bekerja dengan perusahaan secara remote.',
+    story: 'Zapleo dimulai pada 2010 sebagai perusahaan pengembangan untuk klien di AS dan Eropa. Untuk Stepan, asisten saya yang menjawab pesan pelanggan, saya memakai nama Zapleo Soft. Pada 2026 saya memimpin cabang IT STEP Academy di Jakarta, tempat saya membangun sales agent dan analitik funnel yang dijelaskan di situs ini. Saya tinggal di Nha Trang, Vietnam, dan bekerja dengan perusahaan secara remote.',
     methodTitle: 'Mengapa ini berhasil',
     methodBody: 'Saya lebih memilih menemukan solusi sederhana untuk masalah yang sulit daripada membicarakannya berbulan-bulan. Saya mengukur sebelum membangun, tetap melibatkan manusia di tempat yang butuh pertimbangan, dan mengecek sistem setelah berjalan.',
   },

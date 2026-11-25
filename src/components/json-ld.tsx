@@ -1,5 +1,5 @@
 /**
- * Person + WebSite schema for the homepage.
+ * Shared site identity and service schema.
  * Only stable, publicly supported identity and service facts belong here.
  */
 export function JsonLd() {
@@ -14,8 +14,7 @@ export function JsonLd() {
         description:
           'AI integrator and business operator. Founder of Zapleo and former branch director of IT STEP Academy Jakarta.',
         jobTitle: 'Founder, AI integration',
-        worksFor: { '@type': 'Organization', name: 'Zapleo' },
-        founder: { '@type': 'Organization', name: 'Zapleo', url: 'https://zapleo.com' },
+        worksFor: { '@id': 'https://zapleo.com/#organization' },
         knowsAbout: [
           'Software engineering',
           'Web development',
@@ -30,6 +29,14 @@ export function JsonLd() {
           'https://github.com/zapleo',
           'https://www.instagram.com/ai_dimaz/',
         ],
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://zapleo.com/#organization',
+        name: 'Zapleo',
+        alternateName: 'Zapleo Soft',
+        url: 'https://zapleo.com',
+        founder: { '@id': 'https://zapleo.com/#person' },
       },
       {
         '@type': 'Service',
